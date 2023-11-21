@@ -1,0 +1,149 @@
+// agency styles
+.agency {
+  background-color: var(--tertiary-color);
+  z-index: 1;
+  position: relative;
+
+  .agency__thumb {
+    position: relative;
+    overflow: hidden;
+    text-align: end;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 10%;
+      width: 40px;
+      height: 40px;
+      //background-image: url("assets/images/home/agency/dot.png");
+      background-size: cover;
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 40px;
+      height: 40px;
+      //background-image: url("assets/images/home/agency/dot.png");
+      background-size: cover;
+      z-index: -1;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .thumb-one {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      max-width: 80%;
+    }
+
+    .thumb-two {
+      margin-top: 100px;
+      z-index: 2;
+      position: relative;
+      max-width: 80%;
+    }
+  }
+
+  .agency__content {
+    padding-left: 70px;
+  }
+
+  .star {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    z-index: -1;
+  }
+
+  .skill-wrap {
+    margin-top: 40px;
+  }
+
+  .skill-bar-single {
+    margin-bottom: 30px;
+    &:nth-last-of-type(1) {
+      margin-bottom: 0px;
+    }
+  }
+
+  .skill-bar-wrapper {
+    margin-top: 15px;
+  }
+
+  .skill-bar {
+    height: 8px;
+    border-radius: 100px;
+    background-color: #363636;
+    position: relative;
+  }
+
+  .skill-bar-percent {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: #cecece;
+    border-radius: inherit;
+  }
+
+  .percent-value {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    right: 0px;
+  }
+
+  .dot-large {
+    position: absolute;
+    bottom: 40px;
+    right: 4%;
+    max-width: 25vw;
+    z-index: -1;
+  }
+}
+
+// 5.02 agency two styles
+.agency-two {
+  .agency__thumb {
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  .clutch {
+    width: 220px;
+    border-radius: 100px;
+
+    img {
+      border-radius: 100px;
+    }
+  }
+
+  .cta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    row-gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  h5 {
+    color: var(--white);
+  }
+
+  .single {
+    p {
+      color: var(--secondary-color);
+      margin-top: 6px;
+      text-transform: capitalize;
+    }
+  }
+}
