@@ -3,8 +3,8 @@ import Footer from 'layouts/footer/Footer'
 import Header from 'layouts/header/Header'
 import AppRouter from "layouts/AppRouter"
 import FooterImg from 'assets/images/footer/footer-bg.png'
-import AnimatedCursor from 'layouts/animated-cursor/AnimatedCursor'
 import ScrollToTopButton from 'layouts/scroll-to-top/ScrollToTop'
+import AnimatedCursor from 'layouts/animated-cursor/AnimatedCursor'
 
 function App() {
   return (
