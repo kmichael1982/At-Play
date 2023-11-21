@@ -1,0 +1,5 @@
+.App {
+  text-align: center;
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+}
