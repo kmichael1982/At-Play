@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './banner-styles.scss'
 import BannerImage from 'assets/images/home/banner/banner-one-thumb.png'
 import StarIcon from 'assets/images/star.png'
 import VideoFrameIcon from 'assets/images/popup-video.png'
 import LinesContent from 'shared/ui/design/LinesContent'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
+import { VideoModals } from 'layouts/header/video-modal/VideoModal'
+import ScrollAnimatedImage from './ScrollAnimatedImage'
+import VideoPopUp from "../../../../shared/ui/popup/video-popop/VideoPopUp";
 
 function BannerSection() {
+    const [ isModalOpen, setIsModalOpen ] = useState(false)
+
+    const openYouTubeVideo = () => {
+        setIsModalOpen(true)
+    }
+
+    const closeYouTubeVideo = () => {
+        setIsModalOpen(false)
+    }
+
     return (
         <section className="banner">
             <div className="container px-4 w-full">
@@ -49,27 +62,40 @@ function BannerSection() {
                 src={BannerImage}
                 alt="Image"
                 className="banner-one-thumb d-none d-sm-block g-ban-one"
-                style={{
-                    transform: 'translate(-50%, 0%) translate(0px, -10%)',
-                    zIndex: -1,
-                    opacity: 1
-                }}
             />
+
+            <ScrollAnimatedImage
+                imageSrc="your-image-source.jpg"
+                altText="Your Alt Text"
+                className="banner-one-thumb.visible"
+            />
+
             <img src={StarIcon} alt="Image" className="star" />
             <div className="banner-left-text banner-social-text d-none d-md-flex">
                 <LinkButton label="mail : info@xpovio.com" href="mailto:info@xpovio.com" />
                 <LinkButton label="Call : +99 2158 003 6980" href="tel:99-2158-003-6980" />
             </div>
+
             <div className="banner-right-text banner-social-text d-none d-md-flex">
                 <LinkButton label="instagram" href="https://www.instagram.com/" />
                 <LinkButton label="Linkedin" href="https://www.pinterest.com/" />
                 <LinkButton label="facebook" href="https://www.facebook.com/" />
             </div>
-            <a className="video-frame video-btn" href="https://www.youtube.com/watch?v=RvreULjnzFo" target="_blank">
+
+            <a
+                onClick={openYouTubeVideo}
+                className="video-frame video-btn"
+                rel="noopener noreferrer"
+            >
                 <img src={VideoFrameIcon} alt="Image" />
-                <i className="fa fa-sharp fa-solid fa-play"></i>
+                <i className="fa-sharp fa-solid fa-play"></i>
             </a>
 
+            <VideoPopUp
+                isOpen={isModalOpen}
+                onClose={closeYouTubeVideo}
+                videoUrl="//www.youtube.com/embed/RvreULjnzFo?autoplay=1"
+            />
             <LinesContent />
         </section>
     )

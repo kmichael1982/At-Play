@@ -1,11 +1,104 @@
-import React from 'react'
-import Logo from 'assets/For Web/svg/Color logo - no background.svg'
-import { SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
+import React, { useState } from 'react'
+import Logo from 'assets/For Web/png/Color logo - no background.png'
+import { Buttons, SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
+import AccordionItem from './acordion-item/AccordionItem'
 
 const OffCanvasNav: React.FC<{
     isOffCanvasMenu: boolean
     setIsOffCanvasMenu: (setIsOffCanvasMenu: boolean)  => void
 }> = ({ isOffCanvasMenu, setIsOffCanvasMenu }) => {
+
+    const [activeItem, setActiveItem] = useState(null)
+
+    const handleItemClick = (index: any) => {
+        setActiveItem((prevActiveItem) => (prevActiveItem === index ? null : index))
+    }
+
+    const menuItems = [
+        {
+            label: 'Home',
+            subItems: [
+                {
+                    label: 'Creative Agency',
+                    link: ''
+                },
+
+                {
+                    label: 'Creative Agency Light',
+                    link: ''
+                },
+
+                {
+                    label: 'Digital Agency',
+                    link: ''
+                },
+
+                {
+                    label: 'Digital Agency Light',
+                    link: ''
+                },
+
+                {
+                    label: 'It Solution',
+                    link: ''
+                },
+
+                {
+                    label: 'It Solution Light',
+                    link: ''
+                },
+
+                {
+                    label: 'Personal Portfolio',
+                    link: ''
+                },
+
+                {
+                    label: 'Personal Portfolio Light',
+                    link: ''
+                },
+
+                {
+                    label: 'Interactive Portfolio',
+                    link: ''
+                },
+
+                {
+                    label: 'Interactive Portfolio Light',
+                    link: ''
+                }
+            ]
+        },
+        { label: 'About Us' },
+        { label: 'Services', subItems: [{ label: 'Our Services', link: '' }, { label: 'Service Details', link: '' }] },
+        { label: 'Projects', subItems: [{ label: 'Our Projects', link: '' }, { label: 'Project Details', link: '' }] },
+        {
+            label: 'Pages',
+            subItems: [
+                {
+                    label: 'Creative Agency',
+                    link: ''
+                },
+
+                {
+                    label: 'Error',
+                    link: ''
+                },
+
+                {
+                    label: 'Our Story',
+                    link: ''
+                },
+
+                {
+                    label: 'Portfolio',
+                    link: ''
+                }
+            ]
+        },
+        { label: 'Blog', subItems: [{ label: 'Blog', link: 'blog.html' }, { label: 'Blog Details', link: 'blog-single.html' }] },
+    ];
+
     return (
         <div className="offcanvas-nav">
             <div className={`${!isOffCanvasMenu && 'show-offcanvas-menu'}  offcanvas-menu`}>
@@ -17,14 +110,26 @@ const OffCanvasNav: React.FC<{
                             </a>
                         </div>
                         <a onClick={() => setIsOffCanvasMenu(!isOffCanvasMenu)} aria-label="close offcanvas menu" className="close-offcanvas-menu">
-                            <i className="fa-light fa-xmark-large">X</i>
+                            <i className="fa fa-light fa-xmark"></i>
                         </a>
                     </div>
                     <div className="offcanvas-menu__list">
                         <div className="navbar__menu">
+                            {/*<ul>*/}
+                            {/*    {menuItems.map((item, index) => (*/}
+                            {/*        <AccordionItem*/}
+                            {/*            key={index}*/}
+                            {/*            label={item.label}*/}
+                            {/*            subItems={item.subItems || []}*/}
+                            {/*            isActive={activeItem === index}*/}
+                            {/*            onClick={() => handleItemClick(index)}*/}
+                            {/*        />*/}
+                            {/*    ))}*/}
+                            {/*</ul>*/}
+
                             <ul>
                                 <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '1.2s'}}>
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="navbar__dropdown-label">Home</a>
+                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label ">Home</a>
                                     <ul className="navbar__sub-menu">
                                         <li>
                                             <a href="index.html">Creative Agency</a>
@@ -59,10 +164,10 @@ const OffCanvasNav: React.FC<{
                                     </ul>
                                 </li>
                                 <li className="navbar__item nav-fade" style={{animationDelay: '1.4s'}}>
-                                    <a href="about-us.html">About Us</a>
+                                    <a href="about-us.html" className="flex navbar__dropdown-label">About Us</a>
                                 </li>
                                 <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '1.6s'}}>
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="navbar__dropdown-label">Services</a>
+                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label">Services</a>
                                     <ul className="navbar__sub-menu">
                                         <li>
                                             <a href="our-services.html">Our Services</a>
@@ -73,7 +178,7 @@ const OffCanvasNav: React.FC<{
                                     </ul>
                                 </li>
                                 <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '1.8s'}}>
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="navbar__dropdown-label">Projects</a>
+                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label">Projects</a>
                                     <ul className="navbar__sub-menu">
                                         <li>
                                             <a href="our-projects.html">Our Projects</a>
@@ -84,7 +189,7 @@ const OffCanvasNav: React.FC<{
                                     </ul>
                                 </li>
                                 <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '2s'}} >
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="navbar__dropdown-label">Pages</a>
+                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label">Pages</a>
                                     <ul className="navbar__sub-menu">
                                         <li>
                                             <a href="faq.html">FAQ</a>
@@ -99,7 +204,7 @@ const OffCanvasNav: React.FC<{
                                             <a href="portfolio.html">Portfolio</a>
                                         </li>
                                         <li className="navbar__item navbar__item--has-children">
-                                            <a href="javascript:void(0)" aria-label="dropdown menu" className="navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
+                                            <a href="javascript:void(0)" aria-label="dropdown menu" className=" flex navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
                                             <ul className="navbar__sub-menu navbar__sub-menu__nested">
                                                 <li>
                                                     <a href="our-teams.html">Our Teams</a>
@@ -118,7 +223,7 @@ const OffCanvasNav: React.FC<{
                                     </ul>
                                 </li>
                                 <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '2.2s'}} >
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="navbar__dropdown-label navbar__item-active">Blog</a>
+                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label navbar__item-active">Blog</a>
                                     <ul className="navbar__sub-menu flex">
                                         <li>
                                             <a href="blog.html">Blog</a>
@@ -132,9 +237,7 @@ const OffCanvasNav: React.FC<{
                         </div>
                     </div>
                     <div className="offcanvas-menu__options nav-fade" style={{animationDelay: '2.4s'}}>
-                        <div className="offcanvas__mobile-options d-flex">
-                            <a href="contact-us.html" className="btn btn--secondary">Let's Talk</a>
-                        </div>
+                        <Buttons href="/contact-us" title="Let's Talk"/>
                     </div>
                     <div className="offcanvas-menu__social social nav-fade" style={{animationDelay: '2.6s'}}>
                         <SocialLinkButton

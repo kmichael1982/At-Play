@@ -8,7 +8,7 @@ function VideoModal() {
         <div className={`${isActiveVideoModal ? 'flex' : 'none'} vid-m`}>
             <div className="vid-c">
                 <a onClick={() => {setIsActiveVideoModal(false)}} href="" aria-label="close video popup" className="close-v">
-                    <i className="fa-light fa-xmark-large">X</i>
+                    <i className="fa fa-light fa-xmark"></i>
                 </a>
                 <video autoPlay={true} loop={true} muted={true} controls={true}>
                     <source src={VideoUrl} type="video/mp4" />

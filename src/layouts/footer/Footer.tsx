@@ -1,8 +1,8 @@
-import React from 'react'
-import { footer, container } from './footer'
-import Logo from 'assets/For Web/svg/Color logo - no background.svg'
+ import React from 'react'
+ import Logo from 'assets/For Web/png/Color logo - no background.png'
 import { Buttons, LinkButton, SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
 import { SearchInput } from 'shared/ui/inputs/FormInput'
+import './footer-styles.scss'
 
 interface FooterProps {
     background?: string
@@ -14,15 +14,15 @@ const Footer: React.FC<FooterProps> = ({ background }) => {
     }
 
     return (
-        <footer className={footer} style={footerStyle}>
-            <div className={container}>
-                <div className="flex items-center justify-between w-full">
+        <footer className="footer section !pb-0"  style={footerStyle}>
+            <div className="container">
+                <div className="row flex justify-between">
                     <div className="flex flex-col gap-6 text-white">
                         <div className="">
                             <a href="#" className="logo">
-                                <img src={Logo} className="w-48 h-16" alt="Image" />
+                                <img src={Logo} className="h-12" alt="Image" />
                             </a>
-                            <div className="flex items-center gap-6 flex-wrap mt-7 mb-10 mx-0">
+                            <div className="footer__single-meta">
                                 <LinkButton
                                     href='https://www.google.com/maps/d/viewer?mid=1UZ57Drfs3SGrTgh6mrYjQktu6uY&amp;hl=en_US&amp;ll=18.672105000000013%2C105.68673800000003&amp;z=17'
                                     icon={<i className="fa-sharp fa-solid fa-location-dot"></i>}
@@ -41,13 +41,7 @@ const Footer: React.FC<FooterProps> = ({ background }) => {
                                     label='info@xpovio.com'
                                 />
                             </div>
-
-                            <div className="footer__cta text-start">
-                                <Buttons
-                                    title="book a call now"
-                                    className=''
-                                />
-                            </div>
+                            <Buttons title="book a call now"/>
                         </div>
                     </div>
                     <div className="flex flex-col gap-6 text-white">

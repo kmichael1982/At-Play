@@ -1,6 +1,7 @@
 import './blog-styles.scss'
 import BlogOneImg from 'assets/images/home/blog/one.png'
 import BlogTwoImg from 'assets/images/home/blog/two.png'
+import BlogItem from './blog-item/BlogItem'
 
 function BlogSection() {
     return (
@@ -20,47 +21,23 @@ function BlogSection() {
 
                 <div className="flex items-center justify-between w-full gaper">
                     <div className="px-2">
-                        <div className="blog__single fade-top">
-                            <div className="blog__single-thumb topy-tilt">
-                                <a href="blog-single.html">
-                                    <img src={BlogOneImg} alt="Image" />
-                                </a>
-                            </div>
-                            <div className="blog__single-content">
-                                <h4>
-                                    <a href="blog-single.html">A Simple Social Media Marketing Checklist</a>
-                                </h4>
-                                <div className="blog__single-meta">
-                                    <a href="blog.html" className="sub-title">
-                                        creative
-                                        <i className="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                    <p>MARCH 23, 2023</p>
-                                </div>
-                            </div>
-                        </div>
+                        <BlogItem
+                            title="A Simple Social Media Marketing Checklist"
+                            link="/blog"
+                            image={BlogOneImg}
+                            category={{ name: 'creative', link: '/blog' }}
+                            date="MARCH 23, 2023"
+                        />
                     </div>
 
                     <div className="px-2">
-                        <div className="blog__single fade-top">
-                            <div className="blog__single-thumb topy-tilt">
-                                <a href="#blog-single">
-                                    <img src={BlogTwoImg} alt="Image" />
-                                </a>
-                            </div>
-                            <div className="blog__single-content">
-                                <h4>
-                                    <a href="blog-single.html">Transforming Challenges into Opportunities</a>
-                                </h4>
-                                <div className="blog__single-meta">
-                                    <a href="blog.html" className="sub-title">
-                                        creative
-                                        <i className="fa-solid fa-arrow-right"></i>
-                                    </a>
-                                    <p>MARCH 23, 2023</p>
-                                </div>
-                            </div>
-                        </div>
+                        <BlogItem
+                            title="Transforming Challenges into Opportunities"
+                            link="/blog"
+                            image={BlogTwoImg}
+                            category={{ name: 'creative', link: '/blog' }}
+                            date="MARCH 23, 2023"
+                        />
                     </div>
                 </div>
             </div>

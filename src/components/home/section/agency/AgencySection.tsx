@@ -3,19 +3,21 @@ import ThumbOneImg from 'assets/images/home/agency/thumb-one.png'
 import ThumbTwoImg from 'assets/images/home/agency/thumb-two.png'
 import StarIcon from 'assets/images/star.png'
 import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
+import { Buttons } from 'shared/ui/buttons/ButtonUi'
+import SkillBar from './skil-bar/SkilBar'
 
 function AgencySection() {
     return (
         <section className="py-32 px-0 agency">
             <div className="container px-4 mx-auto">
                 <div className="flex items-center gap-7">
-                    <div className="w-1/2 ">
+                    <div className="w-1/2">
                         <div className="agency__thumb">
                             <img
                                 src={ThumbOneImg}
                                 alt="Image"
                                 className="thumb-one fade-left"
-                                style={{translate: 'none', background: 'red', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}
+                                style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}
                             />
 
                             <img
@@ -26,7 +28,7 @@ function AgencySection() {
                             />
                         </div>
                     </div>
-                    <div className="w-1/2 ">
+                    <div className="w-1/2">
                         <div className="agency__content section__content">
                               <span className="sub-title">
                                  WELCOME
@@ -38,35 +40,11 @@ function AgencySection() {
                                         the runway heading towards a streamlined cloud solution going forward porttitor
                                         dictum sapien.</p>
                                 </div>
-                            <div className="skill-wrap">
-                                <div className="skill-bar-single">
-                                    <div className="skill-bar-title">
-                                        <p className="primary-text">Website design</p>
-                                    </div>
-                                    <div className="skill-bar-wrapper" data-percent="75%">
-                                        <div className="skill-bar">
-                                            <div className="skill-bar-percent" style={{width: '75%'}}>
-                                                <span className="percent-value">75%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="skill-bar-single">
-                                    <div className="skill-bar-title">
-                                        <p className="primary-text">Digital Marketing</p>
-                                    </div>
-                                    <div className="skill-bar-wrapper" data-percent="90%">
-                                        <div className="skill-bar">
-                                            <div className="skill-bar-percent" style={{width: '90%'}}>
-                                                <span className="percent-value">90%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div className="skill-wrap mb-10">
+                                <SkillBar title="Website design" percent={75} />
+                                <SkillBar title="Digital Marketing" percent={90} />
                             </div>
-                            <div className="section__content-cta">
-                                <a href="/about-us" className="btn btn--primary">Know More</a>
-                            </div>
+                            <Buttons title="Know More" href="/about-us"/>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import React, { HTMLProps, ReactNode } from 'react'
+import './form-styles.scss'
 
 interface SearchProps extends HTMLProps<HTMLInputElement> {
     label?: string
@@ -17,11 +18,10 @@ export const SearchInput: React.FC<SearchProps> = ({
    className,
    value,
    icon,
-   handleClick,
-   readOnly
+       readOnly
 }) => {
     return (
-        <div className='relative flex gap-4 items-center w-full' onClick={handleClick}>
+        <div className="input">
             <input
                 value={value}
                 onChange={onChange}
@@ -30,9 +30,9 @@ export const SearchInput: React.FC<SearchProps> = ({
                 readOnly={readOnly ? readOnly : false}
                 className={`${className} w-full cursor-pointer py-3 px-4 rounded`}
             />
-            <div className='cursor-pointer absolute bottom-3.5 right-3 hover:text-red'>
+            <button type="submit" className="subscribe">
                 {icon}
-            </div>
+            </button>
         </div>
     )
 }

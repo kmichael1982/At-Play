@@ -3,34 +3,25 @@ import './button.css'
 
 export interface BaseButtonProps {
     title?: string
-    onClick?: () => void
     className?: string
 }
 
 export interface ButtonProps extends BaseButtonProps {
-    disabled?: boolean
-    buttonType?: 'submit' | 'button' | 'reset'
+    href?: string
 }
 
 export const Buttons: React.FC<ButtonProps> = ({
     title,
     className,
-    onClick,
-    disabled,
-    buttonType
+    href,
 }) => {
 
     return (
-        <button
-            disabled={disabled}
-            onClick={onClick}
-            type={buttonType}
-            className={`py-4 px-8 font-bold rounded-full text-center border-2 uppercase bg-none border-[#414141] hover:bg-red hover:text-black hover:border-red transition duration-300 ease-in-out transform hover:translate-x-2 ${
-                className ? className : ''
-            }`}
-        >
-            {title}
-        </button>
+        <div className={`${className && className}`}>
+            <a href={href ? href : '#'} className="btn btn--secondary">
+                {title}
+            </a>
+        </div>
     )
 }
 

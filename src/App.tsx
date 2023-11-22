@@ -19,9 +19,9 @@ function App() {
         <AnimatedCursor
             color="220, 90, 90"
             outerAlpha={0.4}
-            innerSize={12}
+            innerSize={8}
             outerSize={28}
-            outerScale={5}
+            outerScale={2}
             innerScale={0.7}
         />
         <VideoModal />
