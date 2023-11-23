@@ -7,8 +7,7 @@ import FourImg from 'assets/images/sponsor/four.png'
 import FiveImg from 'assets/images/sponsor/five.png'
 import SixImg from 'assets/images/sponsor/six.png'
 import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+
 import './sponsor-styles.scss'
 
 function SponsorSection() {
@@ -17,7 +16,7 @@ function SponsorSection() {
     }, [])
 
     const slickSettings = {
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
         centerMode: true,
         arrows: true,
@@ -38,10 +37,10 @@ function SponsorSection() {
         ]
     }
 
-    const sponsorImages = [ OneImg, TwoImg, ThreeImg, FourImg, FiveImg, SixImg ]
+    const sponsorImages = [ OneImg, TwoImg, ThreeImg, FourImg, FiveImg, SixImg, OneImg, TwoImg, ThreeImg, FourImg, FiveImg, SixImg ]
 
     return (
-        <div className="sponsor pt-32 pb-0">
+        <div className="sponsor relative pt-32 pb-0">
             <div className="container-fluid">
                 <div className="row justify-content-center">
                     <div className="col-12">

@@ -1,0 +1,203 @@
+// offer styles
+.offer {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  .star {
+    position: absolute;
+    bottom: 20%;
+    z-index: -1;
+    left: 40%;
+    transform: translate(-40%, -20%);
+  }
+
+  .offer__cta {
+    .sub-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      line-height: 1;
+      border: 1px solid #414141;
+      color: #404040;
+      border-radius: 30px;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      transition: var(--transition);
+      i {
+        transform: rotate(-45deg);
+        color: var(--primary-color);
+        opacity: 0.5;
+        transition: var(--transition);
+      }
+    }
+
+    h2 {
+      a {
+        justify-content: space-between;
+        text-transform: capitalize;
+        width: 100%;
+        font-weight: 500;
+        color: #404040;
+        gap: 16px;
+        i {
+          font-weight: 900;
+          -webkit-text-fill-color: transparent;
+          -webkit-text-stroke: 1px #404040;
+          transition: var(--transition);
+        }
+      }
+    }
+
+    .offer__cta-single {
+      position: relative;
+      margin-bottom: 65px;
+      &:nth-last-of-type(1) {
+        margin-bottom: 0px;
+      }
+    }
+
+    .offer-thumb-hover {
+      width: 200px;
+      height: 270px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      inset-inline-start: 0;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position-x: 75%;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+      -webkit-transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+      margin: -200px 0 0 -150px;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .offer__cta-single {
+      &:hover {
+        .sub-title {
+          color: var(--primary-color);
+          i {
+            opacity: 1;
+          }
+        }
+        h2 {
+          a {
+            color: var(--primary-color);
+            i {
+              -webkit-text-fill-color: unset;
+              color: var(--primary-color);
+            }
+          }
+        }
+
+        .offer-thumb-hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// 5.08 offer two styles
+.offer-two {
+  .offer-two__slider,
+  .offer-two__slider-rtl {
+    margin: -60px 0px;
+    .offer__cta {
+      direction: ltr;
+    }
+  }
+  .offer__cta {
+    padding: 60px 0px;
+    .sub-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      line-height: 1;
+      border: 1px solid #414141;
+      color: #404040;
+      border-radius: 30px;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      transition: var(--transition);
+      i {
+        transform: rotate(-45deg);
+        color: var(--primary-color);
+        opacity: 0.5;
+        transition: var(--transition);
+      }
+    }
+
+    h2 {
+      a {
+        justify-content: space-between;
+        text-transform: capitalize;
+        width: 100%;
+        font-weight: 500;
+        color: #404040;
+        gap: 16px;
+        i {
+          font-weight: 900;
+          -webkit-text-fill-color: transparent;
+          -webkit-text-stroke: 1px #404040;
+          transition: var(--transition);
+        }
+      }
+    }
+
+    .offer__cta-single {
+      position: relative;
+    }
+
+    .offer-thumb-hover {
+      width: 140px;
+      height: 140px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      inset-inline-start: 0;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position-x: 75%;
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+      -webkit-transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+      margin: -120px 0 0 -120px;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .offer__cta-single {
+      &:hover {
+        .sub-title {
+          color: var(--primary-color);
+          i {
+            opacity: 1;
+          }
+        }
+        h2 {
+          a {
+            color: var(--primary-color);
+            i {
+              -webkit-text-fill-color: unset;
+              -webkit-text-stroke: 0px;
+              color: var(--primary-color);
+            }
+          }
+        }
+
+        .offer-thumb-hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

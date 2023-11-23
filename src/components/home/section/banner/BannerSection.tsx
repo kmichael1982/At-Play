@@ -5,9 +5,8 @@ import StarIcon from 'assets/images/star.png'
 import VideoFrameIcon from 'assets/images/popup-video.png'
 import LinesContent from 'shared/ui/design/LinesContent'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
-import { VideoModals } from 'layouts/header/video-modal/VideoModal'
 import ScrollAnimatedImage from './ScrollAnimatedImage'
-import VideoPopUp from "../../../../shared/ui/popup/video-popop/VideoPopUp";
+import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
 
 function BannerSection() {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
@@ -32,8 +31,9 @@ function BannerSection() {
                                     CREATIVE
                                 </span>
                                 <span className="interval">
-                                    <i className="icon-arrow-top-right"></i>
-                                    DIGITAL AGENCY
+                                    <i className="fa-solid fa-arrow-right" style={{transform: 'rotate(320deg)'}}></i>
+                                    {/*<i className="icon-arrow-top-right"></i>*/}
+                                    MARKETING AGENCY
                                 </span>
                             </h1>
                             <div className="banner__content-inner">

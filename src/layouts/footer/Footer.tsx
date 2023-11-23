@@ -1,5 +1,5 @@
  import React from 'react'
- import Logo from 'assets/For Web/png/Color logo - no background.png'
+ import Logo from 'assets/images/image-removebg-preview.png'
 import { Buttons, LinkButton, SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
 import { SearchInput } from 'shared/ui/inputs/FormInput'
 import './footer-styles.scss'
@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ background }) => {
                     <div className="flex flex-col gap-6 text-white">
                         <div className="">
                             <a href="#" className="logo">
-                                <img src={Logo} className="h-12" alt="Image" />
+                                <img src={Logo} className="h-16" alt="Image" />
                             </a>
                             <div className="footer__single-meta">
                                 <LinkButton

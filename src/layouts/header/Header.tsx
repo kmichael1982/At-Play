@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './header-styles.scss'
-import Logo from 'assets/For Web/svg/Color logo - no background.svg'
+import Logo from 'assets/images/image-removebg-preview.png'
 import OffCanvasNav from './off-canvas-nav/OffCanvasNav'
 
 function Header() {
@@ -21,7 +21,7 @@ function Header() {
     }, [])
 
     const navbarClasses = `${isScrolled ? 'navbar-active' : ''}`
-    console.log(isOffCanvasMenu, 'isOffCanvasMenu')
+
     return (
         <>
             {
@@ -34,7 +34,7 @@ function Header() {
                                         <nav className="navbar p-0">
                                             <div className="navbar__logo">
                                                 <a href="#" aria-label="go to home">
-                                                    <img src={Logo} className="h-12" alt="Image" />
+                                                    <img src={Logo} className="h-16" alt="Image" />
                                                 </a>
                                             </div>
                                             <div className="navbar__options">

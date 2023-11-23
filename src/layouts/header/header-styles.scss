@@ -329,25 +329,41 @@
     .navbar__item--has-children {
       .navbar__dropdown-label {
         position: relative;
-        &::after {
-          content: "\2b";
-          font-family: "Font Awesome 6 Pro";
+        cursor: pointer;
+        &.navbar__item-active {
+          &:before {
+            transform: translatey(-50%) rotate(-90deg);
+            opacity: 0;
+          }
+          &:after {
+            transform: translatey(-50%) rotate(0);
+          }
+        }
+
+        &:before , &:after {
+          content: "";
+          display: block;
+          background-color: #ffffff;
           position: absolute;
-          top: 0px;
-          right: 0px;
-          bottom: 0px;
-          height: 100%;
-          width: 60px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          transform: rotate(0deg);
+          top: 50%; right: 0;
+          transition: .35s;
+          width: 20px;
+          height: 3px;
+        }
+
+        &:before {
+          transform: translatey(-50%);
+        }
+
+        &:after {
+          transform: translatey(-50%) rotate(90deg);
         }
       }
+
       &:hover {
         .navbar__dropdown-label {
-          &::after {
-            transform: rotate(0deg);
+          &::after, &:before {
+            background: var(--primary-color) !important;
           }
         }
       }

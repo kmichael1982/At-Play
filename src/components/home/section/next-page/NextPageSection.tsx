@@ -1,24 +1,12 @@
 import React from 'react'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 import LinesContent from 'shared/ui/design/LinesContent'
 import './next-styles.scss'
+import { TextSlider } from '../slider/TextSlider'
 
 function NextPageSection() {
-    const slickSettings = {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: false,
-        speed: 300,
-        infinite: true,
-        autoplaySpeed: 1500,
-        autoplay: true,
-    };
 
     return (
-        <section className="section next-page">
+        <section className="section relative next-page">
             <div className="container mx-auto">
                 <div className="row justify-content-center">
                     <div className="col-12 col-lg-8">
@@ -32,21 +20,27 @@ function NextPageSection() {
                 </div>
             </div>
 
-            <div className="next__text-slider">
-                    <div className="next__text-slider-single">
-                        <h2 className="h1">
-                            <a href="about-us.html">
-                                About Us
-                            </a>
-                        </h2>
-                    </div>
-
-                    {/* Add more slides with unique data-slick-index values */}
-            </div>
-
+            <TextSlider
+                settings={{
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    arrows: false,
+                    dots: false,
+                    speed: 10000,
+                    centerPadding: '15px',
+                    infinite: true,
+                    autoplaySpeed: 0,
+                    autoplay: true,
+                    cssEase: 'linear',
+                }}
+                labels={['About Us', 'About Us', 'About Us', 'About Us']}
+                href="/about-us"
+                className="next__text-slider next__text-slider-single"
+            />
             <LinesContent />
         </section>
-    );
+    )
 }
 
-export default NextPageSection;
+export default NextPageSection

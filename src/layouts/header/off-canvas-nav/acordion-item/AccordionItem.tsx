@@ -1,23 +1,32 @@
 import React from 'react'
+import { HeaderSubItems } from 'utils/models/header-types'
 
 const AccordionItem: React.FC<{
+    elemIndex: number
     label: string
-    subItems: any
+    subItems: HeaderSubItems[]
     isActive: boolean
     onClick: (event: any) => void
-}> = ({ label, subItems, isActive, onClick }) => (
-    <li className={`navbar__item  nav-fade ${isActive ? 'navbar__item-active' : ''}`} style={{animationDelay: '2.2s'}} >
-        <a aria-label="dropdown menu" className="flex navbar__dropdown-label" onClick={onClick}>
-            {label}
-        </a>
-        <ul className={`navbar__sub-menu ${isActive ? 'show-sub-menu' : ''}`}>
-            {subItems.map((item: any, index: any) => (
-                <li key={index}>
-                    <a href={item.link}>{item.label}</a>
-                </li>
-            ))}
-        </ul>
-    </li>
-)
+}> = ({ elemIndex, label, subItems, isActive, onClick }) => {
+
+    const styles = {
+        display: isActive ? 'block' : 'none',
+    }
+
+    return (
+        <li className={`navbar__item ${subItems.length && 'navbar__item--has-children'} nav-fade`} style={{animationDelay: `${1.2 + 0.1*elemIndex}s`}} >
+            <a aria-label="dropdown menu" className={`flex navbar__dropdown-label  ${isActive ? 'navbar__item-active' : ''}`} onClick={onClick}>
+                {label}
+            </a>
+            <ul className={`navbar__sub-menu `} style={styles}>
+                {subItems.map((item: any, index: number) => (
+                    <li key={index}>
+                        <a className="flex" href={item.link}>{item.label}</a>
+                    </li>
+                ))}
+            </ul>
+        </li>
+    )
+}
 
 export default AccordionItem

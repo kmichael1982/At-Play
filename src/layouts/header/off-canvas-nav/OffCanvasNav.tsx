@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from 'assets/For Web/png/Color logo - no background.png'
+import Logo from 'assets/images/image-removebg-preview.png'
 import { Buttons, SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
 import AccordionItem from './acordion-item/AccordionItem'
 
@@ -97,7 +97,7 @@ const OffCanvasNav: React.FC<{
             ]
         },
         { label: 'Blog', subItems: [{ label: 'Blog', link: 'blog.html' }, { label: 'Blog Details', link: 'blog-single.html' }] },
-    ];
+    ]
 
     return (
         <div className="offcanvas-nav">
@@ -106,7 +106,7 @@ const OffCanvasNav: React.FC<{
                     <div className="offcanvas-menu__header nav-fade" style={{animationDelay: '1s'}}>
                         <div className="logo">
                             <a href="/">
-                                <img src={Logo} className="h-12" alt="" title="" />
+                                <img src={Logo} className="h-14" alt="" title="" />
                             </a>
                         </div>
                         <a onClick={() => setIsOffCanvasMenu(!isOffCanvasMenu)} aria-label="close offcanvas menu" className="close-offcanvas-menu">
@@ -115,124 +115,17 @@ const OffCanvasNav: React.FC<{
                     </div>
                     <div className="offcanvas-menu__list">
                         <div className="navbar__menu">
-                            {/*<ul>*/}
-                            {/*    {menuItems.map((item, index) => (*/}
-                            {/*        <AccordionItem*/}
-                            {/*            key={index}*/}
-                            {/*            label={item.label}*/}
-                            {/*            subItems={item.subItems || []}*/}
-                            {/*            isActive={activeItem === index}*/}
-                            {/*            onClick={() => handleItemClick(index)}*/}
-                            {/*        />*/}
-                            {/*    ))}*/}
-                            {/*</ul>*/}
-
                             <ul>
-                                <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '1.2s'}}>
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label ">Home</a>
-                                    <ul className="navbar__sub-menu">
-                                        <li>
-                                            <a href="index.html">Creative Agency</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-light.html">Creative Agency Light</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-two.html">Digital Agency</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-two-light.html">Digital Agency Light</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-three.html">It Solution</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-three-light.html">It Solution Light</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-four.html">Personal Portfolio</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-four-light.html">Personal Portfolio Light</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-five.html">Interactive Portfolio</a>
-                                        </li>
-                                        <li>
-                                            <a href="index-five-light.html">Interactive Portfolio Light</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="navbar__item nav-fade" style={{animationDelay: '1.4s'}}>
-                                    <a href="about-us.html" className="flex navbar__dropdown-label">About Us</a>
-                                </li>
-                                <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '1.6s'}}>
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label">Services</a>
-                                    <ul className="navbar__sub-menu">
-                                        <li>
-                                            <a href="our-services.html">Our Services</a>
-                                        </li>
-                                        <li>
-                                            <a href="service-single.html">Service Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '1.8s'}}>
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label">Projects</a>
-                                    <ul className="navbar__sub-menu">
-                                        <li>
-                                            <a href="our-projects.html">Our Projects</a>
-                                        </li>
-                                        <li>
-                                            <a href="project-single.html">Project Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '2s'}} >
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label">Pages</a>
-                                    <ul className="navbar__sub-menu">
-                                        <li>
-                                            <a href="faq.html">FAQ</a>
-                                        </li>
-                                        <li>
-                                            <a href="404.html">Error</a>
-                                        </li>
-                                        <li>
-                                            <a href="our-story.html">Our Story</a>
-                                        </li>
-                                        <li>
-                                            <a href="portfolio.html">Portfolio</a>
-                                        </li>
-                                        <li className="navbar__item navbar__item--has-children">
-                                            <a href="javascript:void(0)" aria-label="dropdown menu" className=" flex navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
-                                            <ul className="navbar__sub-menu navbar__sub-menu__nested">
-                                                <li>
-                                                    <a href="our-teams.html">Our Teams</a>
-                                                </li>
-                                                <li>
-                                                    <a href="team-single.html">Team Details</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="client-feedback.html">Testimonials</a>
-                                        </li>
-                                        <li>
-                                            <a href="contact-us.html">Contact Us</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="navbar__item navbar__item--has-children nav-fade" style={{animationDelay: '2.2s'}} >
-                                    <a href="javascript:void(0)" aria-label="dropdown menu" className="flex navbar__dropdown-label navbar__item-active">Blog</a>
-                                    <ul className="navbar__sub-menu flex">
-                                        <li>
-                                            <a href="blog.html">Blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-single.html">Blog Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                {menuItems.map((item, index) => (
+                                    <AccordionItem
+                                        key={index}
+                                        label={item.label}
+                                        subItems={item.subItems || []}
+                                        isActive={activeItem === index}
+                                        onClick={() => handleItemClick(index)}
+                                        elemIndex={index}
+                                    />
+                                ))}
                             </ul>
                         </div>
                     </div>
