@@ -1,33 +1,40 @@
-import React from 'react'
-import AnimatedCursor from 'layouts/animated-cursor/AnimatedCursor'
+import React, { useState } from 'react'
 import AppRouter from 'layouts/AppRouter'
-import Footer from 'layouts/footer/Footer'
-import FooterImg from 'assets/images/footer/footer-bg.png'
-import Header from 'layouts/header/Header'
 import ScrollToTopButton from 'layouts/scroll-to-top/ScrollToTop'
-import useHomePage from 'utils/hooks/useHomePage'
 import VideoModal from 'shared/ui/video-modal/VideoModal'
+import { MouseCursor } from 'layouts/mouse-cursor/MouseCursor'
 
 function App() {
-    const isHomePage = useHomePage()
+    const [ cursorPosition, setCursorPosition ] = useState({ x: 0, y: 0 })
+    const [ disableAnimation, setDisableAnimation ] = useState(false)
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        setCursorPosition({ x: e.clientX, y: e.clientY })
+
+        const targetElement = e.target as HTMLElement
+        if (targetElement.style.cursor === 'pointer') {
+            setDisableAnimation(true)
+        } else {
+            setDisableAnimation(false)
+        }
+    }
+
+    const handleMouseLeave = () => {
+        setDisableAnimation(false)
+    }
 
     return (
-    <div className="my-app">
-        {isHomePage && <Header/>}
-        <AppRouter/>
-        {isHomePage && <Footer background={FooterImg}/>}
-        <AnimatedCursor
-            color="220, 90, 90"
-            outerAlpha={0.4}
-            innerSize={8}
-            outerSize={28}
-            outerScale={2}
-            innerScale={0.7}
-        />
-        <VideoModal />
-        <ScrollToTopButton />
-    </div>
-  )
+        <div
+            className="my-app"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+        >
+            <AppRouter/>
+            <MouseCursor style={{ transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)` }} />
+            <VideoModal />
+            <ScrollToTopButton />
+        </div>
+    )
 }
 
 export default App

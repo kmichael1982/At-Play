@@ -1,6 +1,6 @@
 import React from 'react'
 import './portfolio-section.scss'
-import LinesContent from 'shared/ui/design/LinesContent'
+import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import OneImg from 'assets/images/portfolio/one.png'
 import TwoImg from 'assets/images/portfolio/two.png'
 import ThreeImg from 'assets/images/portfolio/three.png'
@@ -57,7 +57,7 @@ function PortfolioSection() {
                                 <h4>
                                     <a href="/portfolio">view all work</a>
                                 </h4>
-                                <a href="portfolio" className="arr">
+                                <a href="/portfolio" className="arr">
                                     {/*<i className="fa-sharp fa-solid fa-arrow-up-right"></i>*/}
                                     <i className="fa-solid fa-arrow-right" style={{ transform: ' rotate(315deg)' }}></i>
                                 </a>

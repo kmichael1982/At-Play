@@ -1,7 +1,8 @@
 import React from 'react'
-import LinesContent from 'shared/ui/design/LinesContent'
+import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import './next-styles.scss'
 import { TextSlider } from '../slider/TextSlider'
+import {LinkButton} from "../../../../shared/ui/buttons/ButtonUi";
 
 function NextPageSection() {
 
@@ -11,10 +12,13 @@ function NextPageSection() {
                 <div className="row justify-content-center">
                     <div className="col-12 col-lg-8">
                         <div className="section__header text-center">
-                            <a href="/" className="sub-title mb-0">
-                                Next Page
-                                <i className="fa-solid fa-arrow-right"></i>
-                            </a>
+                            <LinkButton
+                                isLink={true}
+                                label="Next Page"
+                                className="sub-title mb-0"
+                                icon={<i className="fa-solid fa-arrow-right"></i>}
+                                href="/about-us"
+                            />
                         </div>
                     </div>
                 </div>

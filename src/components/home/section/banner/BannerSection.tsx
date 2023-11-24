@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import gsap from 'gsap'
 import './banner-styles.scss'
 import BannerImage from 'assets/images/home/banner/banner-one-thumb.png'
 import StarIcon from 'assets/images/star.png'
 import VideoFrameIcon from 'assets/images/popup-video.png'
-import LinesContent from 'shared/ui/design/LinesContent'
+import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import ScrollAnimatedImage from './ScrollAnimatedImage'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
+import { AnimatedText } from 'utils/hooks/useAnimatedText'
 
 function BannerSection() {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
+    const [ scrollPosition, setScrollPosition ] = useState(0)
+    const bannerImageRef = useRef(null)
 
     const openYouTubeVideo = () => {
         setIsModalOpen(true)
@@ -19,6 +23,48 @@ function BannerSection() {
         setIsModalOpen(false)
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    useEffect(() => {
+        const tl = gsap.timeline()
+        const translateY = -50
+        const translate3dY = -5.981 + scrollPosition * 0.1
+        const scale = 1.0365 + scrollPosition * 0.002
+        const zIndex = -1
+        const opacity = 0.9635 - scrollPosition * 0.001
+
+        tl.to(bannerImageRef.current, {
+            duration: 0.003,
+            xPercent: -50,
+            yPercent: translateY,
+            ease: 'power2.inOut',
+        }).to(bannerImageRef.current, {
+            duration: 0.002,
+            xPercent: -50,
+            yPercent: translate3dY,
+            scale: scale,
+            zIndex: zIndex,
+            opacity: opacity,
+            ease: 'power2.inOut',
+        },
+            '<'
+        )
+
+        return () => {
+            tl.kill()
+        }
+    }, [scrollPosition])
+
     return (
         <section className="banner">
             <div className="container px-4 w-full">
@@ -26,14 +72,16 @@ function BannerSection() {
                     <div className="col-12">
                         <div className="banner__content">
                             <h1 className="uppercase text-8xl text-white text-start font-black mb-0 title-anim">
-                                WE ARE
+                                <AnimatedText>WE</AnimatedText>
+                                <AnimatedText>ARE</AnimatedText>
                                 <span className="text-stroke">
-                                    CREATIVE
+                                    <AnimatedText>CREATIVE</AnimatedText>
                                 </span>
                                 <span className="interval">
                                     <i className="fa-solid fa-arrow-right" style={{transform: 'rotate(320deg)'}}></i>
                                     {/*<i className="icon-arrow-top-right"></i>*/}
-                                    MARKETING AGENCY
+                                    <AnimatedText>MARKETING</AnimatedText>
+                                    <AnimatedText>AGENCY</AnimatedText>
                                 </span>
                             </h1>
                             <div className="banner__content-inner">
@@ -59,9 +107,11 @@ function BannerSection() {
                 </div>
             </div>
             <img
+                ref={bannerImageRef}
+                // style={styles}
                 src={BannerImage}
                 alt="Image"
-                className="banner-one-thumb d-none d-sm-block g-ban-one"
+                className="banner-one-thumb sm-none block g-ban-one"
             />
 
             <ScrollAnimatedImage
@@ -87,7 +137,7 @@ function BannerSection() {
                 className="video-frame video-btn"
                 rel="noopener noreferrer"
             >
-                <img src={VideoFrameIcon} alt="Image" />
+                <img src={VideoFrameIcon} className="object-contain" alt="Image" />
                 <i className="fa-sharp fa-solid fa-play"></i>
             </a>
 

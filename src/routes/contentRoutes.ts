@@ -7,6 +7,14 @@ const AUTH = {
 const LANDING = {
     DASHBOARD: lazy(() => import('pages/home/Home')),
     ABOUT: lazy(() => import('pages/about/About')),
+    SERVICES: lazy(() => import('pages/services/Services')),
+
+    OUR_PROJECTS: lazy(() => import('pages/projects/OurProjects')),
+    PROJECT_DETAILS: lazy(() => import('pages/projects/children/ProjectDetails')),
+
+    PAGES: lazy(() => import('pages/services/Services')),
+    CONTACT: lazy(() => import('pages/contact-us/ContactUs')),
+
     BLOG: lazy(() => import('pages/blog/Blog')),
     BLOG_DETAILS: lazy(() => import('pages/blog/children/BlogDetails')),
 }
@@ -21,19 +29,19 @@ export const publicPages = [
         exact: true,
     },
     {
-        id: 'HomePage',
-        text: 'Home Page',
-        path: '/',
-        icon: '',
-        element: LANDING.DASHBOARD,
-        exact: true,
-    },
-    {
         id: 'AboutPage',
         text: 'About Page',
         path: '/about-us',
         icon: '',
         element: LANDING.ABOUT,
+        exact: true,
+    },
+    {
+        id: 'ContactUsPage',
+        text: 'Contact us',
+        path: '/contact-us',
+        icon: '',
+        element: LANDING.CONTACT,
         exact: true,
     },
     {

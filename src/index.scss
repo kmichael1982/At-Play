@@ -207,7 +207,11 @@ button {
     color: var(--theme-color);
     font-weight: 500;
     cursor: pointer;
-
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
     &:hover {
         color: var(--primary-color);
     }
@@ -333,4 +337,84 @@ p {
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
+}
+
+// custom cursor
+.cursor-outer {
+    margin-left: -12px;
+    margin-top: -12px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary-color);
+    box-sizing: border-box;
+    z-index: 10000000;
+    opacity: 0.5;
+    transition: all 0.14s ease-out;
+    mix-blend-mode: difference;
+
+    &.cursor-hover {
+        opacity: 0;
+        transition: none;
+    }
+
+    &.cursor-big {
+        opacity: 0;
+    }
+}
+
+.mouseCursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    transform: translateZ(0);
+    visibility: hidden;
+    text-align: center;
+    &.cursor-big {
+        width: 20px;
+        height: 20px;
+        margin-left: -12px;
+        margin-top: -12px;
+    }
+}
+
+.cursor-inner {
+    margin-left: -3px;
+    margin-top: -3px;
+    width: 10px;
+    height: 10px;
+    z-index: 10000001;
+    background-color: var(--primary-color);
+    opacity: 0.8;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    mix-blend-mode: difference;
+
+    span {
+        color: var(--theme-color);
+        line-height: 60px;
+        opacity: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+    }
+
+    &.cursor-big {
+        span {
+            opacity: 1;
+        }
+    }
+
+    &.cursor-hover {
+        margin-left: -10px;
+        margin-top: -10px;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: 1px solid #686363;
+        opacity: 0;
+    }
 }

@@ -28,7 +28,7 @@ export const SearchInput: React.FC<SearchProps> = ({
                 placeholder={placeholder}
                 type='text'
                 readOnly={readOnly ? readOnly : false}
-                className={`${className} w-full cursor-pointer py-3 px-4 rounded`}
+                className={`${className} w-full py-3 px-4 rounded`}
             />
             <button type="submit" className="subscribe">
                 {icon}

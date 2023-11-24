@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Logo from 'assets/images/image-removebg-preview.png'
-import { Buttons, SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
+import { Buttons } from 'shared/ui/buttons/ButtonUi'
 import AccordionItem from './acordion-item/AccordionItem'
+import SocialMenuList from '../../../shared/ui/design/social-list/SocialMenuList'
 
 const OffCanvasNav: React.FC<{
     isOffCanvasMenu: boolean
@@ -133,24 +134,7 @@ const OffCanvasNav: React.FC<{
                         <Buttons href="/contact-us" title="Let's Talk"/>
                     </div>
                     <div className="offcanvas-menu__social social nav-fade" style={{animationDelay: '2.6s'}}>
-                        <SocialLinkButton
-                            href="https://www.facebook.com/"
-                            icon={<i className="fa-brands fa-facebook-f"></i>}
-                        />
-                        <SocialLinkButton
-                            href="https://www.twitter.com/"
-                            icon={<i className="fa-brands fa-twitter"></i>}
-                        />
-
-                        <SocialLinkButton
-                            href="https://www.pinterest.com/"
-                            icon={<i className="fa-brands fa-linkedin-in"></i>}
-                        />
-
-                        <SocialLinkButton
-                            href="https://www.instagram.com/"
-                            icon={<i className="fa-brands fa-instagram"></i>}
-                        />
+                        <SocialMenuList />
                     </div>
                 </nav>
             </div>

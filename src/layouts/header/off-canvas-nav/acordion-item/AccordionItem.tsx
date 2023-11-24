@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderSubItems } from 'utils/models/header-types'
+import { HeaderSubItems } from 'utils/models/header-types/header-types'
 
 const AccordionItem: React.FC<{
     elemIndex: number
@@ -9,9 +9,7 @@ const AccordionItem: React.FC<{
     onClick: (event: any) => void
 }> = ({ elemIndex, label, subItems, isActive, onClick }) => {
 
-    const styles = {
-        display: isActive ? 'block' : 'none',
-    }
+    const styles = { display: isActive ? 'block' : 'none' }
 
     return (
         <li className={`navbar__item ${subItems.length && 'navbar__item--has-children'} nav-fade`} style={{animationDelay: `${1.2 + 0.1*elemIndex}s`}} >

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import contents from 'routes/contentRoutes'
-import { ArrayType } from '../shared/helpers/helpers'
+import { ArrayType } from 'shared/helpers/helpers'
+import HomePage from 'components/home'
+import { Layout } from './Layout'
 
 const AppRouter = () => {
     const isAuth = true
@@ -9,16 +11,25 @@ const AppRouter = () => {
     const { publicPages } = contents
 
     const renderRoutes = (pages: ArrayType) => {
-        return pages.map(RouteElem => (
-            <React.Fragment key={RouteElem.id}>
-                <Route path={RouteElem.path} element={<RouteElem.element />} />
-                {RouteElem.children && renderRoutes(RouteElem.children)}
-            </React.Fragment>
-        ))
+        return (
+            <Route path="/" element={<Layout />}>
+                {
+                    pages.map(RouteElem => (
+                        <React.Fragment key={RouteElem.id}>
+                            <Route path={RouteElem.path} element={<RouteElem.element />} />
+                            {RouteElem.children && renderRoutes(RouteElem.children)}
+                        </React.Fragment>
+                    ))
+                }
+            </Route>
+        )
     }
 
     return (
         <Routes>
+            <Route path="/" element={<HomePage />}>
+                <Route path="/" element={<></>} />
+            </Route>
             {publicPages && renderRoutes(publicPages)}
         </Routes>
     )

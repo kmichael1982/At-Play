@@ -1,12 +1,13 @@
 import React from 'react'
 import './offer-styles.scss'
-import LinesContent from 'shared/ui/design/LinesContent'
-import { Buttons } from 'shared/ui/buttons/ButtonUi'
+import LinesContent from 'shared/ui/design/lines-content/LinesContent'
+import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
 import StarImg  from 'assets/images/offer/star.png'
 import OneImage from 'assets/images/offer/one.png'
 import TwoImage from 'assets/images/offer/two.png'
 import ThreeImage from 'assets/images/offer/three.png'
 import ThumbImage from 'assets/images/offer/thumb-one.png'
+import { AnimatedText } from 'utils/hooks/useAnimatedText'
 
 const VIEW_ALL_SERVICES_URL = '/our-services'
 const SERVICE_SINGLE_URL = '/service-single'
@@ -21,20 +22,29 @@ function getServiceImage(index: any) {
     return images[index - 1] || ''
 }
 
-
 function OfferSection() {
+
     return (
         <section className="section offer fade-wrapper light">
             <div className="container">
                 <div className="flex items-start">
                     <div className="w-1/2">
                         <div className="offer__content section__content">
-                              <span className="sub-title">
-                                 WHAT WE OFFER
-                                 <i className="fa-solid fa-arrow-right"></i>
-                              </span>
+                            <LinkButton
+                                isLink={true}
+                                label="WHAT WE OFFER"
+                                className="sub-title mb-0"
+                                icon={<i className="fa-solid fa-arrow-right"></i>}
+                                href="#"
+                            />
+
                             <h2 className="title title-anim">
-                                Giving Your Business Some Great Ideas
+                                <AnimatedText>Giving</AnimatedText>
+                                <AnimatedText>Your</AnimatedText>
+                                <AnimatedText>Business</AnimatedText>
+                                <AnimatedText>Some</AnimatedText>
+                                <AnimatedText>Great</AnimatedText>
+                                <AnimatedText>Ideas</AnimatedText>
                             </h2>
                             <div className="paragraph">
                                 <p>Bring to the table win-win survival strategies to ensure proactive domination. At
@@ -50,10 +60,13 @@ function OfferSection() {
                     <div className="offer__cta ml-8 w-1/2">
                         {[1, 2, 3, 4].map((index) => (
                             <div key={index} className="offer__cta-single fade-top">
-                                    <span className="sub-title">
-                                        {`0${index}`}
-                                        <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>
-                                    </span>
+                                <LinkButton
+                                    isLink={true}
+                                    label={`0${index}`}
+                                    className="sub-title mb-0"
+                                    icon={<i className="fa-solid fa-arrow-right"></i>}
+                                    href="#"
+                                />
                                 <h2>
                                     <a className="flex" href={SERVICE_SINGLE_URL}>
                                         {getServiceTitle(index)}

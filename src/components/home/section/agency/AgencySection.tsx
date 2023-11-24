@@ -1,12 +1,62 @@
+import React, { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
 import './agency-styles.scss'
 import ThumbOneImg from 'assets/images/home/agency/thumb-one.png'
 import ThumbTwoImg from 'assets/images/home/agency/thumb-two.png'
 import StarIcon from 'assets/images/star.png'
 import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
-import { Buttons } from 'shared/ui/buttons/ButtonUi'
+import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
 import SkillBar from './skil-bar/SkilBar'
+import { AnimatedText } from 'utils/hooks/useAnimatedText'
+
+gsap.registerPlugin(ScrollTrigger)
 
 function AgencySection() {
+    const thumbOneRef = useRef<HTMLImageElement | null>(null)
+    const thumbTwoRef = useRef<HTMLImageElement | null>(null)
+
+    useEffect(() => {
+        const thumbOne = thumbOneRef.current
+        const thumbTwo = thumbTwoRef.current
+
+        if (thumbOne && thumbTwo) {
+            const thumbOneOffset = thumbOne.getBoundingClientRect().top
+            const thumbTwoOffset = thumbTwo.getBoundingClientRect().top
+
+            const scrollFactor = 0.01
+
+            const thumbOneTranslation = -70 + thumbOneOffset * scrollFactor
+            const thumbTwoTranslation = 70 + thumbTwoOffset * scrollFactor
+
+            gsap.from(thumbOne, {
+                duration: 3,
+                left: thumbOneTranslation,
+                scale: 0.9,
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: thumbOne,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse',
+                },
+            })
+
+            gsap.from(thumbTwo, {
+                duration: 3,
+                left: thumbTwoTranslation + 120,
+                scale: 0.9,
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: thumbTwo,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none reverse',
+                },
+            })
+        }
+    }, [thumbOneRef, thumbTwoRef])
+
     return (
         <section className="py-32 px-0 agency">
             <div className="container px-4 mx-auto">
@@ -14,37 +64,52 @@ function AgencySection() {
                     <div className="w-1/2">
                         <div className="agency__thumb">
                             <img
+                                ref={thumbOneRef}
                                 src={ThumbOneImg}
                                 alt="Image"
                                 className="thumb-one fade-left"
-                                style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}
+                                style={{ left: 0, opacity: 1 }}
                             />
-
                             <img
+                                ref={thumbTwoRef}
                                 src={ThumbTwoImg}
                                 alt="Image"
                                 className="thumb-two fade-right"
-                                style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}
+                                style={{ left: 120, opacity: 1 }}
                             />
                         </div>
                     </div>
                     <div className="w-1/2">
                         <div className="agency__content section__content">
-                              <span className="sub-title">
-                                 WELCOME
-                                 <i className="fa-solid fa-arrow-right"></i>
-                              </span>
-                                <div className="paragraph">
-                                    <p>Bring to the table win-win survival strategies to ensure proactive domination. At
-                                        the end of the day, going forward, a new normal that has evolved from generation on
-                                        the runway heading towards a streamlined cloud solution going forward porttitor
-                                        dictum sapien.</p>
-                                </div>
+                            <LinkButton
+                                isLink={true}
+                                label="WELCOME"
+                                className="sub-title mb-0"
+                                icon={<i className="fa-solid fa-arrow-right"></i>}
+                                href="#"
+                            />
+
+                            <h2 className="title title-anim">
+                                <AnimatedText>We</AnimatedText>
+                                <AnimatedText>Are</AnimatedText>
+                                <AnimatedText>Digital</AnimatedText>
+                                <AnimatedText>Creative</AnimatedText>
+                                <AnimatedText>Agency</AnimatedText>
+                                <AnimatedText>In</AnimatedText>
+                                <AnimatedText>London</AnimatedText>
+                            </h2>
+                            <div className="paragraph">
+                                <p>
+                                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day,
+                                    going forward, a new normal that has evolved from generation on the runway heading towards a streamlined
+                                    cloud solution going forward porttitor dictum sapien.
+                                </p>
+                            </div>
                             <div className="skill-wrap mb-10">
                                 <SkillBar title="Website design" percent={75} />
                                 <SkillBar title="Digital Marketing" percent={90} />
                             </div>
-                            <Buttons title="Know More" href="/about-us"/>
+                            <Buttons title="Know More" href="/about-us" />
                         </div>
                     </div>
                 </div>
@@ -56,4 +121,4 @@ function AgencySection() {
     )
 }
 
-export default AgencySection
+export default AgencySection;

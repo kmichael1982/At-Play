@@ -1,5 +1,5 @@
 import './testimonial-styles.scss'
-import LinesContent from 'shared/ui/design/LinesContent'
+import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import { TextSlider } from '../slider/TextSlider'
 
 function TestimonialSection() {

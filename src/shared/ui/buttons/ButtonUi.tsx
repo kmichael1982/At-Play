@@ -25,7 +25,8 @@ export const Buttons: React.FC<ButtonProps> = ({
     )
 }
 
-export const LinkButton: React.FC<{ className?: string, href?: string, label: string, icon?: ReactNode }> = ({
+export const LinkButton: React.FC<{ isLink?: boolean, className?: string, href?: string, label: string, icon?: ReactNode }> = ({
+    isLink,
     className,
     href,
     label,
@@ -34,13 +35,19 @@ export const LinkButton: React.FC<{ className?: string, href?: string, label: st
 
     return (
         <a
-            className={`cursor-pointer ${className ? className : ''} flex items-center gap-2 hover:text-red transition-all duration-500 ease-in-out capitalize`}
+            className={`cursor-pointer ${className ? className : 'flex items-center gap-2 hover:text-red transition-all duration-500 ease-in-out capitalize'}`}
             href={href ? href : '#'}
-            target="_blank"
             rel="noopener noreferrer"
         >
-            {icon && icon}
-            {label}
+            {isLink ? (
+                <>
+                    {label} {icon && icon}
+                </>
+            ) : (
+                <>
+                    {icon && icon} {label}
+                </>
+            )}
         </a>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import LinesContent from 'shared/ui/design/LinesContent'
+import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import OneImg from 'assets/images/sponsor/one.png'
 import TwoImg from 'assets/images/sponsor/two.png'
 import ThreeImg from 'assets/images/sponsor/three.png'

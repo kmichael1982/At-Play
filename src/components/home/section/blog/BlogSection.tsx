@@ -1,7 +1,10 @@
+import React from 'react'
 import './blog-styles.scss'
 import BlogOneImg from 'assets/images/home/blog/one.png'
 import BlogTwoImg from 'assets/images/home/blog/two.png'
 import BlogItem from './blog-item/BlogItem'
+import { LinkButton } from 'shared/ui/buttons/ButtonUi'
+import { AnimatedText } from 'utils/hooks/useAnimatedText'
 
 function BlogSection() {
     return (
@@ -10,11 +13,19 @@ function BlogSection() {
                 <div className="row justify-content-center">
                     <div className="col-12 col-lg-8">
                         <div className="section__header text-center">
-                              <span className="sub-title">
-                                 news &amp; Blog
-                                 <i className="fa-solid fa-arrow-right"></i>
-                              </span>
-                            <h2 className="title title-anim">What's New In Blog</h2>
+                            <LinkButton
+                                isLink={true}
+                                label="news &amp; Blog"
+                                className="sub-title mb-0"
+                                icon={<i className="fa-solid fa-arrow-right"></i>}
+                                href="#"
+                            />
+                            <h2 className="title title-anim">
+                                <AnimatedText>What's</AnimatedText>
+                                <AnimatedText>New</AnimatedText>
+                                <AnimatedText>In</AnimatedText>
+                                <AnimatedText>Blog</AnimatedText>
+                            </h2>
                         </div>
                     </div>
                 </div>
