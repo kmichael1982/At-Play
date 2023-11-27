@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 
 const AUTH = {
-    PAGE_404: lazy(() => import('pages/auth/page404/Page404')),
+    PAGE_404: lazy(() => import('pages/pages/children/page404/Error')),
 }
 
 const LANDING = {
@@ -14,6 +14,7 @@ const LANDING = {
 
     PAGES: lazy(() => import('pages/services/Services')),
     CONTACT: lazy(() => import('pages/contact-us/ContactUs')),
+    PORTFOLIO: lazy(() => import('pages/pages/children/portfolio/Portfolio')),
 
     BLOG: lazy(() => import('pages/blog/Blog')),
     BLOG_DETAILS: lazy(() => import('pages/blog/children/BlogDetails')),
@@ -42,6 +43,14 @@ export const publicPages = [
         path: '/contact-us',
         icon: '',
         element: LANDING.CONTACT,
+        exact: true,
+    },
+    {
+        id: 'PortfolioPage',
+        text: 'Portfolio',
+        path: '/portfolio',
+        icon: '',
+        element: LANDING.PORTFOLIO,
         exact: true,
     },
     {

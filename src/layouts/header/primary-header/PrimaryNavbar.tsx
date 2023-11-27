@@ -27,9 +27,9 @@ const PrimaryNavbar = () => {
                 isOffCanvasMenu ? (
                     <header className="header">
                         <div className={`primary-navbar secondary--navbar ${navbarClasses}`}>
-                            <div className="container px-4">
+                            <div className="container">
                                 <div className="row">
-                                    <div className="w-full">
+                                    <div className="col-12">
                                         <nav className="navbar p-0">
                                             <div className="navbar__logo">
                                                 <a href="#" aria-label="go to home">
@@ -37,7 +37,12 @@ const PrimaryNavbar = () => {
                                                 </a>
                                             </div>
                                             <div className="navbar__options">
-                                                <button onClick={() => setIsOffCanvasMenu(false)} className="open-offcanvas-nav flex" aria-label="toggle mobile menu" title="open offcanvas menu"></button>
+                                                <button
+                                                    onClick={() => setIsOffCanvasMenu(!isOffCanvasMenu)}
+                                                    className="open-offcanvas-nav flex"
+                                                    aria-label="toggle mobile menu"
+                                                    title="open offcanvas menu"
+                                                ></button>
                                             </div>
                                         </nav>
                                     </div>

@@ -1,14 +1,14 @@
 import React from 'react'
 import './portfolio-section.scss'
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
-import OneImg from 'assets/images/portfolio/one.png'
-import TwoImg from 'assets/images/portfolio/two.png'
-import ThreeImg from 'assets/images/portfolio/three.png'
-import FourImg from 'assets/images/portfolio/four.png'
-import FiveImg from 'assets/images/portfolio/five.png'
-import SixImg from 'assets/images/portfolio/six.png'
-import SevenImg from 'assets/images/portfolio/seven.png'
-import DotImg from 'assets/images/portfolio/dot.png'
+import OneImg from 'assets/images/home/portfolio/one.png'
+import TwoImg from 'assets/images/home/portfolio/two.png'
+import ThreeImg from 'assets/images/home/portfolio/three.png'
+import FourImg from 'assets/images/home/portfolio/four.png'
+import FiveImg from 'assets/images/home/portfolio/five.png'
+import SixImg from 'assets/images/home/portfolio/six.png'
+import SevenImg from 'assets/images/home/portfolio/seven.png'
+import DotImg from 'assets/images/home/portfolio/dot.png'
 import { TextSlider } from '../slider/TextSlider'
 import PortfolioItem from './portfolio-item/ProtfolioItem'
 
@@ -21,6 +21,7 @@ function PortfolioSection() {
         { image: FourImg, title: 'Digital Marketing', link: 'portfolio' },
         { image: FiveImg, title: 'Digital Marketing', link: 'portfolio' },
         { image: SixImg, title: 'Digital Marketing', link: 'portfolio' },
+        { special: true },
         { image: SevenImg, title: 'Digital Marketing', link: 'portfolio' },
     ]
 
@@ -47,29 +48,25 @@ function PortfolioSection() {
             />
 
             <div className="container-fluid">
-                <div className="row gaper" style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat( auto-fit, minmax(400px, 1fr))'
-                }}>
-                    <div className="">
-                        <div className="portfolio__single-alt-wrapper fade-top" >
-                            <div className="portfolio__single-alt topy-tilt" >
-                                <h4>
-                                    <a href="/portfolio">view all work</a>
-                                </h4>
-                                <a href="/portfolio" className="arr">
-                                    {/*<i className="fa-sharp fa-solid fa-arrow-up-right"></i>*/}
-                                    <i className="fa-solid fa-arrow-right" style={{ transform: ' rotate(315deg)' }}></i>
-                                </a>
-                                <img src={DotImg} alt="Image" className="dot-one" />
-                                <img src={DotImg} alt="Image" className="dot-two" />
-                            </div>
-                        </div>
-                    </div>
-
+                <div className="row gaper" >
                     {portfolioItems.map((item, index) => (
-                        <div key={index} className="">
-                            <PortfolioItem srcImage={item.image} title={item.title} link={item.link} />
+                        <div key={index} className="col-12 col-sm-6 col-xl-3">
+                            {item.special ? (
+                                <div className="portfolio__single-alt-wrapper fade-top">
+                                    <div className="portfolio__single-alt topy-tilt">
+                                        <h4>
+                                            <a href="/portfolio">view all work</a>
+                                        </h4>
+                                        <a href="/portfolio" className="arr">
+                                            <i className="fa-solid fa-arrow-right" style={{ transform: ' rotate(315deg)' }}></i>
+                                        </a>
+                                        <img src={DotImg} alt="Image" className="dot-one" />
+                                        <img src={DotImg} alt="Image" className="dot-two" />
+                                    </div>
+                                </div>
+                            ) : (
+                                <PortfolioItem srcImage={item.image} title={item.title || ''} link={item.link || ''} />
+                            )}
                         </div>
                     ))}
                 </div>

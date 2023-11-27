@@ -2,13 +2,14 @@ import React from 'react'
 import './footer-styles.scss'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import Logo from 'assets/images/image-removebg-preview.png'
+import TextAnimation from 'shared/ui/design/animation/TextAnimation'
 
 const Footer = () => {
     return (
         <footer className="footer-two footer-cmn section !pb-0">
             <div className="container">
-                <div className="flex justify-between w-full gaper" >
-                    <div className="wfull">
+                <div className="row gaper" >
+                    <div className="col-12 col-lg-5 col-xl-4">
                         <div className="footer-two__left">
                             <div className="logo">
                                 <a href="/">
@@ -20,16 +21,13 @@ const Footer = () => {
                                     online. From website design and development.</p>
                             </div>
                             <div className="section__content-cta">
-                                <h2>
-                                    <a href="mailto:info@xpovio.com" className="folks-text" style={{opacity: 1}}>
-                                    </a>
-                                </h2>
+                                <TextAnimation />
                             </div>
                         </div>
                     </div>
-                    <div className="w-3/4">
+                    <div className="col-12 col-lg-7 col-xl-7 offset-xl-1 col-xxl-5 offset-xxl-3">
                         <div className="footer-two__right">
-                            <div className="social !justify-start !lg-justify-center">
+                            <div className="social justify-content-start justify-content-lg-start">
                                 <a href="https://www.facebook.com/" target="_blank">
                                     <i className="fa-brands fa-facebook-f"></i>
                                     <span>Facebook</span>
@@ -76,14 +74,14 @@ const Footer = () => {
             </div>
             <div className="footer__copyright">
                 <div className="container">
-                    <div className="flex justify-between w-full items-center gaper">
+                    <div className="row align-items-center gaper">
                         <div className="col-12 col-xl-6">
                             <div className="footer__copyright-text text-center text-xl-start">
                                 <p>
                                     Copyright ©
                                     <span id="copyYear">{(new Date().getFullYear())}</span>
                                     Xpovio by
-                                    <LinkButton className='font-bold' label='GramenTheme' href='https://themeforest.net/user/gramentheme/' />
+                                    <LinkButton className='font-bold px-2' label='GramenTheme' href='https://themeforest.net/user/gramentheme/' />
                                     . All Rights Reserved
                                 </p>
                             </div>

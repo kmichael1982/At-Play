@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import AppRouter from 'layouts/AppRouter'
 import ScrollToTopButton from 'layouts/scroll-to-top/ScrollToTop'
-import VideoModal from 'shared/ui/video-modal/VideoModal'
 import { MouseCursor } from 'layouts/mouse-cursor/MouseCursor'
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
         >
             <AppRouter/>
             <MouseCursor style={{ transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)` }} />
-            <VideoModal />
             <ScrollToTopButton />
         </div>
     )

@@ -16,9 +16,9 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
     return (
         <footer className="footer section !pb-0"  style={footerStyle}>
             <div className="container">
-                <div className="row flex justify-between">
-                    <div className="flex flex-col gap-6 text-white">
-                        <div className="">
+                <div className="row gaper">
+                    <div className="col-12 col-lg-5 col-xl-6">
+                        <div className="footer__single">
                             <a href="#" className="logo">
                                 <img src={Logo} className="h-16" alt="Image" />
                             </a>
@@ -44,43 +44,42 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                             <Buttons title="book a call now"/>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-6 text-white">
-                        <div className="flex flex-col gap-4 items-start">
+                    <div className="col-12 col-lg-2 col-xl-2">
+                        <div className="footer__single">
                             <div className="footer__single-intro">
                                 <h5 className="font-semibold capitalize">discover</h5>
                             </div>
                             <div className="flex flex-col gap-3">
                                 <ul className="flex flex-col gap-3 items-start">
                                     <li className="text-light">
-                                        <LinkButton href='about-us' label='About Us' />
+                                        <LinkButton href='/about-us' label='About Us' />
                                     </li>
                                     <li className="text-light">
-                                        <LinkButton href='client-feedback' label='Award Winning' />
+                                        <LinkButton href='/client-feedback' label='Award Winning' />
                                     </li>
                                     <li className="text-light">
-                                        <LinkButton href='blog' label='News &amp; Blog' />
+                                        <LinkButton href='/blog' label='News &amp; Blog' />
                                     </li>
                                     <li className="text-light">
-                                        <LinkButton href='contact-us' label='careers' />
+                                        <LinkButton href='/contact-us' label='careers' />
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-6 w-1/3 text-white">
-                        <div className="flex flex-col gap-7 items-start">
-                            <div className="">
+                    <div className="col-12 col-lg-5 col-xl-4">
+                        <div className="footer__single">
+                            <div className="footer__single-intro">
                                 <h5 className="font-semibold capitalize">Subscribe our newsletter</h5>
                             </div>
-                            <div className="flex flex-col gap-7 items-start">
+                            <div className="footer__single-content">
                                 <p className="font-normal text-start">Welcome to our digital agency We specialize in helping business most like yours
                                     succeed
                                     online.</p>
-                                <div className="w-full">
+                                <div className="footer__single-form">
                                     <form action="#" method="post">
                                         <SearchInput
                                             placeholder='Enter Your Email'
-                                            className='bg-black border-2 py-4 px-7 border-[#c1c1c1] text-gray-600'
                                             icon={<i className="fa fa-sharp fa-solid fa-paper-plane"></i>}
                                         />
                                     </form>
@@ -105,7 +104,7 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                     </div>
                                 </div>
                                 <div className="col-12 col-lg-4">
-                                    <div className="flex justify-end items-center gap-6">
+                                    <div className="social justify-content-center justify-content-lg-end">
                                         <SocialLinkButton
                                             href="https://www.facebook.com/"
                                             icon={<i className="fa-brands fa-facebook-f"></i>}

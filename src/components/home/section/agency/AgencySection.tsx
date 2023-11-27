@@ -58,10 +58,10 @@ function AgencySection() {
     }, [thumbOneRef, thumbTwoRef])
 
     return (
-        <section className="py-32 px-0 agency">
+        <section className="section agency agency">
             <div className="container px-4 mx-auto">
-                <div className="flex items-center gap-7">
-                    <div className="w-1/2">
+                <div className="row gaper align-items-center">
+                    <div className="col-12 col-lg-6">
                         <div className="agency__thumb">
                             <img
                                 ref={thumbOneRef}
@@ -79,7 +79,7 @@ function AgencySection() {
                             />
                         </div>
                     </div>
-                    <div className="w-1/2">
+                    <div className="col-12 col-lg-6">
                         <div className="agency__content section__content">
                             <LinkButton
                                 isLink={true}
@@ -98,6 +98,7 @@ function AgencySection() {
                                 <AnimatedText>In</AnimatedText>
                                 <AnimatedText>London</AnimatedText>
                             </h2>
+
                             <div className="paragraph">
                                 <p>
                                     Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day,

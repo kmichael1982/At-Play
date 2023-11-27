@@ -60,7 +60,7 @@ export const SocialLinkButton: React.FC<{ className?: string, href?: string, ico
 
     return (
         <a
-            className={`cursor-pointer ${className ? className : ''} w-10 h-10 flex items-center justify-center hover:bg-red transition-all border text-white border-[#414141] duration-500 ease-in-out rounded-full`}
+            className={`cursor-pointer ${className && className}`}
             href={href ? href : '#'}
             target="_blank"
             rel="noopener noreferrer"

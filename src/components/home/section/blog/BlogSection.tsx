@@ -30,8 +30,8 @@ function BlogSection() {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-between w-full gaper">
-                    <div className="px-2">
+                <div className="row gaper">
+                    <div className="col-12 col-md-6">
                         <BlogItem
                             title="A Simple Social Media Marketing Checklist"
                             link="/blog"
@@ -41,7 +41,7 @@ function BlogSection() {
                         />
                     </div>
 
-                    <div className="px-2">
+                    <div className="col-12 col-md-6">
                         <BlogItem
                             title="Transforming Challenges into Opportunities"
                             link="/blog"

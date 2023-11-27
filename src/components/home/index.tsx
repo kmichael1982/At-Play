@@ -12,6 +12,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import PrimaryNavbar from 'layouts/header/primary-header/PrimaryNavbar'
 import PrimaryFooter from 'layouts/footer/primary-footer/PrimaryFooter'
 import FooterImg from 'assets/images/footer/footer-bg.png'
+import VideoModal from 'shared/ui/video-modal/VideoModal'
 
 function HomePage() {
     return (
@@ -27,6 +28,7 @@ function HomePage() {
                    <SponsorSection />
                    <NextPageSection />
                 </main>
+            <VideoModal />
             <PrimaryFooter background={FooterImg}/>
        </>
     )

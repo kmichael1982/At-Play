@@ -1,6 +1,12 @@
-/* ====
- --------- (7.0) responsive styles start ---------
- ==== */
+@mixin box($size) {
+  width: $size;
+  min-width: $size;
+  height: $size;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media only screen and (max-width: 1699.98px) {
   // navbar
@@ -124,8 +130,12 @@
       }
       .frame {
         margin: 0px 20px;
+        @include box(100px);
         font-size: 30px;
         display: inline-flex;
+        i {
+          @include box(60px);
+        }
       }
     }
   }
@@ -161,7 +171,7 @@
     }
 
     .video-frame {
-
+      @include box(120px);
       font-size: 20px;
     }
   }
@@ -376,6 +386,7 @@
       padding: 0px 40px;
       a {
         font-size: 20px;
+        @include box(50px);
       }
     }
   }
@@ -802,6 +813,7 @@
       .offcanvas-menu__social {
         gap: 16px;
         a {
+          @include box(46px);
           font-size: 16px;
         }
       }
@@ -828,6 +840,7 @@
 
   .banner {
     .video-frame {
+      @include box(140px);
       font-size: 20px;
     }
 
@@ -867,7 +880,11 @@
 
   .video-modal {
     .video-frame {
+      @include box(140px);
       font-size: 20px;
+      i {
+        @include box(80px);
+      }
     }
   }
 
@@ -971,6 +988,7 @@
   .footer-two {
     .social {
       a {
+        @include box(70px);
         i {
           display: flex;
           transform: translateX(0px) !important;
@@ -1036,6 +1054,7 @@
     .mobile-menu__social {
       gap: 16px;
       a {
+        @include box(46px);
         font-size: 16px;
       }
     }
@@ -1046,6 +1065,12 @@
         font-size: 14px;
         padding: 20px 70px 20px 24px;
       }
+    }
+  }
+
+  .secondary--navbar {
+    .open-offcanvas-nav {
+      @include box(60px);
     }
   }
 
@@ -1096,6 +1121,7 @@
       inset: unset;
       left: 15px;
       margin-top: 40px;
+      @include box(140px);
     }
 
     .star {
@@ -1118,6 +1144,9 @@
       img {
         min-height: 140px;
       }
+      .video-frame {
+        @include box(60px);
+      }
     }
   }
 
@@ -1125,9 +1154,12 @@
     .banner-four__title {
       max-width: 300px;
       .frame {
+        @include box(80px);
         display: inline-flex;
         font-size: 20px;
-
+        i {
+          @include box(50px);
+        }
       }
     }
   }

@@ -9,9 +9,9 @@ const BreadCrumb: React.FC<{
     return (
         <section className="cmn-banner bg-img" data-background={BannerImg} style={{backgroundImage: `url(${BannerImg})`}}>
             <div className="container">
-                <div className="row gaper items-center" style={{display: 'grid', gridTemplateColumns: 'repeat( auto-fit, minmax(400px, 1fr))'}}>
+                <div className="row gaper align-items-center">
                     <div className="col-12 col-lg-5 col-xl-7">
-                        <div className="text-start lg-text-center">
+                        <div className="text-center text-lg-start">
                             <h2 className="title title-anim">
                                 {title}
                             </h2>
@@ -32,7 +32,7 @@ const BreadCrumb: React.FC<{
                         </div>
                     </div>
                     <div className="col-12 col-lg-7 col-xl-5">
-                        <div className="text-start lg-text-center">
+                        <div className="text-center text-lg-start">
                             <p className="primary-text"> {description} </p>
                         </div>
                     </div>

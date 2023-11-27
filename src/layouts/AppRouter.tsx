@@ -4,6 +4,7 @@ import contents from 'routes/contentRoutes'
 import { ArrayType } from 'shared/helpers/helpers'
 import HomePage from 'components/home'
 import { Layout } from './Layout'
+import { ErrorPage } from 'components/pages/children/error'
 
 const AppRouter = () => {
     const isAuth = true
@@ -18,6 +19,7 @@ const AppRouter = () => {
                         <React.Fragment key={RouteElem.id}>
                             <Route path={RouteElem.path} element={<RouteElem.element />} />
                             {RouteElem.children && renderRoutes(RouteElem.children)}
+                            <Route path="*" element={<ErrorPage />} />
                         </React.Fragment>
                     ))
                 }

@@ -1,6 +1,8 @@
-import './testimonial-styles.scss'
-import LinesContent from 'shared/ui/design/lines-content/LinesContent'
+import React from 'react'
 import { TextSlider } from '../slider/TextSlider'
+import LinesContent from 'shared/ui/design/lines-content/LinesContent'
+import './testimonial-styles.scss'
+import { TestimonialClientsList } from './testimonial-clients-list/TestimonialClientsList'
 
 function TestimonialSection() {
     return (
@@ -24,6 +26,8 @@ function TestimonialSection() {
                 }}
                 className1="testimonial__text-slider-single slick-slide slick-cloned"
             />
+
+            <TestimonialClientsList />
 
             <LinesContent />
         </section>

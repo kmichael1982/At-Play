@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Logo from 'assets/images/image-removebg-preview.png'
 import { Buttons } from 'shared/ui/buttons/ButtonUi'
 import AccordionItem from './acordion-item/AccordionItem'
-import SocialMenuList from '../../../shared/ui/design/social-list/SocialMenuList'
+import SocialMenuList from 'shared/ui/design/social-list/SocialMenuList'
 
 const OffCanvasNav: React.FC<{
     isOffCanvasMenu: boolean
