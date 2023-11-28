@@ -8,7 +8,7 @@ import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import ScrollAnimatedImage from './ScrollAnimatedImage'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
-import { AnimatedText } from 'utils/hooks/useAnimatedText'
+import TextAnimation from 'utils/hooks/useAnimatetText'
 
 function BannerSection() {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
@@ -57,7 +57,7 @@ function BannerSection() {
             opacity: opacity,
             ease: 'power2.inOut',
         },
-            '<'
+            '>'
         )
 
         return () => {
@@ -67,21 +67,18 @@ function BannerSection() {
 
     return (
         <section className="banner">
-            <div className="container px-4 w-full">
-                <div className="row mx-4">
+            <div className="container">
+                <div className="row">
                     <div className="col-12">
                         <div className="banner__content">
-                            <h1 className="uppercase text-8xl text-white text-start font-black mb-0 title-anim">
-                                <AnimatedText>WE</AnimatedText>
-                                <AnimatedText>ARE</AnimatedText>
+                            <h1 className="text-uppercase text-start fw-9 mb-0 title-anim">
+                                <TextAnimation text="we are" />
                                 <span className="text-stroke">
-                                    <AnimatedText>CREATIVE</AnimatedText>
+                                    <TextAnimation text="creative" />
                                 </span>
                                 <span className="interval">
-                                    <i className="fa-solid fa-arrow-right" style={{transform: 'rotate(320deg)'}}></i>
-                                    {/*<i className="icon-arrow-top-right"></i>*/}
-                                    <AnimatedText>MARKETING</AnimatedText>
-                                    <AnimatedText>AGENCY</AnimatedText>
+                                    <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>
+                                    <TextAnimation text="marketing agency" />
                                 </span>
                             </h1>
                             <div className="banner__content-inner">
@@ -111,7 +108,7 @@ function BannerSection() {
                 // style={styles}
                 src={BannerImage}
                 alt="Image"
-                className="banner-one-thumb sm-none block g-ban-one"
+                className="banner-one-thumb d-none d-sm-block g-ban-one"
             />
 
             <ScrollAnimatedImage

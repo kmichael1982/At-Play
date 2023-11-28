@@ -8,7 +8,7 @@ import StarIcon from 'assets/images/star.png'
 import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
 import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
 import SkillBar from './skil-bar/SkilBar'
-import { AnimatedText } from 'utils/hooks/useAnimatedText'
+import TextAnimation from 'utils/hooks/useAnimatetText'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -84,19 +84,19 @@ function AgencySection() {
                             <LinkButton
                                 isLink={true}
                                 label="WELCOME"
-                                className="sub-title mb-0"
+                                className="sub-title"
                                 icon={<i className="fa-solid fa-arrow-right"></i>}
                                 href="#"
                             />
 
-                            <h2 className="title title-anim">
-                                <AnimatedText>We</AnimatedText>
-                                <AnimatedText>Are</AnimatedText>
-                                <AnimatedText>Digital</AnimatedText>
-                                <AnimatedText>Creative</AnimatedText>
-                                <AnimatedText>Agency</AnimatedText>
-                                <AnimatedText>In</AnimatedText>
-                                <AnimatedText>London</AnimatedText>
+                            <h2 className="title title-anim" >
+                                <TextAnimation text="we" />
+                                <TextAnimation text="Are" />
+                                <TextAnimation text="Digital" />
+                                <TextAnimation text="Creative" />
+                                <TextAnimation text="Agency" />
+                                <TextAnimation text="In" />
+                                <TextAnimation text="London" />
                             </h2>
 
                             <div className="paragraph">

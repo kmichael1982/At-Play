@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
+import { animateItem } from 'shared/ui/design/animation/animateItem'
 gsap.registerPlugin(ScrollTrigger)
 
 const PortfolioItem: React.FC<{
@@ -12,33 +13,7 @@ const PortfolioItem: React.FC<{
     const itemRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-        const item = itemRef.current;
-
-        if (item) {
-            gsap.from(item, {
-                scale: 0.95,
-                opacity: 0,
-                y: 50,
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none reverse',
-                },
-            })
-
-            gsap.to(item, {
-                duration: 0.7,
-                scale: 1,
-                y: 0,
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none reverse',
-                },
-            })
-        }
+        animateItem(itemRef)
     }, [])
 
     return (

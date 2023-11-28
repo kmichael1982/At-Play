@@ -26,9 +26,7 @@ function TestimonialSection() {
                 }}
                 className1="testimonial__text-slider-single slick-slide slick-cloned"
             />
-
             <TestimonialClientsList />
-
             <LinesContent />
         </section>
     )

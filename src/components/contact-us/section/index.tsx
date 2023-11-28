@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import MailImg from 'assets/images/contact/mail.png'
 import LocationImg from 'assets/images/contact/location.png'
 import PhoneImg from 'assets/images/contact/phone.png'
@@ -7,14 +7,21 @@ import ContactInfo from './contact-info/ContactInfo'
 import ContactAddress from './contact-address/ContactAddress'
 import './contact-styles.scss'
 import { ContactForm } from './contact-form/ContactForm'
+import { animateItem } from 'shared/ui/design/animation/animateItem'
 
 export const ContactUsPages = () => {
+    const contactInfoItemRef = useRef<HTMLDivElement | null>(null)
+    const contactFormItemRef = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => {
+        animateItem(contactInfoItemRef)
+        animateItem(contactFormItemRef)
+    }, [])
+
     return (
         <section className="section contact-m fade-wrapper">
             <div className="container">
-                <div className="row gaper"
-
-                >
+                <div className="row gaper" ref={contactInfoItemRef}>
                     <ContactInfo
                         icon={PhoneImg}
                         title="Phone & Fax"
@@ -50,7 +57,7 @@ export const ContactUsPages = () => {
                             { text: 'Fri - Sat 4 pm - 10pm' }
                         ]}
                     />
-                </div>
+                </div >
 
                 <div className="">
                     <div className="col-12">
@@ -59,7 +66,7 @@ export const ContactUsPages = () => {
                                 <div className="col-12 col-lg-6">
                                     <ContactAddress />
                                 </div>
-                                <div className="col-12 col-lg-6">
+                                <div className="col-12 col-lg-6" ref={contactFormItemRef}>
                                     <div
                                         className="contact-main__form  fade-top"
                                         style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}

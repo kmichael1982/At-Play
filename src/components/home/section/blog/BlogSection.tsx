@@ -4,7 +4,7 @@ import BlogOneImg from 'assets/images/home/blog/one.png'
 import BlogTwoImg from 'assets/images/home/blog/two.png'
 import BlogItem from './blog-item/BlogItem'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
-import { AnimatedText } from 'utils/hooks/useAnimatedText'
+import TextAnimation from 'utils/hooks/useAnimatetText'
 
 function BlogSection() {
     return (
@@ -16,15 +16,15 @@ function BlogSection() {
                             <LinkButton
                                 isLink={true}
                                 label="news &amp; Blog"
-                                className="sub-title mb-0"
+                                className="sub-title"
                                 icon={<i className="fa-solid fa-arrow-right"></i>}
                                 href="#"
                             />
                             <h2 className="title title-anim">
-                                <AnimatedText>What's</AnimatedText>
-                                <AnimatedText>New</AnimatedText>
-                                <AnimatedText>In</AnimatedText>
-                                <AnimatedText>Blog</AnimatedText>
+                                <TextAnimation text="What's" />
+                                <TextAnimation text="new" />
+                                <TextAnimation text="In" />
+                                <TextAnimation text="Blog" />
                             </h2>
                         </div>
                     </div>

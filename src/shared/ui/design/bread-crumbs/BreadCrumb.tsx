@@ -4,16 +4,17 @@ import BannerImg from 'assets/images/banner/cmn-banner-bg.png'
 
 const BreadCrumb: React.FC<{
     title: string
-    description: string
-}> = ({ title, description }) => {
+    href?: string
+    description?: string
+}> = ({ title, href, description }) => {
     return (
         <section className="cmn-banner bg-img" data-background={BannerImg} style={{backgroundImage: `url(${BannerImg})`}}>
             <div className="container">
                 <div className="row gaper align-items-center">
-                    <div className="col-12 col-lg-5 col-xl-7">
+                    <div className={`${description ? 'col-12 col-lg-5 col-xl-7' : 'col-12' }`}>
                         <div className="text-center text-lg-start">
                             <h2 className="title title-anim">
-                                {title}
+                                {href ? href : title}
                             </h2>
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb items-center">
@@ -31,7 +32,7 @@ const BreadCrumb: React.FC<{
                             </nav>
                         </div>
                     </div>
-                    <div className="col-12 col-lg-7 col-xl-5">
+                    <div className={`${description ? ' col-12 col-lg-7 col-xl-5' : 'd-none'}`}>
                         <div className="text-center text-lg-start">
                             <p className="primary-text"> {description} </p>
                         </div>

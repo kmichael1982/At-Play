@@ -8,6 +8,8 @@
   justify-content: center;
 }
 
+/* ==== responsive styles start ==== */
+
 @media only screen and (max-width: 1699.98px) {
   // navbar
   .primary-navbar {
@@ -1335,7 +1337,7 @@
       .group-wrapper {
         flex-direction: column;
         .group-input {
-          width: 100%;
+          width: 100% !important;
         }
       }
     }

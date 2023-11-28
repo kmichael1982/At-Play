@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './portfolio-section.scss'
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import OneImg from 'assets/images/home/portfolio/one.png'
@@ -11,8 +11,10 @@ import SevenImg from 'assets/images/home/portfolio/seven.png'
 import DotImg from 'assets/images/home/portfolio/dot.png'
 import { TextSlider } from '../slider/TextSlider'
 import PortfolioItem from './portfolio-item/ProtfolioItem'
+import { animateItem } from 'shared/ui/design/animation/animateItem'
 
 function PortfolioSection() {
+    const itemRef = useRef<HTMLDivElement | null>(null)
 
     const portfolioItems = [
         { image: OneImg, title: 'Digital Marketing', link: 'portfolio' },
@@ -24,6 +26,10 @@ function PortfolioSection() {
         { special: true },
         { image: SevenImg, title: 'Digital Marketing', link: 'portfolio' },
     ]
+
+    useEffect(() => {
+        animateItem(itemRef)
+    }, [])
 
     return (
         <section className="section portfolio pb-0 fade-wrapper position-relative">
@@ -52,7 +58,7 @@ function PortfolioSection() {
                     {portfolioItems.map((item, index) => (
                         <div key={index} className="col-12 col-sm-6 col-xl-3">
                             {item.special ? (
-                                <div className="portfolio__single-alt-wrapper fade-top">
+                                <div className="portfolio__single-alt-wrapper fade-top" ref={itemRef}>
                                     <div className="portfolio__single-alt topy-tilt">
                                         <h4>
                                             <a href="/portfolio">view all work</a>

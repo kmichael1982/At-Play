@@ -1,9 +1,6 @@
 import React from 'react'
+import BlogDetailsPage from 'components/blog/children/blog-details'
 
-const BlogDetails = () => {
-    return (
-        <div>BlogDetails</div>
-    )
-}
+const BlogDetails = () => <BlogDetailsPage />
 
 export default BlogDetails

@@ -35,7 +35,7 @@ export const LinkButton: React.FC<{ isLink?: boolean, className?: string, href?:
 
     return (
         <a
-            className={`cursor-pointer ${className ? className : 'flex items-center gap-2 hover:text-red transition-all duration-500 ease-in-out capitalize'}`}
+            className={`cursor-pointer ${className && className}`}
             href={href ? href : '#'}
             rel="noopener noreferrer"
         >

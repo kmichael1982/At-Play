@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
-import gsap from 'gsap'
+import { animateItem } from 'shared/ui/design/animation/animateItem'
 
 const BlogItem: React.FC<{
     title: string
@@ -13,6 +13,7 @@ const BlogItem: React.FC<{
     date: string
 }> = ({ title, link, image, category, date }) => {
     const [ isHovered, setIsHovered ] = useState(false)
+    const itemRef = useRef<HTMLDivElement | null>(null)
 
     const handleMouseEnter = () => {
         setIsHovered(true)
@@ -31,46 +32,17 @@ const BlogItem: React.FC<{
             transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
             opacity: 0.8,
         }
-    const itemRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-        const item = itemRef.current;
-
-        if (item) {
-            gsap.from(item, {
-                scale: 0.9,
-                opacity: 0,
-                y: 50,
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none reverse',
-                },
-            })
-
-            gsap.to(item, {
-                duration: 1,
-                scale: 1,
-                y: 0,
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none reverse',
-                },
-            })
-        }
+        animateItem(itemRef)
     }, [])
 
-
     return(
-        <div className="blog__single fade-top">
+        <div className="blog__single fade-top" ref={itemRef}>
             <div
                 className="blog__single-thumb topy-tilt cursor-pointer"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                ref={itemRef}
                 style={{
                     willChange: 'transform',
                     transform: 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',

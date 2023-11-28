@@ -64,7 +64,7 @@ export const publicPages = [
             {
                 id: 'BlogDetailsPage',
                 text: 'Blog Details Page',
-                path: '/blog-details',
+                path: '/blog-single',
                 icon: '',
                 element: LANDING.BLOG_DETAILS,
                 exact: true,

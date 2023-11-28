@@ -3,7 +3,9 @@ import { SelectInput, TextAreaInput, TextInput } from 'shared/ui/inputs/FormInpu
 import { Buttons } from 'shared/ui/buttons/ButtonUi'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { sendMessageEmailSchema } from 'shared/validations/contact'
+
 import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 export const ContactForm = () => {
     type FormSchemaType = z.infer<typeof sendMessageEmailSchema>
@@ -11,7 +13,7 @@ export const ContactForm = () => {
     const [ isOpen, setIsOpen ] = useState<boolean>(false)
 
     const onFilterChange = ({ target }: React.FormEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = target as HTMLInputElement
+        const { name } = target as HTMLInputElement
         setFilterOptions(name)
     }
 
@@ -24,9 +26,10 @@ export const ContactForm = () => {
         defaultValues: {
             name: '',
             email: '',
+            subject: '',
             message: '',
         },
-        // resolver: zodResolver(sendMessageEmailSchema),
+        resolver: zodResolver(sendMessageEmailSchema),
     })
 
     const onSubmit: SubmitHandler<FormSchemaType> = data => {
@@ -60,15 +63,15 @@ export const ContactForm = () => {
                 </div>
             </div>
             <div className="group-input" onClick={() => setIsOpen(!isOpen)}>
-                {/*<SelectInput*/}
-                {/*    register={register('subject')}*/}
-                {/*    options={['Account', 'Service', 'Pricing', 'Support']}*/}
-                {/*    selected="Subject"*/}
-                {/*    defaultValue="Subject"*/}
-                {/*    onChange={onFilterChange}*/}
-                {/*    name="subject"*/}
-                {/*    isOpen={isOpen}*/}
-                {/*/>*/}
+                <SelectInput
+                    register={register('subject')}
+                    options={['Account', 'Service', 'Pricing', 'Support']}
+                    selected="Subject"
+                    defaultValue="Subject"
+                    onChange={onFilterChange}
+                    name="subject"
+                    isOpen={isOpen}
+                />
             </div>
             <TextAreaInput id="contactMessage" register={register('message')} placeholder="Message"/>
             <div className="form-cta justify-content-start">

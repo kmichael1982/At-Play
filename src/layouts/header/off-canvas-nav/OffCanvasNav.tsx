@@ -71,7 +71,7 @@ const OffCanvasNav: React.FC<{
             ]
         },
         { label: 'About Us' },
-        { label: 'Services', subItems: [{ label: 'Our Services', link: '' }, { label: 'Service Details', link: '' }] },
+        { label: 'Services', subItems: [{ label: 'Our Services', link: '/our-services' }, { label: 'Service Details', link: '' }] },
         { label: 'Projects', subItems: [{ label: 'Our Projects', link: '' }, { label: 'Project Details', link: '' }] },
         {
             label: 'Pages',

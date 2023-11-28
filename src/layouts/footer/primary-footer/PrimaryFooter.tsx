@@ -90,11 +90,11 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                 </div>
                 <div className="row">
                     <div className="col-12">
-                        <div className="py-16 px-0">
-                            <div className="flex items-center justify-between flex-wrap">
+                        <div className="footer__copyright">
+                            <div className="row align-items-center gaper">
                                 <div className="col-12 col-lg-8">
-                                    <div className="text-secondary-color flex text-center font-light text-lg-start">
-                                        <p className="flex items-center gap-2">
+                                    <div className="footer__copyright-text text-center text-lg-start">
+                                        <p>
                                             Copyright ©
                                             <span id="copyYear">{(new Date().getFullYear())}</span>
                                             Xpovio by
