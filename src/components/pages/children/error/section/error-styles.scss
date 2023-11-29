@@ -1,0 +1,37 @@
+.error {
+  span {
+    font-weight: 500;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .thumb {
+    margin: 60px 0px;
+  }
+
+  h2 {
+    letter-spacing: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+}
+
+.section__header,
+.section__content {
+  .title {
+    div {
+      text-transform: lowercase !important;
+      font-weight: 600;
+      &:nth-child(1) {
+        text-transform: capitalize !important;
+      }
+    }
+  }
+}
+
+.g-ind {
+  position: relative;
+  z-index: 99;
+}

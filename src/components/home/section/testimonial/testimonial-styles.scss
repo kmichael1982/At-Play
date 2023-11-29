@@ -1,0 +1,148 @@
+// testimonial styles
+.testimonial {
+  .testimonial__text-slider {
+    margin-bottom: 80px;
+  }
+  .testimonial__text-slider-single {
+    h2 {
+      margin-top: -20px;
+      font-weight: 900;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 0px;
+      font-family: sans-serif;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 2px var(--white);
+      i {
+        -webkit-text-fill-color: var(--primary-color);
+        -webkit-text-stroke: 0px var(--primary-color);
+        color: var(--primary-color);
+      }
+      a {
+        &:hover {
+          -webkit-text-stroke-color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .testimonial-s__slider {
+    .thumb {
+      position: relative;
+      svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -80px;
+      }
+    }
+    .testimonial-s__content {
+      .quote {
+        i {
+          font-size: 56px;
+          color: var(--primary-color);
+        }
+      }
+      .content {
+        margin: 30px 0px;
+      }
+      h4 {
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+
+      .content-cta {
+        p {
+          color: var(--primary-color);
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+
+  .slide-group {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    flex-direction: column;
+
+    button {
+      position: relative;
+      z-index: 9;
+      &:nth-of-type(1) {
+        transform: rotate(90deg);
+      }
+      &:nth-of-type(2) {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .other-section {
+    position: absolute;
+    left: 0px;
+    bottom: 130px;
+    width: 330px;
+    opacity: 0.25;
+    transform: translateX(-40%);
+  }
+}
+
+// 5.10 testimonial two styles
+.testimonial-two {
+  background: var(--tertiary-color);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left bottom;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  .testimonial-two__thumb {
+    img {
+      border-radius: 500px;
+    }
+  }
+
+  .quote {
+    margin: 30px 0px;
+    i {
+      font-size: 60px;
+      color: var(--primary-color);
+    }
+  }
+
+  blockquote {
+    color: #c1c1c1;
+  }
+
+  .author-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 30px;
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+    h5 {
+      margin-bottom: 6px;
+    }
+  }
+
+  .star {
+    position: absolute;
+    top: 80px;
+    right: 120px;
+    z-index: -1;
+  }
+}
+
+// 5.11 testimonial three syles
+.testimonial-three {
+  background-color: var(--tertiary-color);
+}

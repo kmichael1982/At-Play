@@ -1,0 +1,65 @@
+//  breadcurmb styles
+.cmn-banner {
+  padding: 210px 0px 130px;
+  background-color: var(--black);
+
+  .title {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: -12px;
+  }
+}
+
+// breadcrumb
+.breadcrumb {
+  margin: 0px;
+  padding: 0px;
+  border: 1px dashed #414141;
+  display: inline-flex;
+  padding: 10px 20px;
+  border-radius: 100px;
+  margin-top: 20px;
+  .breadcrumb-item {
+    margin-top: 0px;
+    color: var(--white);
+    padding: 0px 0px 0px 24px;
+    position: relative;
+    padding-right: 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+    a {
+      color: var(--theme-color);
+      font-weight: 600;
+      font-size: 14px;
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+    &::before {
+      font-family: "Font Awesome 6 Pro";
+      font-weight: 900;
+      content: "\f105";
+      position: absolute;
+      left: 0px;
+      font-size: 14px;
+      color: var(--theme-color);
+      padding: 0px;
+    }
+    &:first-of-type {
+      a {
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+      padding-left: 0px;
+      &::before {
+        content: none;
+      }
+    }
+  }
+  .active {
+    color: var(--primary-color);
+    padding-right: 0px;
+    font-weight: 600;
+  }
+}

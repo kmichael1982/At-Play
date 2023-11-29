@@ -1,0 +1,19 @@
+.sponsor {
+  .sponsor__slider-item {
+    text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.25;
+      transition: var(--transition);
+    }
+  }
+
+  .slick-center {
+    img {
+      opacity: 1;
+    }
+  }
+}

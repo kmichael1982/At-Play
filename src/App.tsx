@@ -1,28 +1,38 @@
-import './App.css'
-import Footer from 'layouts/footer/Footer'
-import Header from 'layouts/header/Header'
-import AppRouter from "layouts/AppRouter"
-import FooterImg from 'assets/images/footer/footer-bg.png'
+import React, { useState } from 'react'
+import AppRouter from 'layouts/AppRouter'
 import ScrollToTopButton from 'layouts/scroll-to-top/ScrollToTop'
-import AnimatedCursor from 'layouts/animated-cursor/AnimatedCursor'
+import { MouseCursor } from 'layouts/mouse-cursor/MouseCursor'
 
 function App() {
-  return (
-    <div className="App">
-        <Header/>
-        <AppRouter/>
-        <Footer background={FooterImg}/>
-        <AnimatedCursor
-            color="220, 90, 90"
-            outerAlpha={0.4}
-            innerSize={12}
-            outerSize={28}
-            outerScale={5}
-            innerScale={0.7}
-        />
-        <ScrollToTopButton />
-    </div>
-  )
+    const [ cursorPosition, setCursorPosition ] = useState({ x: 0, y: 0 })
+    const [ disableAnimation, setDisableAnimation ] = useState(false)
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        setCursorPosition({ x: e.clientX, y: e.clientY })
+
+        const targetElement = e.target as HTMLElement
+        if (targetElement.style.cursor === 'pointer') {
+            setDisableAnimation(true)
+        } else {
+            setDisableAnimation(false)
+        }
+    }
+
+    const handleMouseLeave = () => {
+        setDisableAnimation(false)
+    }
+
+    return (
+        <div
+            className="my-app"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+        >
+            <AppRouter/>
+            <MouseCursor style={{ transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)` }} />
+            <ScrollToTopButton />
+        </div>
+    )
 }
 
 export default App

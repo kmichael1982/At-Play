@@ -1,4 +1,5 @@
 import React, { HTMLProps, ReactNode } from 'react'
+import './form-styles.scss'
 
 interface SearchProps extends HTMLProps<HTMLInputElement> {
     label?: string
@@ -17,22 +18,104 @@ export const SearchInput: React.FC<SearchProps> = ({
    className,
    value,
    icon,
-   handleClick,
-   readOnly
+       readOnly
 }) => {
     return (
-        <div className='relative flex gap-4 items-center w-full' onClick={handleClick}>
+        <div className="input-email">
             <input
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
                 type='text'
                 readOnly={readOnly ? readOnly : false}
-                className={`${className} w-full cursor-pointer py-3 px-4 rounded`}
+                className={`${className} w-full py-3 px-4 rounded`}
             />
-            <div className='cursor-pointer absolute bottom-3.5 right-3 hover:text-red'>
+            <button type="submit" className="subscribe">
                 {icon}
-            </div>
+            </button>
+        </div>
+    )
+}
+
+export const TextInput: React.FC<SearchProps> = ({
+    register,
+    placeholder,
+    onChange,
+    className,
+    value,
+}) => {
+    return (
+        <input
+            value={value}
+            onChange={onChange}
+            type="text"
+            placeholder={placeholder}
+            className={className}
+            {...register}
+        />
+    )
+}
+
+export const TextAreaInput: React.FC<SearchProps> = ({
+     placeholder,
+     register,
+     onChange
+}) => {
+    return (
+         <textarea
+             name="contact-message"
+             id="contactMessage"
+             placeholder={placeholder}
+             onChange={onChange}
+             {...register}
+         />
+    )
+}
+
+interface PropsOptional {
+    label?: string
+    register?: any
+}
+interface SelectProps {
+    isOpen?: boolean
+    register: any;
+    options: string[];
+    values?: string[];
+    selected: string;
+    defaultValue: string;
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+    name: string;
+    messageId?: string;
+    disabled?: boolean;
+}
+
+export const SelectInput: React.FC<SelectProps> = ({
+   register,
+    isOpen,
+   options,
+   values = [],
+   selected,
+   defaultValue,
+   onChange,
+   name,
+   messageId = '',
+   disabled = false,
+}) => {
+    return (
+        <div className={`nice-select subject ${isOpen && 'open'}`}>
+            <span className="current">{selected}</span>
+            <ul className="list">
+                {options.map((option, index) => (
+                    <li
+                        key={index}
+                        data-value={values[index] || option}
+                        className={`option${selected === option ? ' selected' : ''}`}
+                        onClick={() => onChange({ target: { value: values[index] || option } } as any)}
+                    >
+                        {messageId ? <p>{`${messageId}${option}`}</p> : option}
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }

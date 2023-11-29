@@ -2,7 +2,9 @@ import App from 'App'
 import { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router } from 'react-router-dom'
-import 'index.css'
+import 'index.scss'
+import 'global.scss'
+import 'responsive.scss'
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement

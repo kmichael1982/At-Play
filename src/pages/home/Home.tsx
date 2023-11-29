@@ -1,11 +1,5 @@
 import React from 'react'
+import HomePage from 'components/home'
 
-function Home() {
-    return (
-        <div className="">
-            Home
-        </div>
-    )
-}
-
+const Home = () => <HomePage/>
 export default Home
