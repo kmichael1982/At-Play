@@ -36,20 +36,27 @@ function PortfolioSection() {
             <TextSlider
                 settings={{
                     slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToScroll: 2,
                     centerMode: true,
                     arrows: false,
                     dots: false,
-                    speed: 10000,
-                    centerPadding: '15px',
+                    speed: 4000,
                     infinite: true,
                     autoplaySpeed: 0,
                     autoplay: true,
                     cssEase: 'linear',
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 1,
+                            }
+                        }
+                    ]
                 }}
-                labels={['digital portfolio', 'digital portfolio', 'digital portfolio']}
+                labels={['digital portfolio', 'digital portfolio', 'digital portfolio', 'digital portfolio', 'digital portfolio']}
                 href="/portfolio"
-                className="portfolio__text-slider slick-initialized slick-slider"
+                className="portfolio__text-slider"
                 className1="portfolio__text-slider-single slick-slide slick-cloned"
             />
 

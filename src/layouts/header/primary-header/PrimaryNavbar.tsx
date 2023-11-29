@@ -33,7 +33,7 @@ const PrimaryNavbar = () => {
                                         <nav className="navbar p-0">
                                             <div className="navbar__logo">
                                                 <a href="#" aria-label="go to home">
-                                                    <img src={Logo} className="h-16" alt="Image" />
+                                                    <img src={Logo} className="h-lg-16 h-12" alt="Image" />
                                                 </a>
                                             </div>
                                             <div className="navbar__options">

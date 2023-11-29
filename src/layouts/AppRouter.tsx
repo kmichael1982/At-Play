@@ -11,14 +11,14 @@ const AppRouter = () => {
     if (!isAuth) return null // Render nothing if the user is not authenticated
     const { publicPages } = contents
 
-    const renderRoutes = (pages: ArrayType) => {
+    const renderRoutes = (pages: ArrayType, isFirst: boolean = true) => {
         return (
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Layout isFirst={isFirst}/>} >
                 {
                     pages.map(RouteElem => (
                         <React.Fragment key={RouteElem.id}>
                             <Route path={RouteElem.path} element={<RouteElem.element />} />
-                            {RouteElem.children && renderRoutes(RouteElem.children)}
+                            {RouteElem.children && renderRoutes(RouteElem.children, false) }
                             <Route path="*" element={<ErrorPage />} />
                         </React.Fragment>
                     ))
@@ -28,7 +28,7 @@ const AppRouter = () => {
     }
 
     return (
-        <Routes>
+        <Routes >
             <Route path="/" element={<HomePage />}>
                 <Route path="/" element={<></>} />
             </Route>

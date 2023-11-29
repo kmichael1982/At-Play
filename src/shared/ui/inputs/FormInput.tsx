@@ -18,7 +18,7 @@ export const SearchInput: React.FC<SearchProps> = ({
    className,
    value,
    icon,
-       readOnly
+   readOnly
 }) => {
     return (
         <div className="input-email">

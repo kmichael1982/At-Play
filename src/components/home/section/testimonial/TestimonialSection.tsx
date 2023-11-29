@@ -8,12 +8,12 @@ function TestimonialSection() {
     return (
         <section className="section relative testimonial pt-0 position-relative">
             <TextSlider
-                labels={['clients testimonial', 'clients testimonial']}
+                labels={['clients testimonial', 'clients testimonial', 'clients testimonial', 'clients testimonial']}
                 href=""
                 className="testimonial__text-slider slick-initialized slick-slider"
                 settings={{
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                     centerMode: true,
                     arrows: false,
                     dots: false,

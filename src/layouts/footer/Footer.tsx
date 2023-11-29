@@ -95,7 +95,7 @@ const Footer = () => {
                                     <LinkButton href='/about-us' label='About us' />
                                 </li>
                                 <li>
-                                    <LinkButton href='/services' label='Services' />
+                                    <LinkButton href='/our-services' label='Services' />
                                 </li>
                                 <li>
                                     <LinkButton href='/blog' label='Blog' />

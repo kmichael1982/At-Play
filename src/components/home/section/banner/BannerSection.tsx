@@ -9,6 +9,7 @@ import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import ScrollAnimatedImage from './ScrollAnimatedImage'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
 import TextAnimation from 'utils/hooks/useAnimatetText'
+import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
 
 function BannerSection() {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
@@ -129,20 +130,13 @@ function BannerSection() {
                 <LinkButton label="facebook" href="https://www.facebook.com/" />
             </div>
 
-            <a
-                onClick={openYouTubeVideo}
-                className="video-frame video-btn"
-                rel="noopener noreferrer"
-            >
-                <img src={VideoFrameIcon} className="object-contain" alt="Image" />
-                <i className="fa-sharp fa-solid fa-play"></i>
-            </a>
-
+            <VideoFrame onClick={openYouTubeVideo} imageSrc={VideoFrameIcon} />
             <VideoPopUp
                 isOpen={isModalOpen}
                 onClose={closeYouTubeVideo}
                 videoUrl="//www.youtube.com/embed/RvreULjnzFo?autoplay=1"
             />
+
             <LinesContent />
         </section>
     )

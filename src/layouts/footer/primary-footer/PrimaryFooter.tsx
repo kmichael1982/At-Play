@@ -14,7 +14,7 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
     }
 
     return (
-        <footer className="footer section !pb-0"  style={footerStyle}>
+        <footer className="footer section !pb-0 z-30"  style={footerStyle}>
             <div className="container">
                 <div className="row gaper">
                     <div className="col-12 col-lg-5 col-xl-6">
@@ -49,18 +49,18 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                             <div className="footer__single-intro">
                                 <h5 className="font-semibold capitalize">discover</h5>
                             </div>
-                            <div className="flex flex-col gap-3">
-                                <ul className="flex flex-col gap-3 items-start">
-                                    <li className="text-light">
+                            <div className="footer__single-content">
+                                <ul>
+                                    <li>
                                         <LinkButton href='/about-us' label='About Us' />
                                     </li>
-                                    <li className="text-light">
+                                    <li>
                                         <LinkButton href='/client-feedback' label='Award Winning' />
                                     </li>
-                                    <li className="text-light">
+                                    <li>
                                         <LinkButton href='/blog' label='News &amp; Blog' />
                                     </li>
-                                    <li className="text-light">
+                                    <li>
                                         <LinkButton href='/contact-us' label='careers' />
                                     </li>
                                 </ul>
