@@ -1,8 +1,15 @@
-import React from 'react'
-import TextAnimation from 'utils/hooks/useAnimatetText'
-import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
+import React, { ReactNode } from 'react'
 
-export const HeaderSecondary = () => {
+import TextAnimation from 'utils/hooks/useAnimatetText'
+import { LinkButton } from 'shared/ui/buttons/ButtonUi'
+
+interface HeaderSecondaryProps {
+    label: string
+    title: string
+    elem: ReactNode
+}
+
+export const HeaderSecondary: React.FC<HeaderSecondaryProps> = ({ label, title, elem }) => {
     return (
         <div className="container">
             <div className="row">
@@ -13,23 +20,18 @@ export const HeaderSecondary = () => {
                                 <div className="section__header text-center text-lg-start mb-0">
                                     <LinkButton
                                         isLink={true}
-                                        label="our awesome crew"
+                                        label={label}
                                         className="sub-title"
                                         icon={<i className="fa-solid fa-arrow-right"></i>}
                                         href="#"
                                     />
                                     <h2 className="title title-anim">
-                                        <TextAnimation text="Our" />
-                                        <TextAnimation text="Xpovio" />
-                                        <TextAnimation text="Team" />
-                                        <TextAnimation text="Members" />
+                                        <TextAnimation text={title} />
                                     </h2>
                                 </div>
                             </div>
                             <div className="col-12 col-lg-4">
-                                <div className="text-center text-lg-end">
-                                    <Buttons title="view all teams" href="/our-teams" />
-                                </div>
+                                {elem}
                             </div>
                         </div>
                     </div>

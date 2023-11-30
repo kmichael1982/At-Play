@@ -1,9 +1,6 @@
 import React from 'react'
+import { OurProjectsPage } from 'components/projects'
 
-const OurProjects = () => {
-    return (
-        <div>OurProjects</div>
-    )
-}
+const OurProjects = () => <OurProjectsPage />
 
 export default OurProjects

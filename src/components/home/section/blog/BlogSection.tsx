@@ -21,10 +21,7 @@ function BlogSection() {
                                 href="#"
                             />
                             <h2 className="title title-anim">
-                                <TextAnimation text="What's" />
-                                <TextAnimation text="new" />
-                                <TextAnimation text="In" />
-                                <TextAnimation text="Blog" />
+                                <TextAnimation text="What's New In Blog" />
                             </h2>
                         </div>
                     </div>

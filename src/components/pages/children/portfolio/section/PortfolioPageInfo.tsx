@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './portfolio-styles.scss'
 import { Buttons } from 'shared/ui/buttons/ButtonUi'
 import { PortfolioItem } from './portfolio-item/PortfolioItem'
@@ -12,6 +12,13 @@ import ThirteenImg from 'assets/images/portfolio/thirteen.png'
 import TwelveImg from 'assets/images/portfolio/twelve.png'
 
 export const PortfolioPageInfo = () => {
+    const initialVisibleItems = 4
+    const [ visibleItems, setVisibleItems ] = useState(initialVisibleItems)
+
+    const handleLoadMore = () => {
+        setVisibleItems((prevVisibleItems) => prevVisibleItems + initialVisibleItems)
+    }
+
     const portfolioItems = [
         { imgSrc: ElevenImg, title: 'LMS Web Application' },
         { imgSrc: TwelveImg, title: 'LMS Web Application' },
@@ -32,18 +39,17 @@ export const PortfolioPageInfo = () => {
         <section className="section portfolio-m fade-wrapper">
             <div className="container">
                 <div className="row gaper">
-                    {portfolioItems.map((item, index) => (
-                        <div
-                            key={index}
-                            className={getColumnClasses(index, portfolioItems.length)}
-                        >
-                            <PortfolioItem imgSrc={item.imgSrc} title={item.title} />
-                        </div>
-                    ))}
+                    {
+                        portfolioItems.slice(0, visibleItems).map((item, index) => (
+                            <div key={index} className={getColumnClasses(index, visibleItems)}>
+                                <PortfolioItem imgSrc={item.imgSrc} title={item.title} />
+                            </div>
+                        ))
+                    }
                 </div>
                 <div className="row">
                     <div className="col-12">
-                        <div className="section__content-cta text-center">
+                        <div className="section__content-cta text-center" onClick={handleLoadMore}>
                             <Buttons title="Load More.."/>
                         </div>
                     </div>

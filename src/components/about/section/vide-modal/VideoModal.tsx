@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import BgModalImage from 'assets/images/about/modal-bg.png'
+
 import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
+import BgModalImage from 'assets/images/about/modal-bg.png'
 
-export const VideoModal: React.FC<{
+interface VideoModalProps {
     imageSrc: string
-}> = ({ imageSrc }) => {
+}
+
+export const VideoModal: React.FC<VideoModalProps> = ({ imageSrc }) => {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
 
     const openYouTubeVideo = () => {

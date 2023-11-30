@@ -39,12 +39,7 @@ function OfferSection() {
                             />
 
                             <h2 className="title title-anim">
-                                <TextAnimation text="Giving" />
-                                <TextAnimation text="Your" />
-                                <TextAnimation text="Business" />
-                                <TextAnimation text="Some" />
-                                <TextAnimation text="Great" />
-                                <TextAnimation text="Ideas" />
+                                <TextAnimation text="Giving Your Business Some Great Ideas" />
                             </h2>
                             <div className="paragraph">
                                 <p>Bring to the table win-win survival strategies to ensure proactive domination. At

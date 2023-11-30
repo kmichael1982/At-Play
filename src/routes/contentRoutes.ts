@@ -38,6 +38,8 @@ export const publicPages = [
         path: '/about-us',
         icon: '',
         element: LANDING.ABOUT,
+        header: 'header',
+        footer: 'footer',
         exact: true,
     },
     {
@@ -80,6 +82,14 @@ export const publicPages = [
         path: '/our-services',
         icon: '',
         element: LANDING.OUR_SERVICE,
+        exact: true,
+    },
+    {
+        id: 'OurProjectsPage',
+        text: 'Our Projects',
+        path: '/our-projects',
+        icon: '',
+        element: LANDING.OUR_PROJECTS,
         exact: true,
     },
 ]

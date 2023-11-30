@@ -1,8 +1,9 @@
 import React from 'react'
-import { TextSlider } from '../slider/TextSlider'
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
-import './testimonial-styles.scss'
 import { TestimonialClientsList } from './testimonial-clients-list/TestimonialClientsList'
+import { TextSlider } from '../slider/TextSlider'
+
+import './testimonial-styles.scss'
 
 function TestimonialSection() {
     return (

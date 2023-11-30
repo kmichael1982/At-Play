@@ -1,8 +1,9 @@
 import React from 'react'
-import CtaBgImg from 'assets/images/services/cta-two-bg.png'
-import './cta-style.scss'
 import TextAnimation from 'utils/hooks/useAnimatetText'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
+
+import CtaBgImg from 'assets/images/services/cta-two-bg.png'
+import './cta-style.scss'
 
 export const CtaStart = () => {
     return (
@@ -16,11 +17,7 @@ export const CtaStart = () => {
                                     <div className="cta-two__content">
                                         <span>Hello !</span>
                                         <h2 className="title-anim">
-                                            <TextAnimation text="READY" />
-                                            <TextAnimation text="TO" />
-                                            <TextAnimation text="WORK" />
-                                            <TextAnimation text="WITH" />
-                                            <TextAnimation text="US?" />
+                                            <TextAnimation text="READY TO WORK WITH US?" />
                                         </h2>
                                         <h5>
                                             <a href="tel:19-3265-003-420">call: +19 3265 003 420</a>

@@ -6,7 +6,7 @@ import './header-styles.scss'
 
 const Header = () => {
     const [ isScrolled, setIsScrolled ] = useState(false)
-    const [ isOffCanvasMenu, setIsOffCanvasMenu ] = useState(true)
+    const [ isOffCanvasMenu, setIsOffCanvasMenu ] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {

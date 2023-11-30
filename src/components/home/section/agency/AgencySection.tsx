@@ -1,15 +1,16 @@
 import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
-import './agency-styles.scss'
-import ThumbOneImg from 'assets/images/home/agency/thumb-one.png'
-import ThumbTwoImg from 'assets/images/home/agency/thumb-two.png'
-import StarIcon from 'assets/images/star.png'
-import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
+import TextAnimation from 'utils/hooks/useAnimatetText'
 import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
 import SkillBar from './skil-bar/SkilBar'
-import TextAnimation from 'utils/hooks/useAnimatetText'
 
+import ThumbOneImg from 'assets/images/home/agency/thumb-one.png'
+import ThumbTwoImg from 'assets/images/home/agency/thumb-two.png'
+import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
+import StarIcon from 'assets/images/star.png'
+import './agency-styles.scss'
+
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
 gsap.registerPlugin(ScrollTrigger)
 
 function AgencySection() {
@@ -90,13 +91,7 @@ function AgencySection() {
                             />
 
                             <h2 className="title title-anim" >
-                                <TextAnimation text="we" />
-                                <TextAnimation text="Are" />
-                                <TextAnimation text="Digital" />
-                                <TextAnimation text="Creative" />
-                                <TextAnimation text="Agency" />
-                                <TextAnimation text="In" />
-                                <TextAnimation text="London" />
+                                <TextAnimation text="We Are Digital Creative Agency In London" />
                             </h2>
 
                             <div className="paragraph">
