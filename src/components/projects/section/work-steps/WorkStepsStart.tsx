@@ -39,13 +39,13 @@ export const WorkStepsStart = () => {
 
                 <div className="row">
                     <WorkStepsElem percentage={25} title="Discover & Strategy." thumbImg={ThumbImg} />
-                    <WorkStepsElem percentage={50} title="Wireframes & User-flows" thumbImg={ThumbImg} isActive={true} customClassName="work-two" />
+                    <WorkStepsElem percentage={50} title="Wireframes & User-flows" thumbImg={ThumbImg} customClassName="work-two" />
                     <WorkStepsElem percentage={75} title="Hi-Fidelity design" thumbImg={ThumbImg} customClassName="work-three"/>
                     <WorkStepsElem percentage={100} title="Development Phase" thumbImg={ThumbImg} customClassName="work-four"/>
                 </div>
             </div>
 
-            <VideoFrame onClick={openYouTubeVideo} imageSrc={VideoFrameIcon} />
+            <VideoFrame onClick={openYouTubeVideo} imageSrc={VideoFrameIcon} className="d-none d-md-flex" />
             <VideoPopUp
                 isOpen={isModalOpen}
                 onClose={closeYouTubeVideo}

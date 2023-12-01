@@ -6,15 +6,13 @@ interface WorkStepsElemProps {
     title: string
     thumbImg: string
     customClassName?: string
-    isActive?: boolean
 }
 
-export const WorkStepsElem: React.FC<WorkStepsElemProps> = ({ percentage, title, thumbImg, customClassName, isActive = false }) => {
+export const WorkStepsElem: React.FC<WorkStepsElemProps> = ({ percentage, title, thumbImg, customClassName }) => {
     const itemRef = useRef<HTMLDivElement | null>(null)
-    const [ isHovered, setIsHovered ] = useState(false)
-
+    const [ isActive, setIsActive] = useState(customClassName === 'work-two')
     const isSecondElement = customClassName === 'work-two'
-    const stepClassName = `work-steps__single ${(isActive && (isHovered && isSecondElement)) ? ' work-steps__single-active' : ''} fade-top ${customClassName || ''}`;
+    const stepClassName = `work-steps__single ${( isActive && isSecondElement ) ? ' work-steps__single-active' : ''} fade-top ${customClassName || ''}`
 
     useEffect(() => {
         animateItem(itemRef)
@@ -23,8 +21,8 @@ export const WorkStepsElem: React.FC<WorkStepsElemProps> = ({ percentage, title,
     return (
         <div
             ref={itemRef}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={() => setIsActive(true)}
+            onMouseLeave={() => setIsActive(isSecondElement ? true : false)}
             className="col-12 col-sm-6 col-xl-3" key={percentage}
         >
             <div className={stepClassName} style={{ transform: 'none', opacity: 1 }}>
@@ -36,7 +34,6 @@ export const WorkStepsElem: React.FC<WorkStepsElemProps> = ({ percentage, title,
                 <h5>{title}</h5>
                 <div
                     className="work-thumb-hover d-none d-md-block"
-                    data-background="assets/images/work/thumb-one.png"
                     style={{ backgroundImage: `url("${thumbImg}")` }}
                 ></div>
             </div>

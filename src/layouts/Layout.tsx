@@ -1,11 +1,14 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
+
 import Header from './header/Header'
 import Footer from './footer/Footer'
 
-export const Layout:React.FC<{
+interface LayoutProps {
     isFirst?: boolean
-}>= ({isFirst }) => {
+}
+
+export const Layout:React.FC<LayoutProps> = ({isFirst }) => {
     return (
        <>
            {isFirst && <Header />}

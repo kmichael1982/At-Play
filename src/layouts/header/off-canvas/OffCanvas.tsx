@@ -96,7 +96,7 @@ const OffCanvas: React.FC<{
                 }
             ]
         },
-        { label: 'Blog', subItems: [{ label: 'Blog', link: 'blog.html' }, { label: 'Blog Details', link: 'blog-single.html' }] },
+        { label: 'Blog', subItems: [{ label: 'Blog', link: '/blog' }, { label: 'Blog Details', link: '/blog-single' }] },
     ]
 
     return (
@@ -119,34 +119,34 @@ const OffCanvas: React.FC<{
                             <a aria-label="dropdown menu" className="navbar__dropdown-label">Home</a>
                             <ul className="navbar__sub-menu navbar__sub-menu--lg">
                                 <li>
-                                    <a href="index.html">Creative Agency</a>
+                                    <a href="/">Creative Agency</a>
                                 </li>
                                 <li>
-                                    <a href="index-light.html">Creative Agency Light</a>
+                                    <a href="/index-light">Creative Agency Light</a>
                                 </li>
                                 <li>
-                                    <a href="index-two.html">Digital Agency</a>
+                                    <a href="/index-two">Digital Agency</a>
                                 </li>
                                 <li>
-                                    <a href="index-two-light.html">Digital Agency Light</a>
+                                    <a href="/index-two-light">Digital Agency Light</a>
                                 </li>
                                 <li>
-                                    <a href="index-three.html">It Solution</a>
+                                    <a href="/index-three">It Solution</a>
                                 </li>
                                 <li>
-                                    <a href="index-three-light.html">It Solution Light</a>
+                                    <a href="/index-three-light">It Solution Light</a>
                                 </li>
                                 <li>
-                                    <a href="index-four.html">Personal Portfolio</a>
+                                    <a href="/index-four">Personal Portfolio</a>
                                 </li>
                                 <li>
-                                    <a href="index-four-light.html">Personal Portfolio Light</a>
+                                    <a href="/index-four-light">Personal Portfolio Light</a>
                                 </li>
                                 <li>
-                                    <a href="index-five.html">Interactive Portfolio</a>
+                                    <a href="/index-five">Interactive Portfolio</a>
                                 </li>
                                 <li>
-                                    <a href="index-five-light.html">Interactive Portfolio Light</a>
+                                    <a href="/index-five-light">Interactive Portfolio Light</a>
                                 </li>
                             </ul>
                         </li>
@@ -157,10 +157,10 @@ const OffCanvas: React.FC<{
                             <a aria-label="dropdown menu" className="navbar__dropdown-label">Services</a>
                             <ul className="navbar__sub-menu">
                                 <li>
-                                    <a href="our-services.html">Our Services</a>
+                                    <a href="/our-services">Our Services</a>
                                 </li>
                                 <li>
-                                    <a href="service-single.html">Service Details</a>
+                                    <a href="/service-single">Service Details</a>
                                 </li>
                             </ul>
                         </li>
@@ -168,10 +168,10 @@ const OffCanvas: React.FC<{
                             <a aria-label="dropdown menu" className="navbar__dropdown-label">Projects</a>
                             <ul className="navbar__sub-menu">
                                 <li>
-                                    <a href="our-projects.html">Our Projects</a>
+                                    <a href="/our-projects">Our Projects</a>
                                 </li>
                                 <li>
-                                    <a href="project-single.html">Project Details</a>
+                                    <a href="/project-single">Project Details</a>
                                 </li>
                             </ul>
                         </li>
@@ -179,33 +179,33 @@ const OffCanvas: React.FC<{
                             <a aria-label="dropdown menu" className="navbar__dropdown-label">Pages</a>
                             <ul className="navbar__sub-menu">
                                 <li>
-                                    <a href="faq.html">FAQ</a>
+                                    <a href="/faq">FAQ</a>
                                 </li>
                                 <li>
-                                    <a href="404.html">Error</a>
+                                    <a href="/error">Error</a>
                                 </li>
                                 <li>
-                                    <a href="our-story.html">Our Story</a>
+                                    <a href="/our-story">Our Story</a>
                                 </li>
                                 <li>
-                                    <a href="portfolio.html">Portfolio</a>
+                                    <a href="/portfolio">Portfolio</a>
                                 </li>
                                 <li className="navbar__item navbar__item--has-children">
                                     <a aria-label="dropdown menu" className="navbar__dropdown-label navbar__dropdown-label-sub">Team</a>
                                     <ul className="navbar__sub-menu navbar__sub-menu__nested">
                                         <li>
-                                            <a href="our-teams.html">Our Teams</a>
+                                            <a href="/our-teams">Our Teams</a>
                                         </li>
                                         <li>
-                                            <a href="team-single.html">Team Details</a>
+                                            <a href="/team-single">Team Details</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="client-feedback.html">Testimonials</a>
+                                    <a href="/client-feedback">Testimonials</a>
                                 </li>
                                 <li>
-                                    <a href="contact-us.html">Contact Us</a>
+                                    <a href="/contact-us">Contact Us</a>
                                 </li>
                             </ul>
                         </li>
@@ -213,10 +213,10 @@ const OffCanvas: React.FC<{
                             <a aria-label="dropdown menu" className="navbar__dropdown-label">Blog</a>
                             <ul className="navbar__sub-menu">
                                 <li>
-                                    <a href="blog.html">Blog</a>
+                                    <a href="/blog">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="blog-single.html">Blog Details</a>
+                                    <a href="/blog-single">Blog Details</a>
                                 </li>
                             </ul>
                         </li>

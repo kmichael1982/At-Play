@@ -1,4 +1,5 @@
 import React from 'react'
+
 import TextAnimation from 'utils/hooks/useAnimatetText'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 
