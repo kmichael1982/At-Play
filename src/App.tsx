@@ -11,7 +11,7 @@ function App() {
         setCursorPosition({ x: e.clientX, y: e.clientY })
 
         const targetElement = e.target as HTMLElement
-        if (targetElement.style.cursor === 'pointer') {
+        if (targetElement.style.cursor === "pointer") {
             setDisableAnimation(true)
         } else {
             setDisableAnimation(false)

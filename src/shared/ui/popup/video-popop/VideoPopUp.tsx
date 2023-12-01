@@ -1,11 +1,13 @@
 import React from 'react'
 import '../popup-styles.scss'
 
-const VideoPopUp: React.FC<{
+interface VideoPopUpProps {
     videoUrl: string
     isOpen: boolean
     onClose: () => void
-}> = ({ videoUrl, isOpen, onClose }) => {
+}
+
+const VideoPopUp: React.FC<VideoPopUpProps> = ({ videoUrl, isOpen, onClose }) => {
     if (!isOpen) return null
 
     return (

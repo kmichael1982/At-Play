@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+
 import { animateItem } from 'shared/ui/design/animation/animateItem'
 import { TextAreaInput, TextInput } from 'shared/ui/inputs/FormInput'
 
@@ -10,7 +11,11 @@ export const BlogDetailsCommentForm = () => {
     }, [])
 
     return (
-        <div className="section pb-0 comment-form fade-top" style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}} ref={itemRef}>
+        <div
+            className="section pb-0 comment-form fade-top"
+            style={{translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: 1 }}
+            ref={itemRef}
+        >
             <div className="section__header">
                 <h2 className="h2 text-start">Leave a comment</h2>
             </div>

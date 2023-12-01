@@ -1,11 +1,13 @@
 import React from 'react'
 
-export const BlogPost: React.FC<{
+interface BlogPostProps {
     img: string
     author: string
     date: string
     videoLink: string
-}> = ({ img, author, date, videoLink }) => (
+}
+
+export const BlogPost: React.FC<BlogPostProps> = ({ img, author, date, videoLink }) => (
     <div className="blog-main__single fade-top">
         <div className="thumb">
             <div className="thumb-link">
@@ -31,9 +33,7 @@ export const BlogPost: React.FC<{
                 </div>
             </div>
         </div>
-        <div className="content">
-            {/* ... Content ... */}
-        </div>
+        <div className="content"></div>
     </div>
 )
 

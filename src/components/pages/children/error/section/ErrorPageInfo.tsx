@@ -1,6 +1,8 @@
 import React from 'react'
-import ErrorImg from 'assets/images/error/error-thumb.png'
+
 import { Buttons } from 'shared/ui/buttons/ButtonUi'
+
+import ErrorImg from 'assets/images/error/error-thumb.png'
 import './error-styles.scss'
 
 export const ErrorPageInfo = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
 import ServicesPage from 'components/services'
 
-const Services = () => <ServicesPage/>
+const Services = () => <ServicesPage />
 export default Services

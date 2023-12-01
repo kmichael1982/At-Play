@@ -1,8 +1,10 @@
 import React, { CSSProperties } from 'react'
 
-export  const MouseCursor: React.FC<{
+interface MouseCursorProps {
     style: CSSProperties
-}> = ({ style }) => {
+}
+
+export  const MouseCursor: React.FC<MouseCursorProps> = ({ style }) => {
     return (
         <>
             <div className="mouseCursor cursor-outer" style={{ visibility: 'visible', ...style }}></div>

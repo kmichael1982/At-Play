@@ -14,7 +14,7 @@ const ContactInfo: React.FC<{
                 <h4>{title}</h4>
                 {lines.map((line, index) => (
                     <p key={index}>
-                        <a href={line.href ? line.href : '#'}>{line.text}</a>
+                        <a href={line.href ? line.href : "#"}>{line.text}</a>
                     </p>
                 ))}
             </div>

@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useRef } from 'react'
+
 import { animateItem } from 'shared/ui/design/animation/animateItem'
 
 interface BlogItemProps {
@@ -29,7 +30,7 @@ export const BlogItem: React.FC<BlogItemProps> = ({
     return (
         <div
             className="blog-main__single fade-top"
-            style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}
+            style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: 1 }}
             ref={itemRef}
         >
             <div className="thumb">

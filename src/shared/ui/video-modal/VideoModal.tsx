@@ -1,8 +1,9 @@
 import React, { useState, memo } from 'react'
+
 import VideoUrl from 'assets/images/popup-video.png'
 
 const VideoModal = memo(() => {
-    const [isActiveVideoModal, setIsActiveVideoModal] = useState(true)
+    const [ isActiveVideoModal, setIsActiveVideoModal ] = useState(true)
 
     return (
         <div className={`${isActiveVideoModal ? 'd-none' : 'vid-m'}`}>

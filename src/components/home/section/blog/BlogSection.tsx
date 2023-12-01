@@ -1,10 +1,12 @@
 import React from 'react'
-import './blog-styles.scss'
-import BlogOneImg from 'assets/images/home/blog/one.png'
-import BlogTwoImg from 'assets/images/home/blog/two.png'
-import BlogItem from './blog-item/BlogItem'
+
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import TextAnimation from 'utils/hooks/useAnimatetText'
+import BlogItem from './blog-item/BlogItem'
+
+import BlogOneImg from 'assets/images/home/blog/one.png'
+import BlogTwoImg from 'assets/images/home/blog/two.png'
+import './blog-styles.scss'
 
 function BlogSection() {
     return (
