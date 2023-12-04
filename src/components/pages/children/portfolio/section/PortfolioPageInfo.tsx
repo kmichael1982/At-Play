@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import React from 'react'
-
 import { Buttons } from 'shared/ui/buttons/ButtonUi'
 import { PortfolioItem } from './portfolio-item/PortfolioItem'
 
