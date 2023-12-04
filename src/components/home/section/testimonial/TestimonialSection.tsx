@@ -6,9 +6,13 @@ import { TextSlider } from '../slider/TextSlider'
 
 import './testimonial-styles.scss'
 
-function TestimonialSection() {
+interface TestimonialSectionProps {
+    className?: string
+}
+
+const TestimonialSection: React.FC<TestimonialSectionProps> = ({ className }) => {
     return (
-        <section className="section relative testimonial pt-0 position-relative">
+        <section className={`section relative testimonial ${className && className} position-relative`}>
             <TextSlider
                 labels={["clients testimonial", "clients testimonial"]}
                 href=""

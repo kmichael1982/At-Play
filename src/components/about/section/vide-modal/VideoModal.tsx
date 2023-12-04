@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
 import BgModalImage from 'assets/images/about/modal-bg.png'
+
+import gsap from 'gsap'
+import { Power3 } from 'gsap/all'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 interface VideoModalProps {
     imageSrc: string
@@ -10,6 +15,25 @@ interface VideoModalProps {
 
 export const VideoModal: React.FC<VideoModalProps> = ({ imageSrc }) => {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
+
+    const modalRef = useRef<HTMLDivElement | null>(null)
+
+    useEffect(() => {
+        if (modalRef.current)  {
+            gsap.from(modalRef.current, {
+                opacity: 0,
+                y: '0%',
+                duration: 1,
+                ease: Power3.easeInOut,
+                scrollTrigger: {
+                    trigger: modalRef.current,
+                    start: 'top center+=20',
+                    end: 'bottom center',
+                    scrub: true
+                },
+            })
+        }
+    }, [])
 
     const openYouTubeVideo = () => {
         setIsModalOpen(true)
@@ -20,7 +44,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ imageSrc }) => {
     }
 
     return (
-        <div className="video-modal">
+        <div ref={modalRef} className="video-modal">
             <img
                 src={BgModalImage}
                 alt="Image"

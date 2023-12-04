@@ -53,10 +53,10 @@
 
   .portfolio-three {
     .slide-group {
-      position: static;
-      margin-top: 60px;
-      justify-content: center;
-      transform: translate(0px);
+      position: static !important;
+      margin-top: 60px !important;
+      justify-content: center !important;
+      transform: translate(0px) !important;
     }
   }
 
@@ -68,10 +68,10 @@
 
   .service-t {
     .slide-group {
-      position: static;
-      justify-content: center;
-      transform: translate(0px);
-      margin-top: 40px;
+      position: static !important;
+      justify-content: center !important;
+      transform: translate(0px) !important;
+      margin-top: 40px !important;
     }
   }
 }
@@ -718,11 +718,11 @@
   .team-slider-s {
     .team-r {
       .slide-group {
-        position: static;
-        transform: translate(0px);
-        margin-top: 40px;
-        justify-content: center;
-        display: flex;
+        position: static !important;
+        transform: translate(0px) !important;
+        margin-top: 40px !important;
+        justify-content: center !important;
+        display: flex !important;
       }
     }
   }
@@ -971,10 +971,10 @@
   .project-d {
     .poster__slider-wrapper {
       .slide-group {
-        justify-content: center;
-        transform: translate(0px);
-        position: static;
-        margin-top: 40px;
+        justify-content: center !important;
+        transform: translate(0px) !important;
+        position: static !important;
+        margin-top: 40px !important;
       }
     }
   }
@@ -1211,7 +1211,7 @@
       &:nth-of-type(even) {
         h2 {
           a {
-            -webkit-text-stroke: 0.5px var(--white);
+            -webkit-text-stroke: 0.5px var(--white) !important;
           }
         }
       }
@@ -1337,7 +1337,7 @@
       .group-wrapper {
         flex-direction: column;
         .group-input {
-          width: 100% !important;
+          width: 100%;
         }
       }
     }

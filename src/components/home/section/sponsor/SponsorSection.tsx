@@ -29,10 +29,29 @@ function SponsorSection() {
         autoplay: true,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1700,
                 settings: {
-                    slidesToShow: 1,
-                    centerMode: false,
+                    slidesToShow: 5,
+                },
+            },
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 4,
+                },
+            },
+
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
                 },
             },
         ]

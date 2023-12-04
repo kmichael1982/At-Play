@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 import Slider from 'react-slick'
+import { SliderGroupButton } from 'shared/ui/design/slider-group/SliderGroupButton'
 import { ServiceSliderElement } from './ServicesSliderElement'
 import { serviceSlides } from './serviceSlides'
 
@@ -22,22 +23,23 @@ export const ServiceTableSlider = () => {
         dots: false,
         speed: 4000,
         infinite: true,
-        autoplay: true,
+        padding: "20px",
+        autoplay: false,
         responsive: [
             {
-                breakpoint: 1440,
+                breakpoint: 1400,
                 settings: {
                     slidesToShow: 3,
                 },
             },
             {
-                breakpoint: 1024,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 2,
                 },
             },
             {
-                breakpoint: 700,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                 },
@@ -57,7 +59,7 @@ export const ServiceTableSlider = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="service-t__slider slick-initialized slick-slider">
-                            <div className="slick-list draggable" style={{padding: '0px'}}>
+                            <div className="slick-list draggable">
                                 <Slider {...settings} ref={sliderRef} className="slick-track">
                                     {serviceSlides.map(( elem, index ) => (
                                       <ServiceSliderElement
@@ -76,22 +78,7 @@ export const ServiceTableSlider = () => {
                     </div>
                 </div>
             </div>
-            <div className="slide-group">
-                <a
-                    aria-label="previous item"
-                    className="cursor-pointer slide-btn prev-service-t slick-arrow"
-                    onClick={() => sliderRef.current?.slickPrev()}
-                >
-                    <i className="fa-solid fa-angle-left"></i>
-                </a>
-                <a
-                    aria-label="next item"
-                    className="cursor-pointer slide-btn next-service-t slick-arrow"
-                    onClick={() => sliderRef.current?.slickNext()}
-                >
-                    <i className="fa-solid fa-angle-right"></i>
-                </a>
-            </div>
+            <SliderGroupButton sliderRef={sliderRef} />
         </section>
     )
 }

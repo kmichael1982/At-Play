@@ -93,7 +93,7 @@
       position: relative;
       &::before {
         content: "\2b";
-        font-family: "Font Awesome 6 Pro";
+        font-family: "Font Awesome 5 FREE";
         position: absolute;
         top: 50%;
         right: 0px;
@@ -105,10 +105,14 @@
   }
 
   .service-f-single-active {
+    .p-single {
+      display: block;
+    }
+
     .toggle-service-f {
       &::before {
-        content: "\f068";
-        font-family: "Font Awesome 6 Pro";
+        content: "_";
+        font-family: "Font Awesome 6 FREE";
         color: var(--primary-color);
         font-size: 18px;
       }

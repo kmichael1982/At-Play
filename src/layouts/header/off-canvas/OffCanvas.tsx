@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import SocialMenuList from 'shared/ui/design/social-list/SocialMenuList'
+
 import Logo from 'assets/images/image-removebg-preview.png'
 import './off-canvas-styles.scss'
-import SocialMenuList from 'shared/ui/design/social-list/SocialMenuList'
 
 const OffCanvas: React.FC<{
     isOffCanvasMenu: boolean

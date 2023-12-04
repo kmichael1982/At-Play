@@ -1,9 +1,10 @@
 import React from 'react'
 
 import { SearchInput } from 'shared/ui/inputs/FormInput'
+import TextAnimation from 'utils/hooks/useAnimatetText'
+
 import StarIcon from 'assets/images/about/star.png'
 import CtaBgImg from 'assets/images/about/cta-bg.png'
-import TextAnimation from 'utils/hooks/useAnimatetText'
 
 export const CtaStart = () => {
     return (

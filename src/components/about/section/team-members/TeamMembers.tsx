@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Buttons } from 'shared/ui/buttons/ButtonUi'
 import { HeaderSecondary } from './header-secondary/HeaderSecondary'
+import { TeamMembersSlider } from './team-members-slider/TeamMembersSlider'
 
 import './team-members-styles.scss'
 
@@ -17,6 +18,8 @@ export const TeamMembers = () => {
                     </div>
                 }
             />
+
+            <TeamMembersSlider />
         </section>
     )
 }
