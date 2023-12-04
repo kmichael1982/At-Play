@@ -92,13 +92,7 @@ function AgencySection() {
                             />
 
                             <h2 className="title title-anim" >
-                                <TextAnimation text="we" />
-                                <TextAnimation text="Are" />
-                                <TextAnimation text="Digital" />
-                                <TextAnimation text="Creative" />
-                                <TextAnimation text="Agency" />
-                                <TextAnimation text="In" />
-                                <TextAnimation text="London" />
+                                <TextAnimation text="We Are Digital Creative Agency In London" />
                             </h2>
 
                             <div className="paragraph">

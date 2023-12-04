@@ -14,8 +14,8 @@ function TestimonialSection() {
                 href=""
                 className="testimonial__text-slider slick-initialized slick-slider"
                 settings={{
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                     centerMode: true,
                     arrows: false,
                     dots: false,

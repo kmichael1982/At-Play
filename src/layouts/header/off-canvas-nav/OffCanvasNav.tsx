@@ -97,7 +97,7 @@ const OffCanvasNav: React.FC<{
                 }
             ]
         },
-        { label: 'Blog', subItems: [{ label: 'Blog', link: 'blog.html' }, { label: 'Blog Details', link: 'blog-single.html' }] },
+        { label: 'Blog', subItems: [{ label: 'Blog', link: '/blog' }, { label: 'Blog Details', link: '/blog-single' }] },
     ]
 
     return (

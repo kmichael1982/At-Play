@@ -13,4 +13,4 @@ export const ErrorPage = () => {
             <ErrorPageInfo />
         </main>
     )
-}
+}   

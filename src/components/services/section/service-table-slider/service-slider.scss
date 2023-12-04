@@ -1,0 +1,120 @@
+// service plan
+.service-t {
+  position: relative;
+  overflow-x: clip;
+  z-index: 1;
+  .service-t-single-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 3px 3px 0px 3px;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0px;
+      width: 100%;
+      height: 0%;
+      background-image: linear-gradient(to bottom, #F90D1AFF, transparent);
+      z-index: -1;
+      transition: var(--transition);
+    }
+    &:hover {
+      &::before {
+        height: 100%;
+      }
+      .cta {
+        a {
+          i {
+            -webkit-text-stroke: 1px var(--primary-color);
+          }
+          span {
+            transform: translateY(0px);
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+  .service-t__slider-single {
+    padding: 40px;
+    background-color: var(--tertiary-color);
+    position: relative;
+    .sub-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      line-height: 1;
+      border: 1px solid #414141;
+
+      border-radius: 30px;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      color: var(--white);
+      i {
+        transform: rotate(-45deg);
+        color: var(--primary-color);
+      }
+    }
+
+    h4 {
+      a {
+        font-size: 30px;
+        font-weight: 700;
+      }
+    }
+    ul {
+      margin: 30px 0px 40px;
+      li {
+        list-style-type: disc;
+        margin-bottom: 16px;
+        font-weight: 500;
+        text-transform: capitalize;
+        &:nth-last-of-type(1) {
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .cta {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        text-transform: uppercase;
+        overflow: hidden;
+        i {
+          font-size: 36px;
+          -webkit-text-fill-color: transparent;
+          -webkit-text-stroke: 1px var(--white);
+          transition: var(--transition);
+        }
+        span {
+          color: var(--white);
+          font-size: inherit;
+          line-height: inherit;
+          transition: inherit;
+          transform: translateY(200%);
+        }
+      }
+    }
+  }
+
+  .slide-group {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    right: 0px;
+    max-width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: -1;
+    button {
+      z-index: 2;
+    }
+  }
+}

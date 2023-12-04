@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
+
 import Slider from 'react-slick'
-import SThumbImg from 'assets/images/home/testimonaials/s-thumb.png'
-import SThumbThreeImg from 'assets/images/home/testimonaials/s-thumb-three.png'
-import SThumbTwoImg from 'assets/images/home/testimonaials/s-thumb-two.png'
+import { testimonialSlides } from './testimonailSlides'
 
 interface TestimonialSlideProps {
     imgSrc: string
@@ -61,8 +60,8 @@ export const TestimonialClientsList = () => {
             setCurrentSlide(newIndex)
         },
         afterChange: (index: number) => {
-            const previousSlideIndex = (index - 1 + testimonials.length) % testimonials.length
-            const previousSlideImageSrc = testimonials[previousSlideIndex].imgSrc
+            const previousSlideIndex = (index - 1 + testimonialSlides.length) % testimonialSlides.length
+            const previousSlideImageSrc = testimonialSlides[previousSlideIndex].imgSrc
             setPreviousSlideImageSrc(previousSlideImageSrc)
 
             const otherSectionImage = document.getElementById('other-section-image')
@@ -73,8 +72,8 @@ export const TestimonialClientsList = () => {
     }
 
     const getPreviousSlideImageSrc = (currentSlide: any) => {
-        const previousSlideIndex = (currentSlide - 1 + testimonials.length) % testimonials.length
-        return testimonials[previousSlideIndex].imgSrc
+        const previousSlideIndex = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length
+        return testimonialSlides[previousSlideIndex].imgSrc
     }
 
     useEffect(() => {
@@ -87,40 +86,6 @@ export const TestimonialClientsList = () => {
         }
     }, [currentSlide])
 
-    const testimonials = [
-        {
-            imgSrc: SThumbTwoImg,
-            name: 'Daniel Smith',
-            description: 'posuere luctus orci. Donec vitae mattis quam, vitae tempor arcu. Aeneannon odio porttitor, convallis erat sit amet, facilisis velit. Nulla ornare convallis malesuada. Phasellus molestie, ipsum ac fringilla.',
-            role: 'Senior engineer'
-        },
-        {
-            imgSrc: SThumbThreeImg,
-            name: 'Daniel Smith',
-            description: 'posuere luctus orci. Donec vitae mattis quam, vitae tempor arcu. Aeneannon odio porttitor, convallis erat sit amet, facilisis velit. Nulla ornare convallis malesuada. Phasellus molestie, ipsum ac fringilla.',
-            role: 'Senior engineer'
-        },
-        {
-            imgSrc: SThumbImg,
-            name: 'Daniel Smith',
-            description: 'posuere luctus orci. Donec vitae mattis quam, vitae tempor arcu. Aeneannon odio porttitor, convallis erat sit amet, facilisis velit. Nulla ornare convallis malesuada. Phasellus molestie, ipsum ac fringilla.',
-            role: 'Senior engineer'
-        },
-        {
-            imgSrc: SThumbThreeImg,
-            name: 'Daniel Smith',
-            description: 'posuere luctus orci. Donec vitae mattis quam, vitae tempor arcu. Aeneannon odio porttitor, convallis erat sit amet, facilisis velit. Nulla ornare convallis malesuada. Phasellus molestie, ipsum ac fringilla.',
-            role: 'Senior engineer'
-        },
-        {
-            imgSrc: SThumbImg,
-            name: 'Daniel Smith',
-            description: 'posuere luctus orci. Donec vitae mattis quam, vitae tempor arcu. Aeneannon odio porttitor, convallis erat sit amet, facilisis velit. Nulla ornare convallis malesuada. Phasellus molestie, ipsum ac fringilla.',
-            role: 'Senior engineer'
-        },
-
-    ]
-
     return (
         <>
             <div className="container position-relative">
@@ -129,7 +94,7 @@ export const TestimonialClientsList = () => {
                         <div className="testimonial-s__slider slick-initialized slick-slider">
                             <div className="slick-list draggable" style={{padding: '0px'}}>
                                 <Slider {...settings} ref={sliderRef} className="slick-track">
-                                    {testimonials.map((item, index) => (
+                                    {testimonialSlides.map((item, index) => (
                                         <TestimonialSlide key={index} imgSrc={item.imgSrc} role={item.role} description={item.description} name={item.name} index={index} />
                                     ))}
                                 </Slider>

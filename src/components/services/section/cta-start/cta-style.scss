@@ -1,0 +1,36 @@
+// cta two styles
+.cta-two {
+  .cta-two-wrapper {
+    max-width: 1350px;
+    padding: 80px 65px;
+    background-position: center center;
+    background-size: cover;
+    background-color: transparent;
+    border-radius: 20px;
+  }
+
+  span {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    display: inline-block;
+  }
+
+  h2,
+  h5 {
+    text-transform: capitalize;
+  }
+
+  h2 {
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .btn {
+    background-color: transparent;
+    border: 1px solid var(--primary-color) !important;
+  }
+}

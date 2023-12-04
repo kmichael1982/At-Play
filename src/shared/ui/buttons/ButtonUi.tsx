@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import './button.css'
 
 export interface BaseButtonProps {
     title?: string
@@ -35,7 +34,7 @@ export const LinkButton: React.FC<{ isLink?: boolean, className?: string, href?:
 
     return (
         <a
-            className={`cursor-pointer ${className && className}`}
+            className={`${className && className}`}
             href={href ? href : '#'}
             rel="noopener noreferrer"
         >

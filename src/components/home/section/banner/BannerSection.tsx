@@ -4,6 +4,7 @@ import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import TextAnimation from 'utils/hooks/useAnimatetText'
+import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
 
 import BannerImage from 'assets/images/home/banner/banner-one-thumb.png'
 import VideoFrameIcon from 'assets/images/popup-video.png'
@@ -124,20 +125,13 @@ function BannerSection() {
                 <LinkButton label="facebook" href="https://www.facebook.com/" />
             </div>
 
-            <a
-                onClick={openYouTubeVideo}
-                className="video-frame video-btn"
-                rel="noopener noreferrer"
-            >
-                <img src={VideoFrameIcon} className="object-contain" alt="Image" />
-                <i className="fa-sharp fa-solid fa-play"></i>
-            </a>
-
+            <VideoFrame onClick={openYouTubeVideo} imageSrc={VideoFrameIcon} />
             <VideoPopUp
                 isOpen={isModalOpen}
                 onClose={closeYouTubeVideo}
                 videoUrl="//www.youtube.com/embed/RvreULjnzFo?autoplay=1"
             />
+
             <LinesContent />
         </section>
     )
