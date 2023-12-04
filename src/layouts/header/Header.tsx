@@ -105,7 +105,7 @@ const Header = () => {
                 }
             ]
         },
-        { label: 'Blog', subItems: [{ label: 'Blog', link: '/blog' }, { label: 'Blog Details', link: '/blog-single' }] },
+        { label: 'Journal', subItems: [{ label: 'Journal', link: '/blog' }, { label: 'Journal Details', link: '/blog-single' }] },
     ]
 
     return (
@@ -217,13 +217,13 @@ const Header = () => {
                                             </ul>
                                         </li>
                                         <li className="navbar__item navbar__item--has-children nav-fade" >
-                                            <a aria-label="dropdown menu" className="navbar__dropdown-label">Blog</a>
+                                            <a aria-label="dropdown menu" className="navbar__dropdown-label">Journal</a>
                                             <ul className="navbar__sub-menu">
                                                 <li>
-                                                    <a href="/blog">Blog</a>
+                                                    <a href="/blog">Journal</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/blog-single">Blog Details</a>
+                                                    <a href="/blog-single">Journal Details</a>
                                                 </li>
                                             </ul>
                                         </li>
