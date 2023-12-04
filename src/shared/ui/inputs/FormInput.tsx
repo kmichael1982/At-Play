@@ -72,34 +72,26 @@ export const TextAreaInput: React.FC<SearchProps> = ({
     )
 }
 
-interface PropsOptional {
-    label?: string
-    register?: any
-}
 interface SelectProps {
     isOpen?: boolean
-    register: any;
-    options: string[];
-    values?: string[];
-    selected: string;
-    defaultValue: string;
-    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-    name: string;
-    messageId?: string;
-    disabled?: boolean;
+    register: any
+    options: string[]
+    values?: string[]
+    selected: string
+    defaultValue: string
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void
+    name: string
+    messageId?: string
+    disabled?: boolean
 }
 
 export const SelectInput: React.FC<SelectProps> = ({
-   register,
     isOpen,
-   options,
-   values = [],
-   selected,
-   defaultValue,
-   onChange,
-   name,
-   messageId = '',
-   disabled = false,
+    options,
+    values = [],
+    selected,
+    onChange,
+    messageId = '',
 }) => {
     return (
         <div className={`nice-select subject ${isOpen && 'open'}`}>

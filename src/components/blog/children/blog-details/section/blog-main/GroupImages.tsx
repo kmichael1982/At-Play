@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+
 import { animateItem } from 'shared/ui/design/animation/animateItem'
 
 export const GroupImages: React.FC<{
@@ -13,8 +14,8 @@ export const GroupImages: React.FC<{
 
     return (
         <div className="bd-group" ref={itemRef}>
-            <img src={groupOneSrc} alt="Image" className="fade-top" style={{ translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1 }} />
-            <img src={groupTwoSrc} alt="Image" className="fade-top" style={{ translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1 }} />
+            <img src={groupOneSrc} alt="Image" className="fade-top" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: 1 }} />
+            <img src={groupTwoSrc} alt="Image" className="fade-top" style={{ translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)", opacity: 1 }} />
         </div>
     )
 }

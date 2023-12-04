@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from 'react'
-import PosterImg from 'assets/images/blog/blog-details/poster.png'
+
+import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { BlogDetailsCommentForm } from './section/blog-main/BlogDetailsCommentForm'
+import { GroupImages } from './section/blog-main/GroupImages'
+import { BlogTags } from './section/blog-main/BlogTags'
+
 import GroupOneImg from 'assets/images/blog/blog-details/group-one.png'
 import GroupTwoImg from 'assets/images/blog/blog-details/group-two.png'
-import TenImg from 'assets/images/blog/ten.png'
+import PosterImg from 'assets/images/blog/blog-details/poster.png'
 import ElevenImg from 'assets/images/blog/eleven.png'
-import { BlogDetailsCommentForm } from './section/blog-main/BlogDetailsCommentForm'
-import { BlogTags } from './section/blog-main/BlogTags'
-import { animateItem } from 'shared/ui/design/animation/animateItem'
-import { GroupImages } from './section/blog-main/GroupImages'
+import TenImg from 'assets/images/blog/ten.png'
 
 export const BlogDetailsLeftContent = () => {
     const itemRef = useRef<HTMLDivElement | null>(null)
@@ -21,13 +23,11 @@ export const BlogDetailsLeftContent = () => {
     return (
         <div className="col-12 col-xl-8">
             <div className="blog-details__content">
-                {/*<Thumbnail src={} alt="" />*/}
-                <div className="bd-thumb fade-top" ref={topImageRef} style={{
-                    translate: 'none',
-                    rotate: 'none',
-                    scale: 'none',
-                    transform: 'translate(0 px, 0px)',
-                    opacity: 1}}>
+                <div
+                    className="bd-thumb fade-top"
+                    ref={topImageRef}
+                    style={{ translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0 px, 0px)', opacity: 1 }}
+                >
                     <img src={PosterImg} alt="Image" />
                 </div>
                 <div className="bd-content">

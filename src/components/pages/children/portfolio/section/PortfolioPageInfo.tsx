@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import './portfolio-styles.scss'
+
+import React from 'react'
+
 import { Buttons } from 'shared/ui/buttons/ButtonUi'
 import { PortfolioItem } from './portfolio-item/PortfolioItem'
+
 import ElevenImg from 'assets/images/portfolio/eleven.png'
 import FifteenImg from 'assets/images/portfolio/fifteen.png'
 import EighteenImg from 'assets/images/portfolio/eighteen.png'
@@ -10,6 +13,7 @@ import SevenTenImg from 'assets/images/portfolio/seventeen.png'
 import SixteenImg from 'assets/images/portfolio/sixteen.png'
 import ThirteenImg from 'assets/images/portfolio/thirteen.png'
 import TwelveImg from 'assets/images/portfolio/twelve.png'
+import './portfolio-styles.scss'
 
 export const PortfolioPageInfo = () => {
     const initialVisibleItems = 4
@@ -32,7 +36,7 @@ export const PortfolioPageInfo = () => {
 
     const getColumnClasses = (index: number, totalItems: number) => {
         const isLargeColumn = index === 0 || index === 1 || index === totalItems - 1 || index === totalItems - 2
-        return isLargeColumn ? 'col-12 col-lg-6' : 'col-12 col-lg-6 col-xxl-3'
+        return isLargeColumn ? "col-12 col-lg-6" : "col-12 col-lg-6 col-xxl-3"
     }
 
     return (

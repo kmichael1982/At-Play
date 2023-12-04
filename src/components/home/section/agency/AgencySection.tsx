@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react'
-import TextAnimation from 'utils/hooks/useAnimatetText'
+
 import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
+import TextAnimation from 'utils/hooks/useAnimatetText'
 import SkillBar from './skil-bar/SkilBar'
 
+import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
 import ThumbOneImg from 'assets/images/home/agency/thumb-one.png'
 import ThumbTwoImg from 'assets/images/home/agency/thumb-two.png'
-import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
 import StarIcon from 'assets/images/star.png'
 import './agency-styles.scss'
 
@@ -117,4 +118,4 @@ function AgencySection() {
     )
 }
 
-export default AgencySection;
+export default AgencySection

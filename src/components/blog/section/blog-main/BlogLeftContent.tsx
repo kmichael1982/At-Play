@@ -1,7 +1,8 @@
 import React from 'react'
-import BlogItem from './blog-item/BlogItem'
-import EightImg from 'assets/images/blog/eight.png'
+
 import NineImg from 'assets/images/blog/nine.png'
+import EightImg from 'assets/images/blog/eight.png'
+import BlogItem from './blog-item/BlogItem'
 
 export const BlogLeftContent = () => {
     return (

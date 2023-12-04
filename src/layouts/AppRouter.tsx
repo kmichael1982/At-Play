@@ -1,10 +1,11 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import contents from 'routes/contentRoutes'
+
 import { ArrayType } from 'shared/helpers/helpers'
+import { ErrorPage } from 'components/pages/children/error'
 import HomePage from 'components/home'
 import { Layout } from './Layout'
-import { ErrorPage } from 'components/pages/children/error'
 
 const AppRouter = () => {
     const isAuth = true

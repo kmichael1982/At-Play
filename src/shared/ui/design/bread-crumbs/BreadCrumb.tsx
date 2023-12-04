@@ -10,7 +10,7 @@ interface BreadCrumbProps {
     description?: string
 }
 
-const BreadCrumb:React.FC<BreadCrumbProps> = ({ title, href, description }) => {
+const BreadCrumb: React.FC<BreadCrumbProps> = ({ title, href, description }) => {
     return (
         <section className="cmn-banner bg-img" data-background={BannerImg} style={{backgroundImage: `url(${BannerImg})`}}>
             <div className="container">

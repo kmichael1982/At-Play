@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react'
-import './portfolio-section.scss'
+
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
+import { animateItem } from 'shared/ui/design/animation/animateItem'
+import PortfolioItem from './portfolio-item/ProtfolioItem'
+import { TextSlider } from '../slider/TextSlider'
+
 import OneImg from 'assets/images/home/portfolio/one.png'
 import TwoImg from 'assets/images/home/portfolio/two.png'
 import ThreeImg from 'assets/images/home/portfolio/three.png'
@@ -9,9 +13,7 @@ import FiveImg from 'assets/images/home/portfolio/five.png'
 import SixImg from 'assets/images/home/portfolio/six.png'
 import SevenImg from 'assets/images/home/portfolio/seven.png'
 import DotImg from 'assets/images/home/portfolio/dot.png'
-import { TextSlider } from '../slider/TextSlider'
-import PortfolioItem from './portfolio-item/ProtfolioItem'
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import './portfolio-section.scss'
 
 function PortfolioSection() {
     const itemRef = useRef<HTMLDivElement | null>(null)

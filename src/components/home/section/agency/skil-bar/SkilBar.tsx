@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react'
+
 import gsap from 'gsap'
 
 const SkillBar: React.FC<{
@@ -11,16 +12,16 @@ const SkillBar: React.FC<{
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: skillBarRef.current,
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse',
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse",
             },
         })
 
         tl.to(skillBarRef.current, {
             width: `${percent}%`,
             duration: 1,
-            ease: 'power2.out',
+            ease: "power2.out",
         })
     }, [])
 

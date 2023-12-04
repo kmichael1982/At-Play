@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import './banner-styles.scss'
-import BannerImage from 'assets/images/home/banner/banner-one-thumb.png'
-import StarIcon from 'assets/images/star.png'
-import VideoFrameIcon from 'assets/images/popup-video.png'
+
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
-import { LinkButton } from 'shared/ui/buttons/ButtonUi'
-import ScrollAnimatedImage from './ScrollAnimatedImage'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
+import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import TextAnimation from 'utils/hooks/useAnimatetText'
 import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
+
+import BannerImage from 'assets/images/home/banner/banner-one-thumb.png'
+import VideoFrameIcon from 'assets/images/popup-video.png'
+import StarIcon from 'assets/images/star.png'
+import './banner-styles.scss'
+
+import gsap from 'gsap'
 
 function BannerSection() {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
@@ -29,10 +31,10 @@ function BannerSection() {
             setScrollPosition(window.scrollY)
         }
 
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener("scroll", handleScroll)
 
         return () => {
-            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener("scroll", handleScroll)
         }
     }, [])
 
@@ -48,7 +50,7 @@ function BannerSection() {
             duration: 0.003,
             xPercent: -50,
             yPercent: translateY,
-            ease: 'power2.inOut',
+            ease: "power2.inOut",
         }).to(bannerImageRef.current, {
             duration: 0.002,
             xPercent: -50,
@@ -56,9 +58,9 @@ function BannerSection() {
             scale: scale,
             zIndex: zIndex,
             opacity: opacity,
-            ease: 'power2.inOut',
+            ease: "power2.inOut",
         },
-            '>'
+            ">"
         )
 
         return () => {
@@ -106,16 +108,9 @@ function BannerSection() {
             </div>
             <img
                 ref={bannerImageRef}
-                // style={styles}
                 src={BannerImage}
                 alt="Image"
                 className="banner-one-thumb d-none d-sm-block g-ban-one"
-            />
-
-            <ScrollAnimatedImage
-                imageSrc="your-image-source.jpg"
-                altText="Your Alt Text"
-                className="banner-one-thumb.visible"
             />
 
             <img src={StarIcon} alt="Image" className="star" />

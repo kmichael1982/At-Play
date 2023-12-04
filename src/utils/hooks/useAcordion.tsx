@@ -4,7 +4,7 @@ const Accordion: React.FC<{
     title: string
     content: string
 }> = ({ title, content }) => {
-    const [isActive, setIsActive] = useState(false)
+    const [ isActive, setIsActive ] = useState(false)
 
     return (
         <div className="accordion-item">

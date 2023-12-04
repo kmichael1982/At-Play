@@ -1,10 +1,12 @@
 import React from 'react'
-import TenImg from 'assets/images/blog/ten.png'
+
+import { SearchInput } from 'shared/ui/inputs/FormInput'
+
+import ThirteenImg from 'assets/images/blog/thirteen.png'
 import FourteenImg from 'assets/images/blog/fourteen.png'
 import ElevenImg from 'assets/images/blog/eleven.png'
 import TwelveImg from 'assets/images/blog/twelve.png'
-import ThirteenImg from 'assets/images/blog/thirteen.png'
-import { SearchInput } from 'shared/ui/inputs/FormInput'
+import TenImg from 'assets/images/blog/ten.png'
 
 export const BlogRightContent = () => {
     return (
@@ -30,25 +32,25 @@ export const BlogRightContent = () => {
                     <div className="widget__list">
                         <ul>
                             <li>
-                                <a href="blog.html">Business</a>
+                                <a href="/blog">Business</a>
                             </li>
                             <li>
-                                <a href="blog.html">Job Market</a>
+                                <a href="/blog">Job Market</a>
                             </li>
                             <li>
-                                <a href="blog.html">Marketing</a>
+                                <a href="/blog">Marketing</a>
                             </li>
                             <li>
-                                <a href="blog.html">News</a>
+                                <a href="/blog">News</a>
                             </li>
                             <li>
-                                <a href="blog.html">Social Media</a>
+                                <a href="/blog">Social Media</a>
                             </li>
                             <li>
-                                <a href="blog.html">Trends</a>
+                                <a href="/blog">Trends</a>
                             </li>
                             <li>
-                                <a href="blog.html">Writing</a>
+                                <a href="/blog">Writing</a>
                             </li>
                         </ul>
                     </div>
