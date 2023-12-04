@@ -21,15 +21,15 @@ const ScrollToTopButton = () => {
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener("scroll", handleScroll)
         return () => {
-            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener("scroll", handleScroll)
         }
     }, [])
 
     return (
         <button
-            className={`progress-wrap ${isVisible ? 'active-progress' : ''}`}
+            className={`progress-wrap ${isVisible ? "active-progress" : ''}`}
             aria-label="scroll indicator"
             title="go to top"
             onClick={scrollToTop}

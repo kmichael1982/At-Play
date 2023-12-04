@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from 'react'
+
+import { animateItem } from 'shared/ui/design/animation/animateItem'
+import ContactAddress from './contact-address/ContactAddress'
+import { ContactForm } from './contact-form/ContactForm'
+import ContactInfo from './contact-info/ContactInfo'
+
 import MailImg from 'assets/images/contact/mail.png'
 import LocationImg from 'assets/images/contact/location.png'
 import PhoneImg from 'assets/images/contact/phone.png'
 import TimeImg from 'assets/images/contact/time.png'
-import ContactInfo from './contact-info/ContactInfo'
-import ContactAddress from './contact-address/ContactAddress'
 import './contact-styles.scss'
-import { ContactForm } from './contact-form/ContactForm'
-import { animateItem } from 'shared/ui/design/animation/animateItem'
 
 export const ContactUsPages = () => {
     const contactInfoItemRef = useRef<HTMLDivElement | null>(null)

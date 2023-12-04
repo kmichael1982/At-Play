@@ -1,15 +1,17 @@
 import React, { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
-import './agency-styles.scss'
+
+import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
+import TextAnimation from 'utils/hooks/useAnimatetText'
+import SkillBar from './skil-bar/SkilBar'
+
+import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
 import ThumbOneImg from 'assets/images/home/agency/thumb-one.png'
 import ThumbTwoImg from 'assets/images/home/agency/thumb-two.png'
 import StarIcon from 'assets/images/star.png'
-import DotLargeIcon from 'assets/images/home/agency/dot-large.png'
-import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
-import SkillBar from './skil-bar/SkilBar'
-import TextAnimation from 'utils/hooks/useAnimatetText'
+import './agency-styles.scss'
 
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
 gsap.registerPlugin(ScrollTrigger)
 
 function AgencySection() {
@@ -122,4 +124,4 @@ function AgencySection() {
     )
 }
 
-export default AgencySection;
+export default AgencySection

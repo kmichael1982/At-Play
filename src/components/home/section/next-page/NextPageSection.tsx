@@ -1,11 +1,12 @@
 import React from 'react'
+
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
-import './next-styles.scss'
-import { TextSlider } from '../slider/TextSlider'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
+import { TextSlider } from '../slider/TextSlider'
+
+import './next-styles.scss'
 
 function NextPageSection() {
-
     return (
         <section className="section relative next-page">
             <div className="container mx-auto">

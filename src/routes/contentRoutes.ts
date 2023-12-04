@@ -7,7 +7,9 @@ const AUTH = {
 const LANDING = {
     DASHBOARD: lazy(() => import('pages/home/Home')),
     ABOUT: lazy(() => import('pages/about/About')),
+
     SERVICES: lazy(() => import('pages/services/Services')),
+    // SERVICES_DETAILS: lazy(() => import('pages/services/children/ServicesDetails')),
 
     OUR_PROJECTS: lazy(() => import('pages/projects/OurProjects')),
     PROJECT_DETAILS: lazy(() => import('pages/projects/children/ProjectDetails')),

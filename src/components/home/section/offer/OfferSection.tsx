@@ -1,13 +1,15 @@
 import React from 'react'
-import './offer-styles.scss'
+
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
+import TextAnimation from 'utils/hooks/useAnimatetText'
+
+import ThumbImage from 'assets/images/offer/thumb-one.png'
+import ThreeImage from 'assets/images/offer/three.png'
 import StarImg  from 'assets/images/offer/star.png'
 import OneImage from 'assets/images/offer/one.png'
 import TwoImage from 'assets/images/offer/two.png'
-import ThreeImage from 'assets/images/offer/three.png'
-import ThumbImage from 'assets/images/offer/thumb-one.png'
-import TextAnimation from 'utils/hooks/useAnimatetText'
+import './offer-styles.scss'
 
 const VIEW_ALL_SERVICES_URL = '/our-services'
 const SERVICE_SINGLE_URL = '/service-single'
@@ -23,7 +25,6 @@ function getServiceImage(index: any) {
 }
 
 function OfferSection() {
-
     return (
         <section className="section offer fade-wrapper light">
             <div className="container">

@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
+
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
+import Slider from 'react-slick'
+
 import OneImg from 'assets/images/sponsor/one.png'
 import TwoImg from 'assets/images/sponsor/two.png'
 import ThreeImg from 'assets/images/sponsor/three.png'
 import FourImg from 'assets/images/sponsor/four.png'
 import FiveImg from 'assets/images/sponsor/five.png'
 import SixImg from 'assets/images/sponsor/six.png'
-import Slider from 'react-slick'
-
 import './sponsor-styles.scss'
 
 function SponsorSection() {
@@ -22,7 +23,7 @@ function SponsorSection() {
         arrows: true,
         dots: false,
         speed: 300,
-        centerPadding: '20px',
+        centerPadding: "20px",
         infinite: true,
         autoplaySpeed: 1500,
         autoplay: true,

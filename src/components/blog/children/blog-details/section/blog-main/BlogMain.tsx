@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { BlogRightContent } from 'components/blog/section/blog-main/BlogRightContent'
 import { BlogDetailsLeftContent } from '../../BlogDetailsLeftContent'
 

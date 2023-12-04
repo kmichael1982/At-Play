@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { BlogRightContent } from './BlogRightContent'
 import { BlogLeftContent } from './BlogLeftContent'
 

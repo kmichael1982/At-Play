@@ -4,9 +4,11 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-const TextAnimation: React.FC<{
+interface TextAnimationProps {
     text: string
-}> = ({ text }) => {
+}
+
+const TextAnimation: React.FC<TextAnimationProps> = ({ text }) => {
     const textRef = useRef<HTMLDivElement | any>(null)
 
     useEffect(() => {

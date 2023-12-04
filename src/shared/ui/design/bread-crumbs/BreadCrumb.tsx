@@ -1,12 +1,15 @@
 import React from 'react'
-import './breadcrumb-styles.scss'
-import BannerImg from 'assets/images/banner/cmn-banner-bg.png'
 
-const BreadCrumb: React.FC<{
+import BannerImg from 'assets/images/banner/cmn-banner-bg.png'
+import './breadcrumb-styles.scss'
+
+interface BreadCrumbProps {
     title: string
     href?: string
     description?: string
-}> = ({ title, href, description }) => {
+}
+
+const BreadCrumb: React.FC<BreadCrumbProps> = ({ title, href, description }) => {
     return (
         <section className="cmn-banner bg-img" data-background={BannerImg} style={{backgroundImage: `url(${BannerImg})`}}>
             <div className="container">
