@@ -58,7 +58,7 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                         <LinkButton href='/client-feedback' label='Award Winning' />
                                     </li>
                                     <li>
-                                        <LinkButton href='/blog' label='News &amp; Blog' />
+                                        <LinkButton href='/blog' label='News &amp; Journal' />
                                     </li>
                                     <li>
                                         <LinkButton href='/contact-us' label='careers' />

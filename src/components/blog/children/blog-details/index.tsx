@@ -11,7 +11,7 @@ function BlogDetailsPage() {
         <main>
             <BreadCrumb
                 href="WE DENOUNCE WITH RIGHTEOUS INDIGNATION"
-                title="blog details"
+                title="Journal details"
             />
             <BlogDetailsMain />
         </main>
