@@ -9,7 +9,7 @@ function BlogStandardPage() {
     return (
         <main>
             <BreadCrumb
-                title="Blog Standard"
+                title="Journal Standard"
                 description="We're an UK-based top-notch design agency committed to partnering with good companies and hiring the right people for the right roles."
             />
             <BlogMain />

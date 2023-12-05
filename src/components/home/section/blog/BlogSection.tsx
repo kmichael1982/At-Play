@@ -17,13 +17,13 @@ function BlogSection() {
                         <div className="section__header text-center">
                             <LinkButton
                                 isLink={true}
-                                label="news &amp; Blog"
+                                label="news &amp; Journal"
                                 className="sub-title"
                                 icon={<i className="fa-solid fa-arrow-right"></i>}
                                 href="#"
                             />
                             <h2 className="title title-anim">
-                                <TextAnimation text="What's New In Blog" />
+                                <TextAnimation text="What's New In Our Journal" />
                             </h2>
                         </div>
                     </div>

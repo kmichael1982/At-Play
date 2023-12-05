@@ -9,6 +9,8 @@ import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
 import BannerImage from 'assets/images/home/banner/banner-one-thumb.png'
 import VideoFrameIcon from 'assets/images/popup-video.png'
 import StarIcon from 'assets/images/star.png'
+import BannerVideo from 'assets/images/home/banner/Atplay-video.mp4'
+
 import './banner-styles.scss'
 
 import gsap from 'gsap'
@@ -106,6 +108,11 @@ function BannerSection() {
                     </div>
                 </div>
             </div>
+
+            {/*<video ref={bannerImageRef} autoPlay loop muted controls={true} className="banner-one-thumb d-none d-sm-block g-ban-one">*/}
+            {/*    <source src={URL.createObjectURL(BannerVideo)} type="video/mp4"/>*/}
+            {/*</video>*/}
+
             <img
                 ref={bannerImageRef}
                 src={BannerImage}
