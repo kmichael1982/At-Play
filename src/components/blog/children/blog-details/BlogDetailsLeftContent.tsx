@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { animateItem } from 'shared/ui/animation/animateItem'
 import { BlogDetailsCommentForm } from './section/blog-main/BlogDetailsCommentForm'
 import { GroupImages } from './section/blog-main/GroupImages'
 import { BlogTags } from './section/blog-main/BlogTags'

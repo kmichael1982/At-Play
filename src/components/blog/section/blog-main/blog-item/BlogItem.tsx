@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useRef } from 'react'
 
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { animateItem } from 'shared/ui/animation/animateItem'
 
 interface BlogItemProps {
     topElem: ReactNode

@@ -23,8 +23,8 @@ function AboutUsPage() {
             <VideoModal imageSrc={BgVideoFrameImage} />
             <AgencySection />
             <TeamMembers />
-            <TestimonialSection />
-            <SponsorSection />
+            <TestimonialSection isActive={false}/>
+            <SponsorSection isActive={false}/>
             <CtaStart />
         </main>
     )

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { animateItem } from 'shared/ui/animation/animateItem'
 
 export const PortfolioItem: React.FC<{
     imgSrc: string

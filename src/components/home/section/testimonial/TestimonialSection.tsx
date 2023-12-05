@@ -8,9 +8,10 @@ import './testimonial-styles.scss'
 
 interface TestimonialSectionProps {
     className?: string
+    isActive?: boolean
 }
 
-const TestimonialSection: React.FC<TestimonialSectionProps> = ({ className }) => {
+const TestimonialSection: React.FC<TestimonialSectionProps> = ({ className, isActive = true }) => {
     return (
         <section className={`section relative testimonial ${className && className} position-relative`}>
             <TextSlider
@@ -33,7 +34,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ className }) =>
                 className1="testimonial__text-slider-single slick-slide slick-cloned"
             />
             <TestimonialClientsList />
-            <LinesContent />
+            {isActive && <LinesContent />}
         </section>
     )
 }

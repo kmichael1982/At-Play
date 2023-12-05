@@ -19,11 +19,13 @@ export const ServiceTableSlider = () => {
     const settings = {
         slidesToShow: 4,
         slidesToScroll: 1,
+        centerMode: true,
+        className: "center",
         arrows: false,
         dots: false,
-        speed: 4000,
+        speed: 500,
         infinite: true,
-        padding: "20px",
+        padding: "40px",
         autoplay: false,
         responsive: [
             {
@@ -60,7 +62,7 @@ export const ServiceTableSlider = () => {
                     <div className="col-12">
                         <div className="service-t__slider slick-initialized slick-slider">
                             <div className="slick-list draggable">
-                                <Slider {...settings} ref={sliderRef} className="slick-track">
+                                <Slider {...settings} ref={sliderRef} >
                                     {serviceSlides.map(( elem, index ) => (
                                       <ServiceSliderElement
                                           index={index}

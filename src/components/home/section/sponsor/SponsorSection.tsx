@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import Slider from 'react-slick'
@@ -11,11 +11,11 @@ import FiveImg from 'assets/images/sponsor/five.png'
 import SixImg from 'assets/images/sponsor/six.png'
 import './sponsor-styles.scss'
 
-function SponsorSection() {
-    useEffect(() => {
+interface SponsorSectionProps {
+    isActive?: boolean
+}
 
-    }, [])
-
+const SponsorSection: React.FC<SponsorSectionProps> = ({ isActive = true }) => {
     const slickSettings = {
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -74,7 +74,7 @@ function SponsorSection() {
                     </div>
                 </div>
             </div>
-            <LinesContent />
+            {isActive && <LinesContent />}
         </div>
     )
 }

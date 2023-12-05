@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
@@ -6,10 +7,9 @@ import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import TextAnimation from 'utils/hooks/useAnimatetText'
 import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
 
-import BannerImage from 'assets/images/home/banner/banner-one-thumb.png'
+import BannerVideo from 'assets/images/home/banner/Atplay home page video-2.mp4'
 import VideoFrameIcon from 'assets/images/popup-video.png'
 import StarIcon from 'assets/images/star.png'
-import BannerVideo from 'assets/images/home/banner/Atplay-video.mp4'
 
 import './banner-styles.scss'
 
@@ -19,6 +19,7 @@ function BannerSection() {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
     const [ scrollPosition, setScrollPosition ] = useState(0)
     const bannerImageRef = useRef(null)
+    const [ ref, inView ] = useInView({ triggerOnce: true })
 
     const openYouTubeVideo = () => {
         setIsModalOpen(true)
@@ -33,10 +34,10 @@ function BannerSection() {
             setScrollPosition(window.scrollY)
         }
 
-        window.addEventListener("scroll", handleScroll)
+        window.addEventListener('scroll', handleScroll)
 
         return () => {
-            window.removeEventListener("scroll", handleScroll)
+            window.removeEventListener('scroll', handleScroll)
         }
     }, [])
 
@@ -52,17 +53,19 @@ function BannerSection() {
             duration: 0.003,
             xPercent: -50,
             yPercent: translateY,
-            ease: "power2.inOut",
-        }).to(bannerImageRef.current, {
-            duration: 0.002,
-            xPercent: -50,
-            yPercent: translate3dY,
-            scale: scale,
-            zIndex: zIndex,
-            opacity: opacity,
-            ease: "power2.inOut",
-        },
-            ">"
+            ease: 'power2.inOut',
+        }).to(
+            bannerImageRef.current,
+            {
+                duration: 0.002,
+                xPercent: -50,
+                yPercent: translate3dY,
+                scale: scale,
+                zIndex: zIndex,
+                opacity: opacity,
+                ease: 'power2.inOut',
+            },
+            '>'
         )
 
         return () => {
@@ -71,7 +74,7 @@ function BannerSection() {
     }, [scrollPosition])
 
     return (
-        <section className="banner">
+        <section ref={ref} className="banner">
             <div className="container">
                 <div className="row">
                     <div className="col-12">
@@ -109,16 +112,18 @@ function BannerSection() {
                 </div>
             </div>
 
-            {/*<video ref={bannerImageRef} autoPlay loop muted controls={true} className="banner-one-thumb d-none d-sm-block g-ban-one">*/}
-            {/*    <source src={URL.createObjectURL(BannerVideo)} type="video/mp4"/>*/}
-            {/*</video>*/}
-
-            <img
-                ref={bannerImageRef}
-                src={BannerImage}
-                alt="Image"
-                className="banner-one-thumb d-none d-sm-block g-ban-one"
-            />
+            <div className="banner-one-thumb d-none d-sm-block g-ban-one">
+                <video
+                    ref={bannerImageRef}
+                    autoPlay={inView ? inView : false}
+                    loop={false}
+                    muted
+                    controls={false}
+                    className="w-full h-full"
+                >
+                    <source src={BannerVideo} type="video/mp4" />
+                </video>
+            </div>
 
             <img src={StarIcon} alt="Image" className="star" />
             <div className="banner-left-text banner-social-text d-none d-md-flex">
