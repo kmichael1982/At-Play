@@ -10,7 +10,11 @@ interface UxProcessItemsProps {
     content: string
 }
 
-export const UxProcess = () => {
+interface UxProcessProps {
+    className?: string
+}
+
+export const UxProcess: React.FC<UxProcessProps> = ({ className }) => {
     const uxProcessItems: UxProcessItemsProps[] = [
         { title: 'User Research', content: 'To deliver the best experience, we thoroughly research and evaluate your product and its users to create a strategic foundation for the brand.' },
         { title: 'Story Board', content: 'To deliver the best experience, we thoroughly research and evaluate your product and its users to create a strategic foundation for the brand.' },
@@ -21,7 +25,7 @@ export const UxProcess = () => {
     ]
 
     return (
-        <section className="section ux-process fade-wrapper">
+        <section className={`section ux-process fade-wrapper ${className}`}>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-12 col-lg-8">
@@ -42,7 +46,7 @@ export const UxProcess = () => {
                         <div className="service-f-wrapper">
                             {uxProcessItems.map((item, index) => (
                                 <UxProcessItems
-                                        index={index}
+                                    index={index}
                                     title={item.title}
                                     content={item.content}
                                 />

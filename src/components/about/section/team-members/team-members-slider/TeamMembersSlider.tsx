@@ -31,12 +31,10 @@ export const TeamMembersSlider = () => {
         },
     }
 
-
     return (
         <div className="team-r position-relative">
             <Slider {...settings} ref={sliderRef} className="team-s__slider">
                 {teamMembersSlider.map((teamMember, index) => {
-                    console.log(sliderRef.current, 'sliderRef', activeIndex)
                     return (
                         <TeamMembersSliderElem
                             key={index}

@@ -52,6 +52,7 @@ export const TestimonialClientsList = () => {
         arrows: false,
         dots: false,
         speed: 2000,
+        className: 'draggable',
         infinite: true,
         autoplaySpeed: 0,
         autoplay: false,
@@ -92,13 +93,11 @@ export const TestimonialClientsList = () => {
                 <div className="row">
                     <div className="col-12 col-xxl-10">
                         <div className="testimonial-s__slider slick-initialized slick-slider">
-                            <div className="slick-list draggable" style={{padding: '0px'}}>
-                                <Slider {...settings} ref={sliderRef} className="slick-track">
-                                    {testimonialSlides.map((item, index) => (
-                                        <TestimonialSlide key={index} imgSrc={item.imgSrc} role={item.role} description={item.description} name={item.name} index={index} />
-                                    ))}
-                                </Slider>
-                            </div>
+                            <Slider {...settings} ref={sliderRef}>
+                                {testimonialSlides.map((item, index) => (
+                                    <TestimonialSlide key={index} imgSrc={item.imgSrc} role={item.role} description={item.description} name={item.name} index={index} />
+                                ))}
+                            </Slider>
                         </div>
                     </div>
                 </div>

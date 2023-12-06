@@ -1,6 +1,6 @@
 import React from 'react'
-import BlogDetailsPage from 'components/blog/children/blog-details'
+import ServicesDetailsPage from 'components/services/children/services-details'
 
-const ServicesDetails = () => <BlogDetailsPage />
+const ServicesDetails = () => <ServicesDetailsPage />
 
 export default ServicesDetails

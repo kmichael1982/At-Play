@@ -6,6 +6,7 @@ import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import TextAnimation from 'utils/hooks/useAnimatetText'
 import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
+import { getHomePageFullInfo } from 'shared/helpers/generic-api'
 
 import BannerVideo from 'assets/images/home/banner/Atplay home page video-2.mp4'
 import VideoFrameIcon from 'assets/images/popup-video.png'
@@ -14,12 +15,17 @@ import StarIcon from 'assets/images/star.png'
 import './banner-styles.scss'
 
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger)
 
 function BannerSection() {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
-    const [ scrollPosition, setScrollPosition ] = useState(0)
+    const [ homeData, setHomeData ] = useState<any>([])
+    const parts = homeData?.Title ? homeData.Title.split(/\{(.*?)\}/).filter(Boolean) : []
+
     const bannerImageRef = useRef(null)
     const [ ref, inView ] = useInView({ triggerOnce: true })
+    const scrollFactor = 0.01
 
     const openYouTubeVideo = () => {
         setIsModalOpen(true)
@@ -30,24 +36,12 @@ function BannerSection() {
     }
 
     useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition(window.scrollY)
-        }
-
-        window.addEventListener('scroll', handleScroll)
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
-
-    useEffect(() => {
         const tl = gsap.timeline()
         const translateY = -50
-        const translate3dY = -5.981 + scrollPosition * 0.1
-        const scale = 1.0365 + scrollPosition * 0.002
+        const translate3dY = -5.981 + scrollFactor * 0.1
+        const scale = 1.0365 + scrollFactor * 0.002
         const zIndex = -1
-        const opacity = 0.9635 - scrollPosition * 0.001
+        const opacity = 0.9635 - scrollFactor * 0.001
 
         tl.to(bannerImageRef.current, {
             duration: 0.003,
@@ -71,7 +65,21 @@ function BannerSection() {
         return () => {
             tl.kill()
         }
-    }, [scrollPosition])
+    }, [scrollFactor])
+
+    useEffect(() => {
+        async function getHomePageFullData() {
+            try {
+                const res = await getHomePageFullInfo()
+                if (res) setHomeData(res.data.attributes)
+            } catch (error) {
+                console.error('Failed to fetch home page data:', error)
+            }
+        }
+        getHomePageFullData()
+    }, [homeData])
+
+    const parseTitle = (title: string) => title
 
     return (
         <section ref={ref} className="banner">
@@ -80,18 +88,25 @@ function BannerSection() {
                     <div className="col-12">
                         <div className="banner__content">
                             <h1 className="text-uppercase text-start fw-9 mb-0 title-anim">
-                                <TextAnimation text="we are" />
-                                <span className="text-stroke">
-                                    <TextAnimation text="creative" />
-                                </span>
-                                <span className="interval">
-                                    <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>
-                                    <TextAnimation text="marketing agency" />
-                                </span>
+                                {parts.map((part: string, index: number) => (
+                                    <React.Fragment key={index}>
+                                        {index === 0 && <TextAnimation text={parseTitle(part)} />}
+                                        {index === 1 && (
+                                            <span className="text-stroke">
+                                                <TextAnimation text={parseTitle(part)} />
+                                            </span>
+                                        )}
+                                        {index === 4 && (
+                                            <span className="interval">
+                                                <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>
+                                                <TextAnimation text={parseTitle(part)} />
+                                            </span>
+                                        )}
+                                    </React.Fragment>
+                                ))}
                             </h1>
                             <div className="banner__content-inner">
-                                <p>We are a full-service website design, development and digital marketing company
-                                    specializing in SEO, content marketing that grows brands.</p>
+                                <p>{homeData?.Description}</p>
                                 <div className="cta section__content-cta">
                                     <div className="single">
                                         <h5 className="fw-7">
@@ -115,7 +130,7 @@ function BannerSection() {
             <div className="banner-one-thumb d-none d-sm-block g-ban-one">
                 <video
                     ref={bannerImageRef}
-                    autoPlay={inView ? inView : false}
+                    autoPlay
                     loop={false}
                     muted
                     controls={false}

@@ -13,7 +13,7 @@ interface TestimonialSectionProps {
 
 const TestimonialSection: React.FC<TestimonialSectionProps> = ({ className, isActive = true }) => {
     return (
-        <section className={`section relative testimonial ${className && className} position-relative`}>
+        <section className={`section relative testimonial ${className && className} z-20 position-relative`}>
             <TextSlider
                 labels={["clients testimonial", "clients testimonial"]}
                 href=""
@@ -25,7 +25,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ className, isAc
                     arrows: false,
                     dots: false,
                     speed: 10000,
-                    centerPadding: "15px",
+                    // centerPadding: "15px",
                     infinite: true,
                     autoplaySpeed: 0,
                     autoplay: true,

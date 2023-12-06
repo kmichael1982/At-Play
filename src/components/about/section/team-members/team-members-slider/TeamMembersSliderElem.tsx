@@ -32,7 +32,6 @@ const TeamMembersSliderElem: React.FC<TeamMembersSliderElemProps> = ({ index, te
 
     const sliderClass = `${!isActive ? 'team-s__slider-single slick-slide slick-cloned' : ''}`
 
-    console.log(activeIndex)
     return (
         <div className={sliderClass} data-slick-index={index} aria-hidden="true">
             <div className="team-wrap">

@@ -38,10 +38,10 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ text }) => {
     }, [])
 
     return (
-        <div ref={textRef} style={{ position: 'relative', display: 'inline-block'}}>
+        <div ref={textRef} className="text-animation-container">
             {text.split('').map((char: string, index: number) => (
                 <div
-                    style={{position: 'relative', display: 'inline-block', translate: 'none', rotate: 'none', scale: 'none', opacity: 1, visibility: 'inherit', transform: 'translate(0px, 0px)'}}
+                    className="animated-char"
                     key={index}
                 >
                     {char === ' ' ? '\u00A0' : char}

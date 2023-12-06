@@ -22,7 +22,7 @@ const LANDING = {
     BLOG_DETAILS: lazy(() => import('pages/blog/children/BlogDetails')),
 
     OUR_SERVICE: lazy(() => import('pages/services/Services')),
-    // SERVICE_DETAILS: lazy(() => import('pages/projects/children/ProjectDetails')),
+    SERVICE_DETAILS: lazy(() => import('pages/services/children/ServiceDetails')),
 }
 
 export const publicPages = [
@@ -85,6 +85,16 @@ export const publicPages = [
         icon: '',
         element: LANDING.OUR_SERVICE,
         exact: true,
+        children: [
+            {
+                id: 'OurServicesDetailsPage',
+                text: 'Our Services Details Page',
+                path: '/service-details',
+                icon: '',
+                element: LANDING.SERVICE_DETAILS,
+                exact: true,
+            }
+        ]
     },
     {
         id: 'OurProjectsPage',
