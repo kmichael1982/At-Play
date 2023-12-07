@@ -14,7 +14,7 @@ import TwoImage from 'assets/images/offer/two.png'
 import './offer-styles.scss'
 
 const VIEW_ALL_SERVICES_URL = '/our-services'
-const SERVICE_SINGLE_URL = '/service-single'
+const SERVICE_SINGLE_URL = '/service-details'
 
 function getServiceTitle(index: number) {
     const titles = ['uI / uX experience', 'web development', 'digital marketing', 'product design']

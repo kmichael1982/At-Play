@@ -1322,7 +1322,7 @@
     row-gap: 30px;
 
     .form-group-single {
-      width: 100%;
+      width: 100% !important;
     }
   }
 
@@ -1338,7 +1338,7 @@
       .group-wrapper {
         flex-direction: column;
         .group-input {
-          width: 100%;
+          width: 100% !important;
         }
       }
     }

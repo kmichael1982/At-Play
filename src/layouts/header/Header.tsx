@@ -167,7 +167,7 @@ const Header = () => {
                                                     <a href="/our-services">Our Services</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/service-single">Service Details</a>
+                                                    <a href="/service-details">Service Details</a>
                                                 </li>
                                             </ul>
                                         </li>

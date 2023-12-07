@@ -9,7 +9,7 @@ interface OfferCtaItemProps {
 }
 
 const VIEW_ALL_SERVICES_URL = '/our-services'
-const SERVICE_SINGLE_URL = '/service-single'
+const SERVICE_SINGLE_URL = '/service-details'
 
 export const OfferCtaItem: React.FC<OfferCtaItemProps> = ({ index, getServiceTitle, getServiceImage }) => {
     const itemRef = useRef<HTMLDivElement | null>(null)

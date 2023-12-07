@@ -23,9 +23,8 @@ function BannerSection() {
     const [ homeData, setHomeData ] = useState<any>([])
     const parts = homeData?.Title ? homeData.Title.split(/\{(.*?)\}/).filter(Boolean) : []
 
-    const bannerImageRef = useRef(null)
+    const bannerImageRef = useRef<HTMLImageElement | null>(null)
     const [ ref, inView ] = useInView({ triggerOnce: true })
-    const scrollFactor = 0.01
 
     const openYouTubeVideo = () => {
         setIsModalOpen(true)
@@ -35,37 +34,55 @@ function BannerSection() {
         setIsModalOpen(false)
     }
 
+    const calculateOpacity = (scrollPercent: number) => {
+        const minOpacity = 0.8635
+        const maxOpacity = 0.65
+
+        return minOpacity + scrollPercent * (maxOpacity - minOpacity)
+    }
+
+    const calculateScale = (scrollPercent: number) => {
+        const minScale = 0.45
+            const maxScale = 2.35
+
+        return minScale + scrollPercent * (maxScale - minScale)
+    }
+
     useEffect(() => {
-        const tl = gsap.timeline()
-        const translateY = -50
-        const translate3dY = -5.981 + scrollFactor * 0.1
-        const scale = 1.0365 + scrollFactor * 0.002
-        const zIndex = -1
-        const opacity = 0.9635 - scrollFactor * 0.001
-
-        tl.to(bannerImageRef.current, {
-            duration: 0.003,
-            xPercent: -50,
-            yPercent: translateY,
-            ease: 'power2.inOut',
-        }).to(
-            bannerImageRef.current,
-            {
-                duration: 0.002,
-                xPercent: -50,
-                yPercent: translate3dY,
-                scale: scale,
-                zIndex: zIndex,
-                opacity: opacity,
-                ease: 'power2.inOut',
-            },
-            '>'
-        )
-
-        return () => {
-            tl.kill()
+        async function getHomePageFullData() {
+            try {
+                const res = await getHomePageFullInfo()
+                if (res) setHomeData(res.data.attributes)
+            } catch (error) {
+                console.error('Failed to fetch home page data:', error)
+            }
         }
-    }, [scrollFactor])
+        getHomePageFullData()
+    }, [])
+
+    useEffect(() => {
+        if (inView) {
+            const onUpdate = (self: ScrollTrigger) => {
+                const scrollPercent = self.progress
+                const opacity = calculateOpacity(scrollPercent)
+                const scale = calculateScale(scrollPercent)
+
+                gsap.to(bannerImageRef.current, {
+                    opacity,
+                    scale,
+                    transformOrigin: '50% 50%', // Adjust if necessary
+                })
+            }
+
+            ScrollTrigger.create({
+                trigger: bannerImageRef.current,
+                // start: 'top center',
+                // end: 'bottom center',
+                // scrub: 0.5, // Adjust as needed
+                onUpdate,
+            })
+        }
+    }, [inView])
 
     useEffect(() => {
         async function getHomePageFullData() {
@@ -88,6 +105,14 @@ function BannerSection() {
                     <div className="col-12">
                         <div className="banner__content">
                             <h1 className="text-uppercase text-start fw-9 mb-0 title-anim">
+                                {/*<TextAnimation text="we are" />*/}
+                                {/*<span className="text-stroke">*/}
+                                {/*    <TextAnimation text="creative" />*/}
+                                {/*</span>*/}
+                                {/*<span className="interval">*/}
+                                {/*    <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>*/}
+                                {/*    <TextAnimation text="marketing agency" />*/}
+                                {/*</span>*/}
                                 {parts.map((part: string, index: number) => (
                                     <React.Fragment key={index}>
                                         {index === 0 && <TextAnimation text={parseTitle(part)} />}
@@ -107,6 +132,7 @@ function BannerSection() {
                             </h1>
                             <div className="banner__content-inner">
                                 <p>{homeData?.Description}</p>
+                                {/*<p>We are a full-service website design, development and digital marketing company specializing in SEO, content marketing that grows brands.</p>*/}
                                 <div className="cta section__content-cta">
                                     <div className="single">
                                         <h5 className="fw-7">
@@ -127,9 +153,8 @@ function BannerSection() {
                 </div>
             </div>
 
-            <div className="banner-one-thumb d-none d-sm-block g-ban-one">
+            <div ref={bannerImageRef} className="banner-one-thumb d-none d-sm-block g-ban-one">
                 <video
-                    ref={bannerImageRef}
                     autoPlay
                     loop={false}
                     muted

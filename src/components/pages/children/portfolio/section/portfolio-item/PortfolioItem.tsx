@@ -14,19 +14,19 @@ export const PortfolioItem: React.FC<{
     return (
         <div className="portfolio-m__single topy-tilt fade-top" ref={PortfolioItemRef}>
             <div className="thumb">
-                <a href="/service-single">
+                <a href="/service-details">
                     <img src={imgSrc} alt="Image" />
                 </a>
             </div>
             <div className="content">
                 <div className="tr">
-                    <a href="/service-single">
+                    <a href="/service-details">
                         <i className="fa-solid fa-arrow-right" style={{transform: 'rotate(320deg)'}} />
                         {/*<i className="icon-arrow-top-right"></i>*/}
                     </a>
                 </div>
                 <h3 className="light-title-lg">
-                    <a href="/service-single">{title}</a>
+                    <a href="/service-details">{title}</a>
                 </h3>
             </div>
         </div>

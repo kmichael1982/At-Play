@@ -5,6 +5,7 @@ import { VideoModal } from 'components/about/section/vide-modal/VideoModal'
 import TestimonialSection from '../home/section/testimonial/TestimonialSection'
 import { ServiceTableSlider } from './section/service-table-slider/ServiceTableSlider'
 import { UxProcess } from './section/ux-process/UxProcess'
+
 import { CtaStart } from './section/cta-start/CtaStart'
 
 import BgVideoFrameImage from 'assets/images/about/video-frame-two.png'
