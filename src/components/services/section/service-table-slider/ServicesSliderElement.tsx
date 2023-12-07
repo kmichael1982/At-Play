@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 
 interface ServiceSliderElementProps {
@@ -13,6 +14,7 @@ interface ServiceSliderElementProps {
 
 export const ServiceSliderElement: React.FC<ServiceSliderElementProps> = ({ index, href, title, label, ulList, hoveredIndex, onHover }) => {
     const isHovered  = index === hoveredIndex
+    const navigate = useNavigate()
 
     return (
         <div
@@ -32,12 +34,26 @@ export const ServiceSliderElement: React.FC<ServiceSliderElementProps> = ({ inde
                         href="#"
                     />
                     <h4>
-                        <a href={href}>{title}</a>
+                        <a
+                            className="cursor-pointer"
+                            onClick={(e) => {
+                                e.preventDefault()
+                                navigate(`${href}?query=${title}`)
+                            }}
+                        >
+                            {title}
+                        </a>
                     </h4>
                 </div>
                 {ulList}
                 <div className="cta">
-                    <a href={href}>
+                    <a
+                        className="cursor-pointer"
+                        onClick={(e) => {
+                            e.preventDefault()
+                            navigate(`${href}?query=${title}`)
+                        }}
+                    >
                         <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>
                         {isHovered && <span>{label}</span>}
                     </a>

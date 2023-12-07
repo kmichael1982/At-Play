@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
 import BgModalImage from 'assets/images/about/modal-bg.png'
 
 import gsap from 'gsap'
-import { Power3 } from 'gsap/all'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,24 +16,27 @@ interface VideoModalProps {
 export const VideoModal: React.FC<VideoModalProps> = ({ imageSrc }) => {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
 
-    const modalRef = useRef<HTMLDivElement | null>(null)
+    const modalRef = useRef<HTMLImageElement | null>(null)
+    const [ ref, inView ] = useInView({ triggerOnce: true })
 
     useEffect(() => {
-        if (modalRef.current)  {
-            gsap.from(modalRef.current, {
-                opacity: 0,
-                y: '0%',
-                duration: 1,
-                ease: Power3.easeInOut,
-                scrollTrigger: {
-                    trigger: modalRef.current,
-                    start: 'top center+=20',
-                    end: 'bottom center',
-                    scrub: true
-                },
+        if (inView) {
+            const onUpdate = (self: ScrollTrigger) => {
+                const progress = self.progress
+                const opacity = 1-progress
+
+                gsap.to(modalRef.current, {
+                    opacity,
+                    transform: `translate(0px, ${progress * 10}%)`,
+                })
+            }
+
+            ScrollTrigger.create({
+                trigger: modalRef.current,
+                onUpdate,
             })
         }
-    }, [])
+    }, [inView])
 
     const openYouTubeVideo = () => {
         setIsModalOpen(true)
@@ -44,17 +47,12 @@ export const VideoModal: React.FC<VideoModalProps> = ({ imageSrc }) => {
     }
 
     return (
-        <div ref={modalRef} className="video-modal">
+        <div ref={ref} className="video-modal">
             <img
+                ref={modalRef}
                 src={BgModalImage}
                 alt="Image"
                 className="modal-bg"
-                style={{
-                    translate: 'none',
-                    rotate: 'none',
-                    scale: 'none',
-                    transform: 'translate(0px,0 %)', opacity: 1
-                }}
             />
             <VideoFrame onClick={openYouTubeVideo} imageSrc={imageSrc} />
             <VideoPopUp
