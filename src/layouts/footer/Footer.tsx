@@ -1,8 +1,10 @@
 import React from 'react'
-import './footer-styles.scss'
+
+import TextAnimation from 'shared/ui/animation/TextAnimation'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
+
 import Logo from 'assets/images/image-removebg-preview.png'
-import TextAnimation from 'shared/ui/design/animation/TextAnimation'
+import './footer-styles.scss'
 
 const Footer = () => {
     return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { animateItem } from 'shared/ui/animation/animateItem'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 
 const BlogItem: React.FC<{

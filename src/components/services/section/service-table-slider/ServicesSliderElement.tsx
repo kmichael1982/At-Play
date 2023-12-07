@@ -16,7 +16,7 @@ export const ServiceSliderElement: React.FC<ServiceSliderElementProps> = ({ inde
 
     return (
         <div
-            className="service-t-single-wrapper slick-slide slick-cloned"
+            className="service-t-single-wrapper slick-slide"
             data-slick-index={index}
             onMouseEnter={() => onHover(index)}
             onMouseLeave={() => onHover(null)}

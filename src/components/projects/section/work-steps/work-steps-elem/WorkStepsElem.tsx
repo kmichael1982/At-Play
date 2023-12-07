@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { animateItem } from 'shared/ui/animation/animateItem'
 
 interface WorkStepsElemProps {
     percentage: number

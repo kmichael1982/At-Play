@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { animateItem } from 'shared/ui/animation/animateItem'
 import PortfolioItem from './portfolio-item/ProtfolioItem'
 import { TextSlider } from '../slider/TextSlider'
 

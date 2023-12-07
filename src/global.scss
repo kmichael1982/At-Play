@@ -129,14 +129,14 @@ i {
     color: var(--primary-color);
     border-radius: 30px;
     margin-bottom: 32px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     i {
       transform: rotate(-45deg);
     }
   }
 
   .title {
-    text-transform: capitalize;
+    //text-transform: capitalize;
     font-weight: 700;
   }
 }
@@ -156,7 +156,7 @@ i {
     color: var(--primary-color);
     border-radius: 30px;
     margin-bottom: 32px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     i {
       transform: rotate(-45deg);
     }
@@ -165,7 +165,7 @@ i {
   .title {
     margin-bottom: 30px;
     font-weight: 700;
-    text-transform: capitalize;
+    //text-transform: capitalize;
   }
 }
 
@@ -357,6 +357,18 @@ i {
   display: none !important
 }
 
+//.slick-slide {
+//  margin: 0px 15px;
+//
+//  img {
+//    display: inline-block;
+//  }
+//}
+//
+.slick-list {
+  margin: 0px -15px !important;
+}
+
 .next-page .next__text-slider-single h2 {
   margin-top: -14px;
   margin-bottom: -14px;
@@ -536,3 +548,35 @@ i {
     font-size: 24px;
   }
 }
+
+.text-animation-container {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-char {
+  //text-transform: capitalize;
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+  visibility: inherit;
+  transform: translate(0px, 0px);
+}
+//
+//.section__header,
+//.section__content {
+//  .title {
+//    div {
+//      text-transform: lowercase !important;
+//      font-weight: 600;
+//      &:nth-child(1) {
+//        text-transform: capitalize !important;
+//      }
+//    }
+//  }
+//}
+//
+//.g-ind {
+//  position: relative;
+//  z-index: 99;
+//}

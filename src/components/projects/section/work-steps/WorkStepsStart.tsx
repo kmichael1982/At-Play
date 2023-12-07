@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import VideoPopUp from 'shared/ui/popup/video-popop/VideoPopUp'
 import { VideoFrame } from 'shared/ui/design/video-frame/VideFrame'
-import { HeaderSecondary } from 'components/about/section/team-members/header-secondary/HeaderSecondary'
+import { HeaderSecondary } from 'shared/ui/design/header-secondary/HeaderSecondary'
 import { WorkStepsElem } from './work-steps-elem/WorkStepsElem'
 
 import ThumbImg from 'assets/images/pojects/thumb-one.png'

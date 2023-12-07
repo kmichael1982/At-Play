@@ -1,97 +1,56 @@
 import React from 'react'
+
+import TextAnimation from 'utils/hooks/useAnimatetText'
+import { UxProcessItems } from './us-process-items/UxProcessItems'
+
 import './ux-process-styles.scss'
 
-export const UxProcess = () => {
+interface UxProcessItemsProps {
+    title: string
+    content: string
+}
+
+interface UxProcessProps {
+    className?: string
+}
+
+export const UxProcess: React.FC<UxProcessProps> = ({ className }) => {
+    const uxProcessItems: UxProcessItemsProps[] = [
+        { title: 'User Research', content: 'To deliver the best experience, we thoroughly research and evaluate your product and its users to create a strategic foundation for the brand.' },
+        { title: 'Story Board', content: 'To deliver the best experience, we thoroughly research and evaluate your product and its users to create a strategic foundation for the brand.' },
+        { title: 'Wireframing', content: 'To deliver the best experience, we thoroughly research and evaluate your product and its users to create a strategic foundation for the brand.' },
+        { title: 'Prototyping', content: 'To deliver the best experience, we thoroughly research and evaluate your product and its users to create a strategic foundation for the brand.' },
+        { title: 'Usability Testing', content: 'To deliver the best experience, we thoroughly research and evaluate your product and its users to create a strategic foundation for the brand.' },
+        { title: 'UI Design', content: 'To deliver the best experience, we thoroughly research and evaluate your product and its users to create a strategic foundation for the brand.' },
+    ]
+
     return (
-        <section className="section ux-process fade-wrapper">
+        <section className={`section ux-process fade-wrapper ${className}`}>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-12 col-lg-8">
                         <div className="section__header text-center">
-                              <span className="sub-title">
-                                 UX Process
-                                 <i className="fa-solid fa-arrow-right"></i>
-                              </span>
+                            <span className="sub-title">
+                            UX Process
+                            <i className="fa-solid fa-arrow-right"></i>
+                          </span>
                             <h2 className="title title-anim">
+                                <TextAnimation text="Working Ux Process" />
                             </h2>
                         </div>
                     </div>
                 </div>
+
                 <div className="row">
                     <div className="col-12">
                         <div className="service-f-wrapper">
-                            <div className="service-f-single fade-top" style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}>
-                                <div className="single-item single-item-active">
-                                    <div className="intro-btn">
-                                        <h4>User Research</h4>
-                                    </div>
-                                </div>
-                                <div className="single-item p-single p-sm body-cn" style={{display: 'none'}}>
-                                    <p>To deliver the best experience, we thoroughly research and evaluate your product
-                                        and its users to create a strategic foundation for the brand.</p>
-                                </div>
-                                <button className="toggle-service-f"></button>
-                            </div>
-                            <div className="service-f-single fade-top" style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}>
-                                <div className="single-item single-item-active">
-                                    <div className="intro-btn">
-                                        <h4>story board</h4>
-                                    </div>
-                                </div>
-                                <div className="single-item p-single p-sm body-cn" style={{display: 'none'}}>
-                                    <p>To deliver the best experience, we thoroughly research and evaluate your product
-                                        and its users to create a strategic foundation for the brand.</p>
-                                </div>
-                                <button className="toggle-service-f"></button>
-                            </div>
-                            <div className="service-f-single fade-top" style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}>
-                                <div className="single-item single-item-active">
-                                    <div className="intro-btn">
-                                        <h4>wireframing</h4>
-                                    </div>
-                                </div>
-                                <div className="single-item p-single p-sm body-cn" style={{display: 'none'}}>
-                                    <p>To deliver the best experience, we thoroughly research and evaluate your product
-                                        and its users to create a strategic foundation for the brand.</p>
-                                </div>
-                                <button className="toggle-service-f"></button>
-                            </div>
-                            <div className="service-f-single fade-top service-f-single-active" style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}>
-                                <div className="single-item single-item-active">
-                                    <div className="intro-btn">
-                                        <h4>Prototyping</h4>
-                                    </div>
-                                </div>
-                                <div className="single-item p-single p-sm body-cn" style={{display: 'block'}}>
-                                    <p>To deliver the best experience, we thoroughly research and evaluate your product
-                                        and its users to create a strategic foundation for the brand.</p>
-                                </div>
-                                <button className="toggle-service-f"></button>
-                            </div>
-                            <div className="service-f-single fade-top" style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}>
-                                <div className="single-item single-item-active">
-                                    <div className="intro-btn">
-                                        <h4>usability testing</h4>
-                                    </div>
-                                </div>
-                                <div className="single-item p-single p-sm body-cn">
-                                    <p>To deliver the best experience, we thoroughly research and evaluate your product
-                                        and its users to create a strategic foundation for the brand.</p>
-                                </div>
-                                <button className="toggle-service-f"></button>
-                            </div>
-                            <div className="service-f-single fade-top" style={{translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)', opacity: 1}}>
-                                <div className="single-item single-item-active">
-                                    <div className="intro-btn">
-                                        <h4>UI Design</h4>
-                                    </div>
-                                </div>
-                                <div className="single-item p-single p-sm body-cn">
-                                    <p>To deliver the best experience, we thoroughly research and evaluate your product
-                                        and its users to create a strategic foundation for the brand.</p>
-                                </div>
-                                <button className="toggle-service-f"></button>
-                            </div>
+                            {uxProcessItems.map((item, index) => (
+                                <UxProcessItems
+                                    index={index}
+                                    title={item.title}
+                                    content={item.content}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>

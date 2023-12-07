@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { animateItem } from 'shared/ui/animation/animateItem'
 gsap.registerPlugin(ScrollTrigger)
 
 const PortfolioItem: React.FC<{

@@ -35,7 +35,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ title, href, description }) => 
                             </nav>
                         </div>
                     </div>
-                    <div className={`${description ? ' col-12 col-lg-7 col-xl-5' : 'd-none'}`}>
+                    <div className={`${description ? 'col-12 col-lg-7 col-xl-5' : 'd-none'}`}>
                         <div className="text-center text-lg-start">
                             <p className="primary-text"> {description} </p>
                         </div>

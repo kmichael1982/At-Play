@@ -6,9 +6,14 @@ import { TextSlider } from '../slider/TextSlider'
 
 import './testimonial-styles.scss'
 
-function TestimonialSection() {
+interface TestimonialSectionProps {
+    className?: string
+    isActive?: boolean
+}
+
+const TestimonialSection: React.FC<TestimonialSectionProps> = ({ className, isActive = true }) => {
     return (
-        <section className="section relative testimonial pt-0 position-relative">
+        <section className={`section relative testimonial ${className && className} z-20 position-relative`}>
             <TextSlider
                 labels={["clients testimonial", "clients testimonial"]}
                 href=""
@@ -20,7 +25,7 @@ function TestimonialSection() {
                     arrows: false,
                     dots: false,
                     speed: 10000,
-                    centerPadding: "15px",
+                    // centerPadding: "15px",
                     infinite: true,
                     autoplaySpeed: 0,
                     autoplay: true,
@@ -29,7 +34,7 @@ function TestimonialSection() {
                 className1="testimonial__text-slider-single slick-slide slick-cloned"
             />
             <TestimonialClientsList />
-            <LinesContent />
+            {isActive && <LinesContent />}
         </section>
     )
 }

@@ -1,7 +1,9 @@
  import React from 'react'
- import Logo from 'assets/images/image-removebg-preview.png'
+
 import { Buttons, LinkButton, SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
 import { SearchInput } from 'shared/ui/inputs/FormInput'
+
+ import Logo from 'assets/images/image-removebg-preview.png'
 import '../footer-styles.scss'
 
 interface FooterProps {

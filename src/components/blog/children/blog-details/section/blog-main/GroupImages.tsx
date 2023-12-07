@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-import { animateItem } from 'shared/ui/design/animation/animateItem'
+import { animateItem } from 'shared/ui/animation/animateItem'
 
 export const GroupImages: React.FC<{
     groupOneSrc: string

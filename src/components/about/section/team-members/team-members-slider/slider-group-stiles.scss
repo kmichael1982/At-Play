@@ -1,0 +1,241 @@
+// team slider
+.team-slider-s {
+  overflow-x: clip;
+
+  .team-s__slider-single {
+    overflow: hidden;
+    .content {
+      transform: translateY(100%);
+      transition: var(--transition);
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .thumb {
+      position: relative;
+      overflow: hidden;
+      a {
+        width: 100%;
+      }
+      @keyframes rer {
+        0% {
+          transform: translateY(-200%);
+          display: none;
+          opacity: 0;
+        }
+        100% {
+          display: block;
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      .thumb__content {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding: 30px;
+        background-color: #1a1a1a;
+        background-size: cover;
+        background-position: left bottom;
+        height: 130px;
+        width: calc(300px - 60px);
+        overflow-y: clip;
+        transition: all 0.4s ease-in-out;
+        display: none;
+        p {
+          color: var(--primary-color);
+          margin-top: 8px;
+        }
+
+        .info {
+          transform: translateY(-200%);
+          display: none;
+          transition: var(--transition);
+          margin-bottom: 20px;
+          p {
+            color: var(--white);
+          }
+        }
+
+        .social-alt {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          align-items: center;
+          justify-content: center;
+          top: 0px;
+          left: 100%;
+          bottom: 0px;
+          width: 60px;
+          height: 100%;
+          background: linear-gradient(90deg, #cc2500 0%, #cc2500 100%);
+          transition: all 0.4s ease-in-out;
+          transition-delay: 0s;
+          transform: translateY(100%);
+          a {
+            width: auto;
+            &:hover {
+              color: var(--white);
+            }
+          }
+        }
+      }
+      &:hover {
+        .thumb__content {
+          height: 220px;
+          .info {
+            transform: translateY(0px);
+            display: block;
+            animation: rer 0.4s ease-in-out;
+          }
+
+          .social-alt {
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+  }
+
+  .slick-center-active {
+    .content {
+      transform: translateY(0px);
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      animation: fde 0.6s ease-in-out;
+      max-width: 340px;
+    }
+    .team-wrap {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 24px;
+      padding: 25px 20px;
+      background-color: #131313;
+
+      .thumb {
+        max-width: 290px;
+        min-width: 290px;
+        img {
+          width: 100%;
+          min-height: 500px;
+        }
+      }
+
+      .intro {
+        p {
+          color: var(--primary-color);
+          margin-top: 6px;
+        }
+      }
+
+      hr {
+        background-color: #414141;
+        height: 1px;
+        margin: 24px 0px;
+        opacity: 1;
+      }
+
+      .inner {
+        p,
+        span {
+          font-size: 14px;
+        }
+      }
+
+      .skill-wrap {
+        margin: 24px 0px;
+      }
+
+      .skill-bar-single {
+        margin-bottom: 10px;
+        &:nth-last-of-type(1) {
+          margin-bottom: 0px;
+        }
+      }
+
+      .skill-bar-wrapper {
+        margin-top: 10px;
+
+        span {
+          color: #757575;
+        }
+      }
+
+      .skill-bar {
+        height: 5px;
+        border-radius: 100px;
+        background-color: #ffffff;
+        position: relative;
+      }
+
+      .skill-bar-percent {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        background-color: var(--primary-color);
+        border-radius: inherit;
+      }
+
+      .percent-value {
+        position: absolute;
+        bottom: calc(100% + 10px);
+        right: 0px;
+      }
+
+      .social {
+        margin-top: 30px;
+        justify-content: flex-start;
+        gap: 14px;
+
+        a {
+          border: 1px solid #888888;
+          color: #888888;
+          background-color: transparent;
+          &:hover {
+            color: var(--white);
+            background-color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  .team-r {
+    .slide-group {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      right: 0%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 9;
+      max-width: 86%;
+      padding: 0px 15px;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+
+      button {
+        background-color: var(--white);
+        color: var(--primary-color);
+        &:hover {
+          background-color: var(--primary-color);
+          color: var(--white);
+        }
+      }
+    }
+    &:hover {
+      .slide-group {
+        display: flex;
+      }
+    }
+  }
+}
