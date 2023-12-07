@@ -77,9 +77,9 @@ function BannerSection() {
                     <div className="col-12">
                         <div className="banner__content">
                             <h1 className="text-uppercase text-start fw-9 mb-0 title-anim">
-                                <TextAnimation text="we are" />
+                                <TextAnimation text="we are a" />
                                 <span className="text-stroke">
-                                    <TextAnimation text="creative" />
+                                    <TextAnimation text=" creative" />
                                 </span>
                                 <span className="interval">
                                     <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>
@@ -88,7 +88,7 @@ function BannerSection() {
                             </h1>
                             <div className="banner__content-inner">
                                 <p>We are a full-service website design, development and digital marketing company
-                                    specializing in SEO, content marketing that grows brands.</p>
+                                    specialising in SEO & content marketing that grows brands.</p>
                                 <div className="cta section__content-cta">
                                     <div className="single">
                                         <h5 className="fw-7">
