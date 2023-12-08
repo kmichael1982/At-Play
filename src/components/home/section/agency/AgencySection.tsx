@@ -92,14 +92,12 @@ function AgencySection() {
                             />
 
                             <h2 className="title title-anim" >
-                                <TextAnimation text="We Are Digital Creative Agency In London" />
+                                <TextAnimation text="We Are A Digital Creative Agency Based In London & Dubai" />
                             </h2>
 
                             <div className="paragraph">
                                 <p>
-                                    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day,
-                                    going forward, a new normal that has evolved from generation on the runway heading towards a streamlined
-                                    cloud solution going forward porttitor dictum sapien.
+                                    Bring to the table win-win survival strategies to ensure proactive domination.
                                 </p>
                             </div>
                             <div className="skill-wrap mb-10">
