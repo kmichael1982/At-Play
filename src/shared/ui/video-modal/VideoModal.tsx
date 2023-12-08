@@ -18,6 +18,6 @@ const VideoModal = memo(() => {
             </div>
         </div>
     )
-})
+}, () => false)
 
 export default VideoModal

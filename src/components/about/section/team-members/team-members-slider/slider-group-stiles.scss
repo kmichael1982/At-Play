@@ -70,7 +70,7 @@
           bottom: 0px;
           width: 60px;
           height: 100%;
-          background: linear-gradient(90deg, #cc2500 0%, #cc2500 100%);
+          background: linear-gradient(90deg, #f90 0%, #cc2500 100%);
           transition: all 0.4s ease-in-out;
           transition-delay: 0s;
           transform: translateY(100%);
@@ -97,6 +97,12 @@
         }
       }
     }
+  }
+
+  .slick-track {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: start !important;
   }
 
   .slick-center-active {

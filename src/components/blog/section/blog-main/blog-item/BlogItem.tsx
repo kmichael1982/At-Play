@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useRef } from 'react'
 
-import { animateItem } from 'shared/ui/animation/animateItem'
+import { animateItem } from 'utils/hooks/animateItem'
 
 interface BlogItemProps {
     topElem: ReactNode
@@ -57,7 +57,6 @@ export const BlogItem: React.FC<BlogItemProps> = ({
                 <p>{content}</p>
                 <div className="cta">
                     <a href="/blog-single">
-                        {/*<i className="fa-sharp fa-regular fa-arrow-right"></i>*/}
                         <i className="fa-solid fa-arrow-right-long"></i>
                     </a>
                 </div>

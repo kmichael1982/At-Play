@@ -1,4 +1,5 @@
 import React from 'react'
+import SocialMenuList from 'shared/ui/design/social-list/SocialMenuList'
 
 export const BlogTags = () => (
     <div className="bd-tags">
@@ -11,28 +12,7 @@ export const BlogTags = () => (
         </div>
         <div className="tags-right">
             <p>Share:</p>
-            <ul className="social">
-                <li>
-                    <a href="index" aria-label="social media">
-                        <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="index" aria-label="social media">
-                        <i className="fa-brands fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="index" aria-label="social media">
-                        <i className="fa-brands fa-youtube"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="index" aria-label="social media">
-                        <i className="fa-brands fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
+            <SocialMenuList />
         </div>
     </div>
 )

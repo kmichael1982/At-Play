@@ -38,6 +38,7 @@
 
     &:hover {
       & > .navbar__dropdown-label {
+        cursor: pointer;
         color: var(--primary-color);
         &::after {
           transform: rotate(180deg);

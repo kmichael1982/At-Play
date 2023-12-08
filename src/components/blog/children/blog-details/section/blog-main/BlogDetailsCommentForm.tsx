@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-import { animateItem } from 'shared/ui/animation/animateItem'
+import { animateItem } from 'utils/hooks/animateItem'
 import { TextAreaInput, TextInput } from 'shared/ui/inputs/FormInput'
 
 export const BlogDetailsCommentForm = () => {

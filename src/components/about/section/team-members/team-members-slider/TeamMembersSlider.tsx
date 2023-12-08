@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import { SliderGroupButton } from 'shared/ui/design/slider-group/SliderGroupButton'
 import TeamMembersSliderElem from './TeamMembersSliderElem'
 import { teamMembersSlider } from './teamMembersSlider'
+import './slider-group-stiles.scss'
 
 export const TeamMembersSlider = () => {
     const sliderRef = useRef<Slider | null>(null)
@@ -20,7 +21,7 @@ export const TeamMembersSlider = () => {
         dots: false,
         infinite: true,
         autoplay: false,
-        // className: "slick-center-active",
+        className: "slick-center-active",
         centerMode: true,
         centerPadding: "30px",
         beforeChange: (oldIndex: number, newIndex: number) => {

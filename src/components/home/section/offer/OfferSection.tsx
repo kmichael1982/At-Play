@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import { Buttons, LinkButton } from 'shared/ui/buttons/ButtonUi'
-import { animateItem } from 'shared/ui/animation/animateItem'
+import { animateItem } from 'utils/hooks/animateItem'
 import TextAnimation from 'utils/hooks/useAnimatetText'
 import { OfferCtaItem } from './OfferCtaItem'
 

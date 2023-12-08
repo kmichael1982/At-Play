@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Logo from 'assets/images/image-removebg-preview.png'
+
 import { Buttons } from 'shared/ui/buttons/ButtonUi'
 import OffCanvas from './off-canvas/OffCanvas'
+
+import Logo from 'assets/images/image-removebg-preview.png'
 import './header-styles.scss'
 
 const Header = () => {
@@ -22,91 +24,6 @@ const Header = () => {
     }, [])
 
     const navbarClasses = `${isScrolled ? 'navbar-active' : ''}`
-
-    const menuItems = [
-        {
-            label: 'Home',
-            subItems: [
-                {
-                    label: 'Creative Agency',
-                    link: ''
-                },
-
-                {
-                    label: 'Creative Agency Light',
-                    link: ''
-                },
-
-                {
-                    label: 'Digital Agency',
-                    link: ''
-                },
-
-                {
-                    label: 'Digital Agency Light',
-                    link: ''
-                },
-
-                {
-                    label: 'It Solution',
-                    link: ''
-                },
-
-                {
-                    label: 'It Solution Light',
-                    link: ''
-                },
-
-                {
-                    label: 'Personal Portfolio',
-                    link: ''
-                },
-
-                {
-                    label: 'Personal Portfolio Light',
-                    link: ''
-                },
-
-                {
-                    label: 'Interactive Portfolio',
-                    link: ''
-                },
-
-                {
-                    label: 'Interactive Portfolio Light',
-                    link: ''
-                }
-            ]
-        },
-        { label: 'About Us' },
-        { label: 'Services', subItems: [{ label: 'Our Services', link: '' }, { label: 'Service Details', link: '' }] },
-        { label: 'Projects', subItems: [{ label: 'Our Projects', link: '' }, { label: 'Project Details', link: '' }] },
-        {
-            label: 'Pages',
-            subItems: [
-                {
-                    label: 'Creative Agency',
-                    link: ''
-                },
-
-                {
-                    label: 'Error',
-                    link: ''
-                },
-
-                {
-                    label: 'Our Story',
-                    link: ''
-                },
-
-                {
-                    label: 'Portfolio',
-                    link: ''
-                }
-            ]
-        },
-        { label: 'Journal', subItems: [{ label: 'Journal', link: '/blog' }, { label: 'Journal Details', link: '/blog-single' }] },
-    ]
 
     return (
         <header className="header">
@@ -238,7 +155,6 @@ const Header = () => {
                                         className="open-mobile-menu d-flex d-xl-none"
                                         aria-label="toggle mobile menu"
                                     >
-                                        {/*<i className="fa-light fa-bars-staggered"></i>*/}
                                         <i className="fa-solid fa-bars-staggered"></i>
                                     </button>
                                 </div>

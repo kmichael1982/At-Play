@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
-import { animateItem } from 'shared/ui/animation/animateItem'
+import { animateItem } from 'utils/hooks/animateItem'
 
 interface OfferCtaItemProps {
     index: number

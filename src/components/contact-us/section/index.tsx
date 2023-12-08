@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-import { animateItem } from 'shared/ui/animation/animateItem'
+import { animateItem } from 'utils/hooks/animateItem'
 import ContactAddress from './contact-address/ContactAddress'
 import { ContactForm } from './contact-form/ContactForm'
 import ContactInfo from './contact-info/ContactInfo'
