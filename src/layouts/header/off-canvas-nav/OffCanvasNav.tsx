@@ -10,9 +10,9 @@ const OffCanvasNav: React.FC<{
     setIsOffCanvasMenu: (setIsOffCanvasMenu: boolean)  => void
 }> = ({ isOffCanvasMenu, setIsOffCanvasMenu }) => {
 
-    const [activeItem, setActiveItem] = useState(null)
+    const [activeItem, setActiveItem] = useState<number | null>(null)
 
-    const handleItemClick = (index: any) => {
+    const handleItemClick = (index: number | null) => {
         setActiveItem((prevActiveItem) => (prevActiveItem === index ? null : index))
     }
 

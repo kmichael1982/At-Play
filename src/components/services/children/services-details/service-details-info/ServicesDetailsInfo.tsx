@@ -6,12 +6,8 @@ import { animateItem } from 'utils/hooks/animateItem'
 import ThumbServicesOneImg from 'assets/images/services/thumb-one.png'
 import ThumbServicesTwoImg from 'assets/images/services/thumb-two.png'
 
-interface ServicesDetailsInfoProps {
-
-}
-
-export const ServicesDetailsInfo: React.FC<ServicesDetailsInfoProps> = ({  }) => {
-    const imageRef = useRef<HTMLDivElement | any>(null)
+export const ServicesDetailsInfo= () => {
+    const imageRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         animateItem(imageRef)

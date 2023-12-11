@@ -9,7 +9,7 @@ interface UxProcessItemsProps {
 
 export const UxProcessItems: React.FC<UxProcessItemsProps> = ({ index, title, content }) => {
     const [ activeIndex, setActiveIndex ] = useState<number | null>(null)
-    const itemRef = useRef<HTMLDivElement | any>(null)
+    const itemRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         animateItem(itemRef)

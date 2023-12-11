@@ -1,13 +1,15 @@
-import React from 'react'
-import { HeaderSubItems } from 'utils/models/header-types/header-types'
+import React, { MouseEventHandler } from 'react'
+import { HeaderSubItems } from 'models/header-types/header-types'
 
-const AccordionItem: React.FC<{
+interface AccordionItemProps {
     elemIndex: number
     label: string
     subItems: HeaderSubItems[]
     isActive: boolean
-    onClick: (event: any) => void
-}> = ({ elemIndex, label, subItems, isActive, onClick }) => {
+    onClick: MouseEventHandler<HTMLAnchorElement>
+}
+
+const AccordionItem: React.FC<AccordionItemProps> = ({ elemIndex, label, subItems, isActive, onClick }) => {
 
     const styles = { display: isActive ? 'block' : 'none' }
 
@@ -17,7 +19,7 @@ const AccordionItem: React.FC<{
                 {label}
             </a>
             <ul className={`navbar__sub-menu `} style={styles}>
-                {subItems.map((item: any, index: number) => (
+                {subItems.map((item: HeaderSubItems, index: number) => (
                     <li key={index}>
                         <a className="flex" href={item.link}>{item.label}</a>
                     </li>

@@ -31,7 +31,6 @@ export const OfferCtaItem: React.FC<OfferCtaItemProps> = ({ index, getServiceTit
                 <a className="flex" href={SERVICE_SINGLE_URL}>
                     {getServiceTitle(index)}
                     <i className="fa-solid fa-arrow-right" style={{transform: 'rotate(320deg)'}}></i>
-                    {/*<i className="fa-sharp fa-solid fa-arrow-up-right"></i>*/}
                 </a>
             </h2>
             <div

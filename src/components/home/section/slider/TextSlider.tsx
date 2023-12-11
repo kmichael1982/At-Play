@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Slider from 'react-slick'
+import Slider, { Settings } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
@@ -8,7 +8,7 @@ interface TextSliderProps {
     href: string
     className: string
     className1?: string
-    settings: any
+    settings: Settings
 }
 
 export const TextSlider: React.FC<TextSliderProps> = ({ labels, href, className, className1, settings }) => {

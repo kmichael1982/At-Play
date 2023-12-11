@@ -9,7 +9,7 @@ import { Buttons } from 'shared/ui/buttons/ButtonUi'
 
 export const ContactForm = () => {
     type FormSchemaType = z.infer<typeof sendMessageEmailSchema>
-    const [ filterOptions, setFilterOptions ] = useState<any>({})
+    const [ filterOptions, setFilterOptions ] = useState<FormSchemaType | {}>({})
     const [ isOpen, setIsOpen ] = useState<boolean>(false)
 
     const onFilterChange = ({ target }: React.FormEvent<HTMLInputElement | HTMLSelectElement>) => {

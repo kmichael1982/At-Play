@@ -18,9 +18,14 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 gsap.registerPlugin(ScrollTrigger)
 
+interface homeDataType {
+    Title: string
+    Description: string
+}
+
 function BannerSection() {
     const [ isModalOpen, setIsModalOpen ] = useState(false)
-    const [ homeData, setHomeData ] = useState<any>([])
+    const [ homeData, setHomeData ] = useState<homeDataType | null>(null)
     const parts = homeData?.Title ? homeData.Title.split(/\{(.*?)\}/).filter(Boolean) : []
 
     const bannerImageRef = useRef<HTMLImageElement | null>(null)
@@ -47,18 +52,6 @@ function BannerSection() {
 
         return minScale + scrollPercent * (maxScale - minScale)
     }
-
-    useEffect(() => {
-        async function getHomePageFullData() {
-            try {
-                const res = await getHomePageFullInfo()
-                if (res) setHomeData(res.data.attributes)
-            } catch (error) {
-                console.error('Failed to fetch home page data:', error)
-            }
-        }
-        getHomePageFullData()
-    }, [])
 
     useEffect(() => {
         if (inView) {
@@ -94,7 +87,7 @@ function BannerSection() {
             }
         }
         getHomePageFullData()
-    }, [homeData])
+    }, [])
 
     const parseTitle = (title: string) => title
 
@@ -105,14 +98,6 @@ function BannerSection() {
                     <div className="col-12">
                         <div className="banner__content">
                             <h1 className="text-uppercase text-start fw-9 mb-0 title-anim">
-                                {/*<TextAnimation text="we are" />*/}
-                                {/*<span className="text-stroke">*/}
-                                {/*    <TextAnimation text="creative" />*/}
-                                {/*</span>*/}
-                                {/*<span className="interval">*/}
-                                {/*    <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>*/}
-                                {/*    <TextAnimation text="marketing agency" />*/}
-                                {/*</span>*/}
                                 {parts.map((part: string, index: number) => (
                                     <React.Fragment key={index}>
                                         {index === 0 && <TextAnimation text={parseTitle(part)} />}
@@ -132,7 +117,6 @@ function BannerSection() {
                             </h1>
                             <div className="banner__content-inner">
                                 <p>{homeData?.Description}</p>
-                                {/*<p>We are a full-service website design, development and digital marketing company specializing in SEO, content marketing that grows brands.</p>*/}
                                 <div className="cta section__content-cta">
                                     <div className="single">
                                         <h5 className="fw-7">

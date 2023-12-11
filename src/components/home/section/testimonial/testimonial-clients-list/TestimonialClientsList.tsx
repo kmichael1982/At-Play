@@ -72,7 +72,7 @@ export const TestimonialClientsList = () => {
         },
     }
 
-    const getPreviousSlideImageSrc = (currentSlide: any) => {
+    const getPreviousSlideImageSrc = (currentSlide: number): string  => {
         const previousSlideIndex = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length
         return testimonialSlides[previousSlideIndex].imgSrc
     }
