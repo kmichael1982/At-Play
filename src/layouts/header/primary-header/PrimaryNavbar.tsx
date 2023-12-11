@@ -24,7 +24,7 @@ const PrimaryNavbar = () => {
 
     return (
         <>
-                {
+            {
                 isOffCanvasMenu ? (
                     <header className="header">
                         <div className={`primary-navbar secondary--navbar ${navbarClasses}`}>

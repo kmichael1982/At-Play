@@ -1,5 +1,6 @@
 export const serviceSlides = [
     {
+        id: 1,
         href: "/service-details",
         title: "Development",
         label: "service details",
@@ -14,6 +15,7 @@ export const serviceSlides = [
         )
     },
     {
+        id: 2,
         href: "/service-details",
         title: "Branding",
         label: "service details",
@@ -28,6 +30,7 @@ export const serviceSlides = [
         )
     },
     {
+        id: 3,
         href: "/service-details",
         title: "UX Design",
         label: "service details",
@@ -42,6 +45,7 @@ export const serviceSlides = [
         )
     },
     {
+        id: 4,
         href: "/service-details",
         title: "UI Design",
         label: "service details",
@@ -56,6 +60,7 @@ export const serviceSlides = [
         )
     },
     {
+        id: 5,
         href: "/service-details",
         title: "Development",
         label: "service details",
@@ -70,6 +75,7 @@ export const serviceSlides = [
         )
     },
     {
+        id: 6,
         href: "/service-details",
         title: "Branding",
         label: "service details",
@@ -84,6 +90,7 @@ export const serviceSlides = [
         )
     },
     {
+        id: 7,
         href: "/service-details",
         title: "UX Design",
         label: "service details",
@@ -98,6 +105,7 @@ export const serviceSlides = [
         )
     },
     {
+        id: 8,
         href: "/service-details",
         title: "UI Design",
         label: "service details",

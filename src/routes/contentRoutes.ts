@@ -29,7 +29,7 @@ export const publicPages = [
     {
         id: 'Page404',
         text: '404 Page',
-        path: '404',
+        path: 'error',
         icon: '',
         element: AUTH.PAGE_404,
         exact: true,

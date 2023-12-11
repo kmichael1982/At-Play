@@ -323,7 +323,7 @@
       .navbar__dropdown-label {
         position: relative;
         &::after {
-          content: "\2b";
+          content: "-";
           font-family: "Font Awesome 6 Pro";
           position: absolute;
           top: 0px;

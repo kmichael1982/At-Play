@@ -306,8 +306,7 @@
     .navbar__item--has-children {
       .navbar__dropdown-label {
         &::after {
-          content: "\2b";
-          font-family: "Font Awesome 6 Pro";
+          content: "+";
           position: absolute;
           top: 0px;
           right: 0px;

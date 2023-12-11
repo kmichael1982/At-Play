@@ -9,8 +9,7 @@ const OffCanvasNav: React.FC<{
     isOffCanvasMenu: boolean
     setIsOffCanvasMenu: (setIsOffCanvasMenu: boolean)  => void
 }> = ({ isOffCanvasMenu, setIsOffCanvasMenu }) => {
-
-    const [activeItem, setActiveItem] = useState<number | null>(null)
+    const [ activeItem, setActiveItem ] = useState<number | null>(null)
 
     const handleItemClick = (index: number | null) => {
         setActiveItem((prevActiveItem) => (prevActiveItem === index ? null : index))
@@ -26,7 +25,7 @@ const OffCanvasNav: React.FC<{
                                 <img src={Logo} className="h-14" alt="" title="" />
                             </a>
                         </div>
-                        <a onClick={() => setIsOffCanvasMenu(!isOffCanvasMenu)} aria-label="close offcanvas menu" className="close-offcanvas-menu">
+                        <a onClick={() => setIsOffCanvasMenu(!isOffCanvasMenu)} aria-label="close offcanvas menu" className="close-offcanvas-menu cursor-pointer">
                             <i className="fa fa-light fa-xmark"></i>
                         </a>
                     </div>
@@ -37,8 +36,10 @@ const OffCanvasNav: React.FC<{
                                     <AccordionItem
                                         key={index}
                                         label={item.label}
+                                        link={item.link || ''}
                                         subItems={item.subItems || []}
                                         isActive={activeItem === index}
+                                        setActiveItem={setActiveItem}
                                         onClick={() => handleItemClick(index)}
                                         elemIndex={index}
                                     />

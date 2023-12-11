@@ -37,6 +37,14 @@ function NextPageSection() {
                     autoplaySpeed: 0,
                     autoplay: true,
                     cssEase: 'linear',
+                    responsive: [
+                        {
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 2,
+                            },
+                        }
+                    ]
                 }}
                 labels={['About Us', 'About Us', 'About Us', 'About Us', 'About Us', 'About Us', 'About Us', 'About Us']}
                 href="/about-us"
