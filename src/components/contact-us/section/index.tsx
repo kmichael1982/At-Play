@@ -46,7 +46,7 @@ export const ContactUsPages = () => {
                         lines={[
                             {
                                 href: 'https://www.google.com/maps/d/viewer?mid=1UZ57Drfs3SGrTgh6mrYjQktu6uY&amp;hl=en_US&amp;ll=18.672105000000013%2C105.68673800000003&amp;z=17',
-                                text: '85 Ketch Harbour Road Bensalem, PA 19020',
+                                text: '71-75 Shelton Street, London WC2H 9JQ',
                             },
                         ]}
                     />
