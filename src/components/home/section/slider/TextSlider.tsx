@@ -9,9 +9,10 @@ interface TextSliderProps {
     className: string
     className1?: string
     settings: Settings
+    h1?: string
 }
 
-export const TextSlider: React.FC<TextSliderProps> = ({ labels, href, className, className1, settings }) => {
+export const TextSlider: React.FC<TextSliderProps> = ({ labels, href, className, className1, settings, h1 }) => {
     useEffect(() => {
 
     }, [])
@@ -21,7 +22,7 @@ export const TextSlider: React.FC<TextSliderProps> = ({ labels, href, className,
             <Slider {...settings}>
                 {labels.map((label, index) => (
                     <div key={index} className={`${className1 ? className1 : "slick-slide slick-current slick-active"}`}>
-                        <h2 className="h1">
+                        <h2 className={`${h1 ? h1 : 'h1'} h1`}>
                             <a href={href}>
                                 {label}
                                 <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(45deg)' }}></i>

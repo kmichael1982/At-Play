@@ -3,6 +3,7 @@ import React from 'react'
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import { TestimonialClientsList } from './testimonial-clients-list/TestimonialClientsList'
 import { TextSlider } from '../slider/TextSlider'
+import { responsiveTextSliderTestimonial } from '../slider-responsive/text-slider-responsive'
 
 import './testimonial-styles.scss'
 
@@ -19,18 +20,19 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ className, isAc
                 href=""
                 className="testimonial__text-slider slick-initialized slick-slider"
                 settings={{
-                    slidesToShow: 2,
+                    slidesToShow: 1.385,
                     slidesToScroll: 2,
                     centerMode: true,
                     arrows: false,
                     dots: false,
                     speed: 10000,
-                    // centerPadding: "15px",
                     infinite: true,
                     autoplaySpeed: 0,
                     autoplay: true,
                     cssEase: "linear",
+                    responsive: responsiveTextSliderTestimonial
                 }}
+                h1="h1T"
                 className1="testimonial__text-slider-single slick-slide slick-cloned"
             />
             <TestimonialClientsList />

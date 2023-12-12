@@ -47,35 +47,31 @@ function BannerSection() {
     }
 
     const calculateScale = (scrollPercent: number) => {
-        const minScale = 0.45
-            const maxScale = 2.35
+        const minScale = 0.15
+        const maxScale = 3.5
 
         return minScale + scrollPercent * (maxScale - minScale)
     }
 
     useEffect(() => {
-        if (inView) {
             const onUpdate = (self: ScrollTrigger) => {
                 const scrollPercent = self.progress
                 const opacity = calculateOpacity(scrollPercent)
                 const scale = calculateScale(scrollPercent)
+                const translateY = `${-5.15 + 65.2686 * scrollPercent}%`
 
                 gsap.to(bannerImageRef.current, {
                     opacity,
                     scale,
-                    transformOrigin: '50% 50%', // Adjust if necessary
+                    y: translateY
                 })
             }
 
             ScrollTrigger.create({
                 trigger: bannerImageRef.current,
-                // start: 'top center',
-                // end: 'bottom center',
-                // scrub: 0.5, // Adjust as needed
                 onUpdate,
             })
-        }
-    }, [inView])
+    }, [bannerImageRef])
 
     useEffect(() => {
         async function getHomePageFullData() {
@@ -97,26 +93,37 @@ function BannerSection() {
                 <div className="row">
                     <div className="col-12">
                         <div className="banner__content">
-                            <h1 className="text-uppercase text-start fw-9 mb-0 title-anim">
-                                {parts.map((part: string, index: number) => (
-                                    <React.Fragment key={index}>
-                                        {index === 0 && <TextAnimation text={parseTitle(part)} />}
-                                        {index === 1 && (
-                                            <span className="text-stroke">
-                                                <TextAnimation text={parseTitle(part)} />
-                                            </span>
-                                        )}
-                                        {index === 4 && (
-                                            <span className="interval">
-                                                <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>
-                                                <TextAnimation text={parseTitle(part)} />
-                                            </span>
-                                        )}
-                                    </React.Fragment>
-                                ))}
+                            <h1 className="text-uppercase h1 text-start fw-9 mb-0 title-anim">
+                                <TextAnimation text="we are a" />
+                                <span className="pl-3 text-stroke">
+                                    <TextAnimation text="creative" />
+                                </span>
+                                <span className="interval">
+                                    <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>
+                                    <TextAnimation text="marketing agency" />
+                                </span>
+                                {/*{parts.map((part: string, index: number) => (*/}
+                                {/*    <React.Fragment key={index}>*/}
+                                {/*        {index === 0 && <TextAnimation text={parseTitle(part)} />}*/}
+                                {/*        {index === 1 && (*/}
+                                {/*            <span className="text-stroke">*/}
+                                {/*                <TextAnimation text={parseTitle(part)} />*/}
+                                {/*            </span>*/}
+                                {/*        )}*/}
+                                {/*        {index === 4 && (*/}
+                                {/*            <span className="interval">*/}
+                                {/*                <i className="fa-solid fa-arrow-right" style={{ transform: 'rotate(320deg)' }}></i>*/}
+                                {/*                <TextAnimation text={parseTitle(part)} />*/}
+                                {/*            </span>*/}
+                                {/*        )}*/}
+                                {/*    </React.Fragment>*/}
+                                {/*))}*/}
                             </h1>
                             <div className="banner__content-inner">
-                                <p>{homeData?.Description}</p>
+                                {/*<p>{homeData?.Description}</p>*/}
+                                <p>
+                                    We are a full-service website design, development and digital marketing company specialising in SEO & content marketing that grows brands.
+                                </p>
                                 <div className="cta section__content-cta">
                                     <div className="single">
                                         <h5 className="fw-7">
@@ -137,7 +144,7 @@ function BannerSection() {
                 </div>
             </div>
 
-            <div ref={bannerImageRef} className="banner-one-thumb d-none d-sm-block g-ban-one">
+            <div ref={bannerImageRef} className="banner-one-thumb d-none d-sm-block bg-ban-one">
                 <video
                     autoPlay
                     loop={false}

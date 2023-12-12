@@ -89,8 +89,8 @@
   h1,
   .h1,
   .light-title {
-    font-size: 55px;
-    line-height: 80px;
+    font-size: 55px !important;
+    line-height: 80px !important;
   }
 
   h2 {
@@ -551,19 +551,19 @@
   h1,
   .h1,
   .light-title {
-    font-size: 40px;
-    line-height: 60px;
+    font-size: 40px !important;
+    line-height: 60px !important;
   }
 
   h2 {
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 30px !important;
+    line-height: 40px !important;
   }
 
   h3,
   .light-title-lg {
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 24px !important;
+    line-height: 34px !important;
   }
 
   // global styles
@@ -853,8 +853,10 @@
 
     .banner-one-thumb {
       top: 240px;
-      left: 60%;
-      max-width: 200px;
+      left: 36%;
+      height: 200px !important;
+      max-width: 200px !important;
+      min-height: 200px !important;
     }
 
     .banner__content-inner {
@@ -1012,33 +1014,39 @@
 }
 
 @media only screen and (max-width: 575.98px) {
+  .h1T,
+  .light-title {
+    font-size: 18px !important;
+    line-height: 45px !important;
+  }
+
   // typography
   h1,
   .h1,
   .light-title {
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 24px !important;
+    line-height: 55px !important;
   }
 
   h2 {
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 24px !important;
+    line-height: 34px !important;
   }
 
   h3,
   .light-title-lg {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 20px !important;
+    line-height: 30px !important;
   }
 
   h4 {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 18px !important;
+    line-height: 28px !important;
   }
 
   h5 {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 18px !important;
+    line-height: 28px !important;
   }
 
   .mobile-menu {
@@ -1354,6 +1362,11 @@
 }
 
 @media only screen and (max-width: 424.98px) {
+  .h1T,
+  .light-title {
+    font-size: 16px !important;
+    line-height: 35px !important;
+  }
   .banner-five {
     .banner-five__single {
       padding: 0px 15px;
