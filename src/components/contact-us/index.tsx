@@ -8,7 +8,7 @@ function ContactUsPage() {
         <main>
             <BreadCrumb
                 title="contact us"
-                description="We're an UK-based top-notch design agency committed to partnering with good companies and hiring the right people for the right roles."
+                description="We're a UK & Dubai based top-notch design agency committed to partnering with good companies and hiring the right people for the right roles."
             />
             <ContactUsPages />
         </main>
