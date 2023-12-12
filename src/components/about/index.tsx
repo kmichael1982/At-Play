@@ -18,7 +18,7 @@ function AboutUsPage() {
         <main>
             <BreadCrumb
                 title="About us"
-                description="We're an UK-based top-notch design agency committed to partnering with good companies and hiring the right people for the right roles."
+                description="We're a UK-based top-notch creative marketing agency committed to partnering with companies enabling them to use our specialist marketing services."
             />
             <VideoModal imageSrc={BgVideoFrameImage} />
             <AgencySection />
