@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Logo from 'assets/images/image-removebg-preview.png'
 import OffCanvasNav from '../off-canvas-nav/OffCanvasNav'
+
+import Logo from 'assets/images/image-removebg-preview.png'
 
 const PrimaryNavbar = () => {
     const [ isScrolled, setIsScrolled ] = useState(false)
@@ -10,7 +11,7 @@ const PrimaryNavbar = () => {
         const handleScroll = () => {
             const scrolled = window.scrollY > 0
             setIsScrolled(scrolled)
-        }
+       }
 
         window.addEventListener('scroll', handleScroll)
 

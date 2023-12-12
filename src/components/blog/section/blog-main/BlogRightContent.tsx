@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { SearchInput } from 'shared/ui/inputs/FormInput'
+import { RecentPost } from './recent-post/RecentPost'
 
 import ThirteenImg from 'assets/images/blog/thirteen.png'
 import FourteenImg from 'assets/images/blog/fourteen.png'
@@ -9,6 +10,13 @@ import TwelveImg from 'assets/images/blog/twelve.png'
 import TenImg from 'assets/images/blog/ten.png'
 
 export const BlogRightContent = () => {
+    const recentPosts = [
+        { date: '10/01/2023', image: TenImg, title: 'Guide dog shortage: The blind people who train their own guide', link: '/blog-single' },
+        { date: '10/01/2023', image: ElevenImg, title: 'Guide dog shortage: The blind people who train their own guide', link: '/blog-single' },
+        { date: '10/01/2023', image: TwelveImg, title: 'Guide dog shortage: The blind people who train their own guide', link: '/blog-single' },
+        { date: '10/01/2023', image: ThirteenImg, title: 'Guide dog shortage: The blind people who train their own guide', link: '/blog-single' },
+    ]
+
     return (
         <div className="col-12 col-xl-4">
             <div className="blog-main__sidebar">
@@ -60,70 +68,9 @@ export const BlogRightContent = () => {
                         <h5 className="h5">Recent Posts</h5>
                     </div>
                     <div className="widget__latest">
-                        <div className="latest-single ">
-                            <div className="latest-thumb">
-                                <a href="/blog-single">
-                                    <img src={TenImg} alt="Image" />
-                                </a>
-                            </div>
-                            <div className="latest-content">
-                                <p>10/01/2023</p>
-                                <p>
-                                    <a href="/blog-single">
-                                        Guide dog shortage: The blind peo ple who train
-                                        their own guide
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                        <div className="latest-single ">
-                            <div className="latest-thumb">
-                                <a href="/blog-single">
-                                    <img src={ElevenImg} alt="Image" />
-                                </a>
-                            </div>
-                            <div className="latest-content">
-                                <p>10/01/2023</p>
-                                <p>
-                                    <a href="/blog-single">
-                                        Guide dog shortage: The blind peo ple who train
-                                        their own guide
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                        <div className="latest-single ">
-                            <div className="latest-thumb">
-                                <a href="/blog-single">
-                                    <img src={TwelveImg} alt="Image" />
-                                </a>
-                            </div>
-                            <div className="latest-content">
-                                <p>10/01/2023</p>
-                                <p>
-                                    <a href="/blog-single">
-                                        Guide dog shortage: The blind peo ple who train
-                                        their own guide
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                        <div className="latest-single ">
-                            <div className="latest-thumb">
-                                <a href="/blog-single">
-                                    <img src={ThirteenImg} alt="Image" />
-                                </a>
-                            </div>
-                            <div className="latest-content">
-                                <p>10/01/2023</p>
-                                <p>
-                                    <a href="/blog-single">
-                                        Guide dog shortage: The blind peo ple who train
-                                        their own guide
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
+                        {recentPosts.map((post, index) => (
+                            <RecentPost key={index} {...post} />
+                        ))}
                     </div>
                 </div>
                 <div className="widget ">

@@ -37,7 +37,7 @@ function AgencySection() {
                 scale: 0.9,
                 opacity: 0,
                 scrollTrigger: {
-                    trigger: thumbOne,
+                    trigger: ".section",
                     start: 'top 80%',
                     end: 'bottom 20%',
                     toggleActions: 'play none none reverse',
@@ -50,7 +50,7 @@ function AgencySection() {
                 scale: 0.9,
                 opacity: 0,
                 scrollTrigger: {
-                    trigger: thumbTwo,
+                    trigger: ".section",
                     start: 'top 80%',
                     end: 'bottom 20%',
                     toggleActions: 'play none none reverse',

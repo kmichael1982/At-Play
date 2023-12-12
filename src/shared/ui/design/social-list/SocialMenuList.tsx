@@ -3,7 +3,7 @@ import React from 'react'
 import { SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
 
 const SocialMenuList = () => (
-    <>
+    <div className="social">
         <SocialLinkButton
             href="https://www.facebook.com/"
             icon={<i className="fa-brands fa-facebook-f"></i>}
@@ -22,7 +22,7 @@ const SocialMenuList = () => (
             href="https://www.instagram.com/"
             icon={<i className="fa-brands fa-instagram"></i>}
         />
-    </>
+    </div>
 )
 
 export default SocialMenuList

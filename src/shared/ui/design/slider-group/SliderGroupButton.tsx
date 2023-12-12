@@ -1,7 +1,8 @@
 import React from 'react'
+import Slider from 'react-slick'
 
 interface SliderGroupButtonProps {
-    sliderRef: any
+    sliderRef: React.RefObject<Slider>
 }
 export const SliderGroupButton: React.FC<SliderGroupButtonProps> = ({ sliderRef }) => {
     return (

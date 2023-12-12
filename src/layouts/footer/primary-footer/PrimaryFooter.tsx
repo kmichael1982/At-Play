@@ -98,9 +98,9 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                     <div className="footer__copyright-text text-center text-lg-start">
                                         <p>
                                             Copyright ©
-                                            <span id="copyYear">{(new Date().getFullYear())}</span>
+                                            <span id="copyYear" className="px-1">{(new Date().getFullYear())}</span>
                                             Xpovio by
-                                            <LinkButton className='font-bold' label='GramenTheme' href='https://themeforest.net/user/gramentheme/' />
+                                            <LinkButton className='font-bold pl-1' label='GramenTheme' href='https://themeforest.net/user/gramentheme/' />
                                             . All Rights Reserved
                                         </p>
                                     </div>

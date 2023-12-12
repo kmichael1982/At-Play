@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import TextAnimation from 'utils/hooks/useAnimatetText'
+import { serviceSlides } from 'components/services/section/service-table-slider/serviceSlides'
 
 import BannerImg from 'assets/images/banner/cmn-banner-bg.png'
 import './breadcrumb-styles.scss'
@@ -16,11 +17,18 @@ interface BreadCrumbProps {
 
 const BreadCrumb: React.FC<BreadCrumbProps> = ({ title, pathName, href, description, isService }) => {
     const location = useLocation()
+    const navigate = useNavigate()
 
     const breadcrumbElem = location.pathname === pathName && 'our-services'
     let params = new URLSearchParams(location.search)
     const query = params.get('query')
 
+    const currentIndex = serviceSlides.find((slide) => slide.title === query)
+
+    const prevItem = currentIndex && serviceSlides[currentIndex.id - 2]
+    const nextItem = currentIndex && serviceSlides[currentIndex.id + 2]
+
+    console.log(prevItem, nextItem)
     return (
         <section className="cmn-banner bg-img" data-background={BannerImg} style={{backgroundImage: `url(${BannerImg})`}}>
             <div className="container">
@@ -58,14 +66,35 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ title, pathName, href, descript
                         {
                             query ? (
                                 <div className="slide-group justify-content-center justify-content-lg-end">
-                                    <a href="/service-single" aria-label="previous item" className="slide-btn ">
-                                        <i className="fa-solid fa-angle-left"></i>
-                                    </a>
-                                    <a href="/service-single" aria-label="next item" className="slide-btn">
-                                        <i className="fa-solid fa-angle-right"></i>
-                                    </a>
+                                    {
+                                        currentIndex && currentIndex?.id > 0 && (
+                                            <a
+                                                onClick={(e) => {
+                                                    e.preventDefault()
+                                                    navigate(`/service-details?query=${prevItem && prevItem.title}`);
+                                                }}
+                                                className="slide-btn cursor-pointer"
+                                            >
+                                                <i className="fa-solid fa-angle-left"></i>
+                                            </a>
+                                        )
+                                    }
+
+                                    {
+                                        currentIndex && currentIndex?.id < serviceSlides.length && (
+                                            <a
+                                                onClick={(e) => {
+                                                    e.preventDefault()
+                                                    navigate(`/service-details?query=${nextItem && nextItem.title}`)
+                                                }}
+                                                className="slide-btn cursor-pointer"
+                                            >
+                                                <i className="fa-solid fa-angle-right"></i>
+                                            </a>
+                                        )
+                                    }
                                 </div>
-                            ) : (
+                            )  : (
                                 <div className="text-center text-lg-start">
                                     <p className="primary-text"> {description} </p>
                                 </div>

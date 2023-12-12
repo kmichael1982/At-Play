@@ -22,7 +22,7 @@ const TestimonialSlide: React.FC<TestimonialSlideProps> = ({ imgSrc, index, role
                     </svg>
                 </div>
             </div>
-            <div className="col-12 col-lg-7 offset-lg-1 col-xxl-7 offset-xxl-1">
+            <div className="col-12 col-lg-7 col-xxl-7">
                 <div className="testimonial-s__content">
                     <div className="quote">
                         <i className="fa-solid fa-quote-right"></i>
@@ -48,11 +48,13 @@ export const TestimonialClientsList = () => {
     const settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
+        // centerMode: true,
         arrows: false,
+        spaceBetween: 10,
         dots: false,
         speed: 2000,
         className: 'draggable',
+        // width: '1200',
         infinite: true,
         autoplaySpeed: 0,
         autoplay: false,
@@ -70,9 +72,16 @@ export const TestimonialClientsList = () => {
                 otherSectionImage.setAttribute('src', previousSlideImageSrc)
             }
         },
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    speed: 500
+                }
+            }]
     }
 
-    const getPreviousSlideImageSrc = (currentSlide: any) => {
+    const getPreviousSlideImageSrc = (currentSlide: number): string  => {
         const previousSlideIndex = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length
         return testimonialSlides[previousSlideIndex].imgSrc
     }
@@ -90,9 +99,9 @@ export const TestimonialClientsList = () => {
     return (
         <>
             <div className="container position-relative">
-                <div className="row">
-                    <div className="col-12 col-xxl-10">
-                        <div className="testimonial-s__slider slick-initialized slick-slider">
+                <div className="col-12">
+                    <div className="col-sm-10 col-md-11 col-xxl-10 col-12 mx-auto">
+                        <div className="testimonial-s__slider slick-initialized slick-slider px-[15px] md:px-0">
                             <Slider {...settings} ref={sliderRef}>
                                 {testimonialSlides.map((item, index) => (
                                     <TestimonialSlide key={index} imgSrc={item.imgSrc} role={item.role} description={item.description} name={item.name} index={index} />

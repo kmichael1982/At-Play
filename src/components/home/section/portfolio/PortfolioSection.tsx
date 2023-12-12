@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
-import { animateItem } from 'shared/ui/animation/animateItem'
+import { animateItem } from 'utils/hooks/animateItem'
 import PortfolioItem from './portfolio-item/ProtfolioItem'
 import { TextSlider } from '../slider/TextSlider'
+import { responsiveTextSliderPortfolio } from '../slider-responsive/text-slider-responsive'
 
 import OneImg from 'assets/images/home/portfolio/one.png'
 import TwoImg from 'assets/images/home/portfolio/two.png'
@@ -37,24 +38,17 @@ function PortfolioSection() {
         <section className="section portfolio pb-0 fade-wrapper position-relative">
             <TextSlider
                 settings={{
-                    slidesToShow: 2,
+                    slidesToShow: 1.5,
                     slidesToScroll: 2,
                     centerMode: true,
                     arrows: false,
                     dots: false,
-                    speed: 4000,
+                    speed: 10000,
                     infinite: true,
                     autoplaySpeed: 0,
                     autoplay: true,
                     cssEase: 'linear',
-                    responsive: [
-                        {
-                            breakpoint: 1024,
-                            settings: {
-                                slidesToShow: 1,
-                            }
-                        }
-                    ]
+                    responsive: responsiveTextSliderPortfolio
                 }}
                 labels={['digital portfolio', 'digital portfolio', 'digital portfolio', 'digital portfolio', 'digital portfolio']}
                 href="/portfolio"

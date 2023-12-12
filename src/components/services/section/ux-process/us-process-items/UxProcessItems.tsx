@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { animateItem } from 'shared/ui/animation/animateItem'
+import { animateItem } from 'utils/hooks/animateItem'
 
 interface UxProcessItemsProps {
     index: number
@@ -9,7 +9,7 @@ interface UxProcessItemsProps {
 
 export const UxProcessItems: React.FC<UxProcessItemsProps> = ({ index, title, content }) => {
     const [ activeIndex, setActiveIndex ] = useState<number | null>(null)
-    const itemRef = useRef<HTMLDivElement | any>(null)
+    const itemRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         animateItem(itemRef)

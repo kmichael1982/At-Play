@@ -1,7 +1,8 @@
 import React from 'react'
 
-import TextAnimation from 'shared/ui/animation/TextAnimation'
+import TextAnimation from 'utils/hooks/TextAnimation'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
+import { SocialList } from './social-list/SocialList'
 
 import Logo from 'assets/images/image-removebg-preview.png'
 import './footer-styles.scss'
@@ -29,28 +30,7 @@ const Footer = () => {
                     </div>
                     <div className="col-12 col-lg-7 col-xl-7 offset-xl-1 col-xxl-5 offset-xxl-3">
                         <div className="footer-two__right">
-                            <div className="social justify-content-start justify-content-lg-start">
-                                <a href="https://www.facebook.com/" target="_blank">
-                                    <i className="fa-brands fa-facebook-f"></i>
-                                    <span>Facebook</span>
-                                </a>
-                                <a href="https://www.twitter.com/" target="_blank">
-                                    <i className="fa-brands fa-twitter"></i>
-                                    <span>Twitter</span>
-                                </a>
-                                <a href="https://www.pinterest.com/" target="_blank">
-                                    <i className="fa-brands fa-linkedin-in"></i>
-                                    <span>Linkedin</span>
-                                </a>
-                                <a href="https://www.instagram.com/" target="_blank">
-                                    <i className="fa-brands fa-instagram"></i>
-                                    <span>Instagram</span>
-                                </a>
-                                <a href="https://www.dribble.com/" target="_blank">
-                                    <i className="fa-light fa-basketball"></i>
-                                    <span>Dribble</span>
-                                </a>
-                            </div>
+                            <SocialList />
                             <div className="footer__single-meta section__content-cta">
                                 <LinkButton
                                     href='https://www.google.com/maps/d/viewer?mid=1UZ57Drfs3SGrTgh6mrYjQktu6uY&amp;hl=en_US&amp;ll=18.672105000000013%2C105.68673800000003&amp;z=17'

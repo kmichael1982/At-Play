@@ -3,6 +3,7 @@ import React from 'react'
 import LinesContent from 'shared/ui/design/lines-content/LinesContent'
 import { LinkButton } from 'shared/ui/buttons/ButtonUi'
 import { TextSlider } from '../slider/TextSlider'
+import { responsiveTextLSliderNext } from '../slider-responsive/text-slider-responsive'
 
 import './next-styles.scss'
 
@@ -27,16 +28,17 @@ function NextPageSection() {
 
             <TextSlider
                 settings={{
-                    slidesToShow: 3,
+                    slidesToShow: 2.65,
                     slidesToScroll: 3,
                     centerMode: true,
                     arrows: false,
                     dots: false,
-                    speed: 4000,
+                    speed: 10000,
                     infinite: true,
                     autoplaySpeed: 0,
                     autoplay: true,
                     cssEase: 'linear',
+                    responsive: responsiveTextLSliderNext
                 }}
                 labels={['About Us', 'About Us', 'About Us', 'About Us', 'About Us', 'About Us', 'About Us', 'About Us']}
                 href="/about-us"

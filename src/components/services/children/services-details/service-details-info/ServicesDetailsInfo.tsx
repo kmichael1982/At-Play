@@ -1,17 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 
 import TextAnimation from 'utils/hooks/useAnimatetText'
-import { animateItem } from 'shared/ui/animation/animateItem'
+import { animateItem } from 'utils/hooks/animateItem'
 
 import ThumbServicesOneImg from 'assets/images/services/thumb-one.png'
 import ThumbServicesTwoImg from 'assets/images/services/thumb-two.png'
 
-interface ServicesDetailsInfoProps {
-
-}
-
-export const ServicesDetailsInfo: React.FC<ServicesDetailsInfoProps> = ({  }) => {
-    const imageRef = useRef<HTMLDivElement | any>(null)
+export const ServicesDetailsInfo= () => {
+    const imageRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         animateItem(imageRef)
