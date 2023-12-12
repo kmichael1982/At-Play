@@ -10,7 +10,7 @@ export const TeamMembers = () => {
     return (
         <section className="section team-slider-s">
             <HeaderSecondary
-                title="Our Xpovio Team Members"
+                title="Our Atplay Team Members"
                 label="OUR AWESOME CREW"
                 elem={
                     <div className="text-center text-lg-end">
