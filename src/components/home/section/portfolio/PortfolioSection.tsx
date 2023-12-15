@@ -26,7 +26,7 @@ function PortfolioSection() {
         { image: FourImg, title: 'Website Development', link: 'portfolio' },
         { image: FiveImg, title: 'Graphic Design', link: 'portfolio' },
         { image: SixImg, title: 'Social Media Management', link: 'portfolio' },
-        { special: true },
+        { special: true }
         
 
     useEffect(() => {
