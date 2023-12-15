@@ -14,7 +14,7 @@ function ServicesDetailsPage() {
             <BreadCrumb
                 title={location.search}
                 pathName={location.pathname}
-                description="We're an UK-based top-notch design agency committed to partnering with good companies and hiring the right people for the right roles."
+                description="We're a UK & Dubai based top-notch design agency committed to partnering with good companies and hiring the right people for the right roles."
             />
             <ServicesDetailsInfo />
             <UxProcess className="bg-tertiary"/>
