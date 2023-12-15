@@ -1,56 +1,7 @@
 export const menuItems = [
     {
         label: 'Home',
-        subItems: [
-            {
-                label: 'Creative Agency',
-                link: ''
-            },
-
-            {
-                label: 'Creative Agency Light',
-                link: ''
-            },
-
-            {
-                label: 'Digital Agency',
-                link: ''
-            },
-
-            {
-                label: 'Digital Agency Light',
-                link: ''
-            },
-
-            {
-                label: 'It Solution',
-                link: ''
-            },
-
-            {
-                label: 'It Solution Light',
-                link: ''
-            },
-
-            {
-                label: 'Personal Portfolio',
-                link: ''
-            },
-
-            {
-                label: 'Personal Portfolio Light',
-                link: ''
-            },
-
-            {
-                label: 'Interactive Portfolio',
-                link: ''
-            },
-
-            {
-                label: 'Interactive Portfolio Light',
-                link: ''
-            }
+        
         ]
     },
     { label: 'About Us', link: '/about-us' },
