@@ -56,12 +56,7 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                     <li>
                                         <LinkButton href='/blog' label='Journal' />
                                     </li>
-                                    
-                                        
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                 
                     <div className="col-12 col-lg-5 col-xl-4">
                         <div className="footer__single">
                             <div className="footer__single-intro">
