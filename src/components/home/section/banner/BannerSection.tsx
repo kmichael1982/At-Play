@@ -158,9 +158,8 @@ function BannerSection() {
 
             <img src={StarIcon} alt="Image" className="star" />
             <div className="banner-left-text banner-social-text d-none d-md-flex">
-                <LinkButton label="mail : info@xpovio.com" href="mailto:info@xpovio.com" />
-                <LinkButton label="Call : +99 2158 003 6980" href="tel:99-2158-003-6980" />
-            </div>
+                <LinkButton label="mail : info@atplay.marketing.com" href="mailto:info@xpovio.com" />
+                
 
             <div className="banner-right-text banner-social-text d-none d-md-flex">
                 <LinkButton label="instagram" href="https://www.instagram.com/" />
