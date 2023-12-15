@@ -20,8 +20,8 @@ const Footer = () => {
                                 </a>
                             </div>
                             <div className="paragraph">
-                                <p>Welcome to our digital agency We specialize in helping business most like yours succeed
-                                    online. From website design and development.</p>
+                                <p>Welcome to our digital agency We specialise in helping business most like yours succeed
+                                    online.</p>
                             </div>
                             <div className="section__content-cta">
                                 <TextAnimation />
@@ -60,11 +60,11 @@ const Footer = () => {
                         <div className="col-12 col-xl-6">
                             <div className="footer__copyright-text text-center text-xl-start">
                                 <p>
-                                    Copyright ©
+                                    Copyright © 2023
                                     <span id="copyYear">{(new Date().getFullYear())}</span>
-                                    Xpovio by
-                                    <LinkButton className='font-bold px-2' label='GramenTheme' href='https://themeforest.net/user/gramentheme/' />
-                                    . All Rights Reserved
+                                    Atplay Marketing.
+                                    
+                                     All Rights Reserved.
                                 </p>
                             </div>
                         </div>
