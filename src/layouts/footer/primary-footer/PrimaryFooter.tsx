@@ -1,4 +1,4 @@
- import React from 'react'
+       import React from 'react'
 
 import { Buttons, LinkButton, SocialLinkButton } from 'shared/ui/buttons/ButtonUi'
 import { SearchInput } from 'shared/ui/inputs/FormInput'
@@ -28,14 +28,19 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                 <LinkButton
                                     href='https://www.google.com/maps/d/viewer?mid=1UZ57Drfs3SGrTgh6mrYjQktu6uY&amp;hl=en_US&amp;ll=18.672105000000013%2C105.68673800000003&amp;z=17'
                                     icon={<i className="fa-sharp fa-solid fa-location-dot"></i>}
-                                    label='71- 75 Shelton Street London WC2H 9Jq | Gold & Diamond Business Park, Building 6, Dubai'
+                                    label='901 N Pitt Str., Suite 170 Alexandria, USA'
                                 />
 
-                                
                                 <LinkButton
-                                    href='mailto:info@atplay.marketing'
+                                    href='tel:406-555-0120'
+                                    icon={<i className="fa fa-sharp fa-solid fa-phone-volume"></i>}
+                                    label='(406) 555-0120'
+                                />
+
+                                <LinkButton
+                                    href='mailto:info@xpovio.com'
                                     icon={<i className="fa fa-sharp fa-solid fa-envelope"></i>}
-                                    label='info@atplay.marketing'
+                                    label='info@xpovio.com'
                                 />
                             </div>
                             <Buttons title="book a call now"/>
@@ -47,25 +52,32 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                 <h5 className="font-semibold capitalize">discover</h5>
                             </div>
                             <div className="footer__single-content">
-                                
+                                <ul>
                                     <li>
                                         <LinkButton href='/about-us' label='About Us' />
                                     </li>
-                                    
-                                        
                                     <li>
-                                        <LinkButton href='/blog' label='Journal' />
+                                        <LinkButton href='/client-feedback' label='Award Winning' />
                                     </li>
-                 
+                                    <li>
+                                        <LinkButton href='/blog' label='News &amp; Journal' />
+                                    </li>
+                                    <li>
+                                        <LinkButton href='/contact-us' label='careers' />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <div className="col-12 col-lg-5 col-xl-4">
                         <div className="footer__single">
                             <div className="footer__single-intro">
                                 <h5 className="font-semibold capitalize">Subscribe our newsletter</h5>
                             </div>
                             <div className="footer__single-content">
-                                <p className="font-normal text-start">Welcome to our digital agency We specialise in helping business most like yours
-                                    succeed online.</p>
-                           
+                                <p className="font-normal text-start">Welcome to our digital agency We specialize in helping business most like yours
+                                    succeed
+                                    online.</p>
                                 <div className="footer__single-form">
                                     <form action="#" method="post">
                                         <SearchInput
@@ -86,10 +98,10 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                     <div className="footer__copyright-text text-center text-lg-start">
                                         <p>
                                             Copyright ©
-                                            <span id="copyYear" className="px-1">{(new Date().getFullYear())}</span>
-                                            Atplay Marketing.
-                                            
-                                             All Rights Reserved.
+                                            <span id="copyYear">{(new Date().getFullYear())}</span>
+                                            Xpovio by
+                                            <LinkButton className='font-bold' label='GramenTheme' href='https://themeforest.net/user/gramentheme/' />
+                                            . All Rights Reserved
                                         </p>
                                     </div>
                                 </div>
@@ -120,8 +132,7 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                     </div>
                 </div>
             </div>
-        </footer> 
-      </div>
+        </footer>
     )
 }
 
