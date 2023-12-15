@@ -51,12 +51,12 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                     <li>
                                         <LinkButton href='/about-us' label='About Us' />
                                     </li>
-                                    <li>
+                                    
                                         
                                     <li>
                                         <LinkButton href='/blog' label='Journal' />
                                     </li>
-                                    <li>
+                                    
                                         
                                 </ul>
                             </div>
@@ -90,7 +90,7 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                 <div className="col-12 col-lg-8">
                                     <div className="footer__copyright-text text-center text-lg-start">
                                         <p>
-                                            Copyright ©2023
+                                            Copyright ©
                                             <span id="copyYear" className="px-1">{(new Date().getFullYear())}</span>
                                             Atplay Marketing.
                                             
