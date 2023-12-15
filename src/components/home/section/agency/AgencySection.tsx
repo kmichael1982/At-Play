@@ -80,7 +80,7 @@ function AgencySection() {
                                 style={{ left: 120, opacity: 1 }}
                             />
                         </div>
-                    </div>
+                    
                     <div className="col-12 col-lg-6">
                         <div className="agency__content section__content">
                             <LinkButton
@@ -90,13 +90,11 @@ function AgencySection() {
                                 icon={<i className="fa-solid fa-arrow-right"></i>}
                                 href="#"
                             />
+                            </div>
 
                             <h2 className="title title-anim" >
-                                <TextAnimation text= "We Are A 
-                                    
-                                   Creative Agency Based 
-                                    
-                                    In London & Dubai" />
+                                <TextAnimation text= "We Are A Creative Agency Based In London & Dubai"/>
+                                  
                             </h2>
 
                             <div className="paragraph">
