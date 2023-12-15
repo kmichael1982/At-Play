@@ -21,14 +21,13 @@ function PortfolioSection() {
 
     const portfolioItems = [
         { image: OneImg, title: 'Digital Marketing', link: 'portfolio' },
-        { image: TwoImg, title: 'Digital Marketing', link: 'portfolio' },
-        { image: ThreeImg, title: 'Digital Marketing', link: 'portfolio' },
-        { image: FourImg, title: 'Digital Marketing', link: 'portfolio' },
-        { image: FiveImg, title: 'Digital Marketing', link: 'portfolio' },
-        { image: SixImg, title: 'Digital Marketing', link: 'portfolio' },
+        { image: TwoImg, title: 'Product Design', link: 'portfolio' },
+        { image: ThreeImg, title: 'Lead Generation', link: 'portfolio' },
+        { image: FourImg, title: 'Website Development', link: 'portfolio' },
+        { image: FiveImg, title: 'Graphic Design', link: 'portfolio' },
+        { image: SixImg, title: 'Social Media Management', link: 'portfolio' },
         { special: true },
-        { image: SevenImg, title: 'Digital Marketing', link: 'portfolio' },
-    ]
+        
 
     useEffect(() => {
         animateItem(itemRef)
