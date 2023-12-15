@@ -159,7 +159,9 @@ function BannerSection() {
             <img src={StarIcon} alt="Image" className="star" />
             <div className="banner-left-text banner-social-text d-none d-md-flex">
                 <LinkButton label="mail : info@atplay.marketing" href="mailto:info@atplay.marketing" />
-                </div>
+                <LinkButton label="Call : +971 5858 10115" href="tel:971-5858-10115" />
+            </div>
+
                 
 
             <div className="banner-right-text banner-social-text d-none d-md-flex">
