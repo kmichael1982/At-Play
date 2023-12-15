@@ -51,10 +51,7 @@ function OfferSection() {
                                 <TextAnimation text="Giving Your Business Some Great Ideas" />
                             </h2>
                             <div className="paragraph">
-                                <p>Bring to the table win-win survival strategies to ensure proactive domination. At
-                                    the end of the day, going forward, a new normal that has evolved from generation on
-                                    the runway heading towards a streamlined cloud solution going forward porttitor
-                                    dictum sapien.</p>
+                                <p>Bring to the table win-win survival strategies to ensure proactive domination.</p>
                             </div>
                             <div className="section__content-cta">
                                 <Buttons title="view all services" href="our-services"/>
