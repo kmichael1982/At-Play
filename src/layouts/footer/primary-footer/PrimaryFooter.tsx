@@ -47,7 +47,7 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                 <h5 className="font-semibold capitalize">discover</h5>
                             </div>
                             <div className="footer__single-content">
-                                <ul>
+                                
                                     <li>
                                         <LinkButton href='/about-us' label='About Us' />
                                     </li>
