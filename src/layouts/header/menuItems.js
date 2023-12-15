@@ -3,7 +3,6 @@ export const menuItems = [
         label: 'Home', },
         
         ]
-    },
     { label: 'About Us', link: '/about-us' },
     { label: 'Services', subItems: [{ label: 'Our Services', link: '/our-services' }, { label: 'Service Details', link: '/service-details?query=UX%20Design' }] },
     { label: 'Projects', subItems: [{ label: 'Our Projects', link: '/our-projects' }, { label: 'Project Details', link: '/project-details' }] },
