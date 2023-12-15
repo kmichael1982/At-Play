@@ -120,7 +120,8 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                     </div>
                 </div>
             </div>
-        </footer> </div>
+        </footer> 
+      </div>
     )
 }
 
