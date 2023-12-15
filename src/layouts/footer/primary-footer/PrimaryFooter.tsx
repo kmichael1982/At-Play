@@ -28,19 +28,14 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                 <LinkButton
                                     href='https://www.google.com/maps/d/viewer?mid=1UZ57Drfs3SGrTgh6mrYjQktu6uY&amp;hl=en_US&amp;ll=18.672105000000013%2C105.68673800000003&amp;z=17'
                                     icon={<i className="fa-sharp fa-solid fa-location-dot"></i>}
-                                    label='901 N Pitt Str., Suite 170 Alexandria, USA'
+                                    label='71- 75 Shelton Street London WC2H 9Jq | Gold & Diamond Business Park, Building 6, Dubai'
                                 />
 
+                                
                                 <LinkButton
-                                    href='tel:406-555-0120'
-                                    icon={<i className="fa fa-sharp fa-solid fa-phone-volume"></i>}
-                                    label='(406) 555-0120'
-                                />
-
-                                <LinkButton
-                                    href='mailto:info@xpovio.com'
+                                    href='mailto:info@atplay.marketing'
                                     icon={<i className="fa fa-sharp fa-solid fa-envelope"></i>}
-                                    label='info@xpovio.com'
+                                    label='info@atplay.marketing'
                                 />
                             </div>
                             <Buttons title="book a call now"/>
@@ -57,14 +52,12 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                         <LinkButton href='/about-us' label='About Us' />
                                     </li>
                                     <li>
-                                        <LinkButton href='/client-feedback' label='Award Winning' />
+                                        
+                                    <li>
+                                        <LinkButton href='/blog' label='Journal' />
                                     </li>
                                     <li>
-                                        <LinkButton href='/blog' label='News &amp; Journal' />
-                                    </li>
-                                    <li>
-                                        <LinkButton href='/contact-us' label='careers' />
-                                    </li>
+                                        
                                 </ul>
                             </div>
                         </div>
@@ -75,9 +68,9 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                 <h5 className="font-semibold capitalize">Subscribe our newsletter</h5>
                             </div>
                             <div className="footer__single-content">
-                                <p className="font-normal text-start">Welcome to our digital agency We specialize in helping business most like yours
-                                    succeed
-                                    online.</p>
+                                <p className="font-normal text-start">Welcome to our digital agency We specialise in helping business most like yours
+                                    succeed online.</p>
+                           
                                 <div className="footer__single-form">
                                     <form action="#" method="post">
                                         <SearchInput
@@ -97,11 +90,11 @@ const PrimaryFooter: React.FC<FooterProps> = ({ background }) => {
                                 <div className="col-12 col-lg-8">
                                     <div className="footer__copyright-text text-center text-lg-start">
                                         <p>
-                                            Copyright ©
+                                            Copyright ©2023
                                             <span id="copyYear" className="px-1">{(new Date().getFullYear())}</span>
-                                            Xpovio by
-                                            <LinkButton className='font-bold pl-1' label='GramenTheme' href='https://themeforest.net/user/gramentheme/' />
-                                            . All Rights Reserved
+                                            Atplay Marketing.
+                                            
+                                             All Rights Reserved.
                                         </p>
                                     </div>
                                 </div>
