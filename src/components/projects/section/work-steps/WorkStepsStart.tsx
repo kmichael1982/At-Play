@@ -29,8 +29,7 @@ export const WorkStepsStart = () => {
                             elem={
                                 <p>
                                     Bring to the table win-win survival strategies to ensure proactive domination.
-                                    At the end of the day, going forward, a new normal that has evolved from
-                                    generation on the runway heading towards
+                                    
                                 </p>
                             }
                         />
