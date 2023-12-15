@@ -22,11 +22,14 @@ function PortfolioSection() {
     const portfolioItems = [
         { image: OneImg, title: 'Digital Marketing', link: 'portfolio' },
         { image: TwoImg, title: 'Product Design', link: 'portfolio' },
-        { image: ThreeImg, title: 'Lead Generation', link: 'portfolio' },
-        { image: FourImg, title: 'Website Development', link: 'portfolio' },
-        { image: FiveImg, title: 'Graphic Design', link: 'portfolio' },
-        { image: SixImg, title: 'Social Media Management', link: 'portfolio' },
-        { special: true }
+        { image: ThreeImg, title: 'Website Development', link: 'portfolio' },
+        { image: FourImg, title: 'Graphic Design', link: 'portfolio' },
+        { image: FiveImg, title: 'Social Media Management', link: 'portfolio' },
+        { image: SixImg, title: 'Billboard Campaigns', link: 'portfolio' },
+        { special: true },
+        { image: SevenImg, title: 'AI Marketing', link: 'portfolio' },
+    ]
+
         
 
     useEffect(() => {
